@@ -1,11 +1,11 @@
 import React from 'react';
 
-import {DivTrip, ImgTrip, Dvlinks, LinkApp} from './weelz-app-style';
+import {DivTrip, ImgTrip, Dvlinks, LinkApp} from './weelzAppStyle';
 
 // ----- Images
-import app from '../icons/avatar-trip.png';
-import apple from '../icons/apple.png';
-import android from '../icons/android.png';
+import app from '../../icons/avatar-trip.png';
+import apple from '../../icons/apple.png';
+import android from '../../icons/android.png';
 
 
 

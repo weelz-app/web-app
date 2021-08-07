@@ -1,6 +1,6 @@
 import React from "react";
 
-import {SectionTrip, DivTrip, ImgTrip, DTrip, DetaTrip, HTrip, Head} from './trip-summary-style';
+import {SectionTrip, DivTrip, ImgTrip, DTrip, DetaTrip, HTrip, Head} from './tripSummaryStyle';
 
 
 // ----- Images
