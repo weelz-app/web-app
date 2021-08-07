@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="30.301" height="30.217" viewBox="0 0 30.301 30.217">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-1 {
+        stroke: #fff;
+        stroke-width: 0.5px;
+      }
+    </style>
+  </defs>
+  <g id="information" transform="translate(0.25 0.25)">
+    <path id="Path_819" data-name="Path 819" class="cls-1" d="M14.9,0A14.859,14.859,0,1,0,29.8,14.859,14.9,14.9,0,0,0,14.9,0Zm0,27.976A13.117,13.117,0,1,1,28.055,14.859,13.151,13.151,0,0,1,14.9,27.976Z"/>
+    <path id="Path_820" data-name="Path 820" class="cls-2" d="M211.61,96.4a2.736,2.736,0,1,0,2.743,2.736A2.743,2.743,0,0,0,211.61,96.4Zm0,3.73a.994.994,0,1,1,1-.994A1,1,0,0,1,211.61,100.13Z" transform="translate(-196.71 -90.805)"/>
+    <path id="Path_821" data-name="Path 821" class="cls-2" d="M211.61,224.934a2.743,2.743,0,0,0-2.743,2.736v5.6a2.743,2.743,0,0,0,5.487,0v-5.6A2.739,2.739,0,0,0,211.61,224.934Zm1,8.331a1,1,0,0,1-1.994,0v-5.6a1,1,0,0,1,1.994,0Z" transform="translate(-196.71 -211.878)"/>
+  </g>
+</svg>

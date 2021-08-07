@@ -1,0 +1,16 @@
+.head-trip::after{
+    content: " ";
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    display: block;
+    background: linear-gradient( 180deg, rgba(0,195,225,1) 45%, rgba(88,73,149,1) 100%, #000 17%);
+    top: 0;
+    opacity: .35;
+  }
+  
+  .row{ 
+    --bs-gutter-x: none !important;
+    --bs-gutter-y: none !important;
+  }
