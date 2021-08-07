@@ -13,7 +13,7 @@ const NavBar = ({ username }) => {
         <NavBarContainer.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link href="#">
-              <Icon src="../icons/calender.svg" />
+              <img alt="cal" src="../../icons/calender.svg" />
               Trips
             </Nav.Link>
             <Nav.Link href="#">
