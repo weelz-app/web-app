@@ -1,10 +1,10 @@
 import "./App.css";
-import WeelzLogo from "./icons/en_logo_primary.svg";
+import CarSelectionListDemo from "./components/CarSelection/CarSelectionListDemo";
 
 function App() {
   return (
     <>
-      <img width={400} src={WeelzLogo} />
+      <CarSelectionListDemo />
     </>
   );
 }
