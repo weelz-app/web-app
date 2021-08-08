@@ -25,8 +25,8 @@ export default function CarSelectionItem({ carOption, onClick, className }) {
           <WalletIconWrapper className="car__Icon-wrapper">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="37.527"
-              height="37.533"
+              width="18.8"
+              height="18.8"
               viewBox="0 0 37.527 37.533"
             >
               <path
