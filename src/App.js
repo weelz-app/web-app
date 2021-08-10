@@ -1,10 +1,10 @@
 import "./App.css";
-import CarSelectionListDemo from "./components/CarSelection/CarSelectionListDemo";
+import ConfirmationDemo from "./components/Confirmation/ConfirmationDemo";
 
 function App() {
   return (
     <>
-      <CarSelectionListDemo />
+      <ConfirmationDemo />
     </>
   );
 }
