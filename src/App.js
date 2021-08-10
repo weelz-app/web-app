@@ -1,10 +1,10 @@
 import "./App.css";
-import WeelzLogo from "./icons/en_logo_primary.svg";
+import ConfirmationDemo from "./components/Confirmation/ConfirmationDemo";
 
 function App() {
   return (
     <>
-      <img width={400} src={WeelzLogo} />
+      <ConfirmationDemo />
     </>
   );
 }
