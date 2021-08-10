@@ -1,11 +1,5 @@
 import "./App.css";
-import ConfirmationDemo from "./components/Confirmation/ConfirmationDemo";
-
-function App() {
-  return (
-    <>
-      <ConfirmationDemo />
-    </>
-  );
+import BookingTopMenuDemo from './components/BookingTopMenu/BookingTopMenuDemo'
+export default function App() {
+  return (<BookingTopMenuDemo />);
 }
-export default App;
