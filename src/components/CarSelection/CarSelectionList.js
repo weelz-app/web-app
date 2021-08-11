@@ -5,45 +5,17 @@ import { Row, Col } from "react-bootstrap";
 
 export default function CarSelectionList({ carOptions }) {
   const [selectedCar, setSelectedCar] = useState({ type: "" });
+  const carItems = document.querySelectorAll(".car-item");
 
-  const handleClickOnCar = (e, car) => {
-    document.querySelectorAll(".car-item").forEach((ele) => {
-      ele.classList.remove("active");
+  carItems.forEach((item) => {
+    item.addEventListener("click", () => {
+      carItems.forEach((item) => {
+        item.classList.remove("active");
+      });
+      item.classList.add("active");
+      setSelectedCar(item);
     });
-
-    let ele = e.target;
-
-    if (
-      ele.classList.contains("car__details-wrapper") ||
-      ele.classList.contains("car__img")
-    ) {
-      ele = ele.parentElement;
-    } else if (
-      ele.classList.contains("car__text-wrapper") ||
-      ele.classList.contains("car__price-wrapper")
-    ) {
-      ele = ele.parentElement.parentElement;
-    } else if (
-      ele.classList.contains("car__title") ||
-      ele.classList.contains("car__icon-wrapper") ||
-      ele.classList.contains("car__des")
-    ) {
-      ele = ele.parentElement.parentElement.parentElement;
-    } else if (
-      ele.classList.contains("car__original-price") ||
-      ele.classList.contains("car__price") ||
-      ele.tagName === "svg"
-    ) {
-      ele = ele.parentElement.parentElement.parentElement.parentElement;
-    } else if (ele.tagName === "path") {
-      ele =
-        ele.parentElement.parentElement.parentElement.parentElement
-          .parentElement;
-    }
-
-    ele.classList.add("active");
-    setSelectedCar(car);
-  };
+  });
 
   return (
     <CarSelectionListWrapper>
@@ -54,7 +26,6 @@ export default function CarSelectionList({ carOptions }) {
               className="car-item"
               key={car.id}
               carOption={car}
-              onClick={(e) => handleClickOnCar(e, car)}
               active={car.type === selectedCar.type ? true : false}
             />
           </Col>

@@ -11,18 +11,16 @@ import {
   DetailsWrapper
 } from "./CarSelectionItemStyles";
 
-export default function CarSelectionItem({ carOption, onClick, className }) {
+export default function CarSelectionItem({ carOption, className }) {
   return (
-    <CarSelectionItemWrapper onClick={onClick} className={className}>
-      <DetailsWrapper className="car__details-wrapper">
-        <div className="car__text-wrapper">
-          <Title className="car__title">{carOption.type}</Title>
-          <Description className="car__des">
-            {carOption.description}
-          </Description>
+    <CarSelectionItemWrapper className={className}>
+      <DetailsWrapper>
+        <div>
+          <Title>{carOption.type}</Title>
+          <Description>{carOption.description}</Description>
         </div>
-        <PriceWrapper className="car__price-wrapper">
-          <WalletIconWrapper className="car__Icon-wrapper">
+        <PriceWrapper>
+          <WalletIconWrapper>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="18.8"
@@ -36,20 +34,18 @@ export default function CarSelectionItem({ carOption, onClick, className }) {
               />
             </svg>
           </WalletIconWrapper>
-          <div className="car__prices-wrapper">
-            <Price className="car__price">
-              {carOption.price + " " + carOption.currency}
-            </Price>
+          <div>
+            <Price>{carOption.price + " " + carOption.currency}</Price>
             {carOption.originalPrice &&
             carOption.price !== carOption.originalPrice ? (
-              <OriginalPrice className="car__original-price">
+              <OriginalPrice>
                 {carOption.originalPrice + " " + carOption.currency}
               </OriginalPrice>
             ) : null}
           </div>
         </PriceWrapper>
       </DetailsWrapper>
-      <CarImage src={carOption.img} className="car__img" />
+      <CarImage src={carOption.img} />
     </CarSelectionItemWrapper>
   );
 }

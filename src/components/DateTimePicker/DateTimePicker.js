@@ -1,12 +1,27 @@
+import React, { useState } from "react";
+import { Div, StyledTextField } from "./DateTimePickerStyles";
 
-import React, { useState } from "react"
-import { Div } from "./DateTimePickerStyles"
 export default function DateTimePicker({ ts, setTs }) {
-    const [timestampUTC, setTimestampUTC] = useState(216489754)
-    return (<Div>
-        <a href="https://material-ui.com/components/pickers/"><img alt="design" src="https://s3.eu-central-1.amazonaws.com/storage.weelz.app/DateTimePicker.png" />
-        </a>
+  const [timestampUTC, setTimestampUTC] = useState(ts);
+  const currentDate = new Date(parseInt(timestampUTC));
 
+  const setTimeStamp = (e) => {
+    setTimestampUTC(new Date(e.target.value).getTime())
+    setTs()
+  }
+
+  return (
+    <Div>
+      <StyledTextField
+        id="datetime-local"
+        label="Next appointment"
+        type="datetime-local"
+        defaultValue={`${currentDate.getFullYear()}-${currentDate.getMonth()}-${currentDate.getDate()}T${currentDate.getHours()}:${currentDate.getMinutes()}`}
+        InputLabelProps={{
+          shrink: true
+        }}
+        onChange={(e) => setTimeStamp(e)}
+      />
     </Div>
-    )
+  );
 }
