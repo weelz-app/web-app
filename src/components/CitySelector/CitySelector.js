@@ -1,5 +1,14 @@
 import React, { useState } from "react";
-import { MainWrapper, Div, Icon, Label, City, ArrowIcon, DropdownMenu, DropdownItem } from "./CitySelectorStyles";
+import {
+  MainWrapper,
+  Div,
+  Icon,
+  Label,
+  City,
+  ArrowIcon,
+  DropdownMenu,
+  DropdownItem
+} from "./CitySelectorStyles";
 export default function CitySelector({
   mode,
   cityList,
@@ -7,16 +16,39 @@ export default function CitySelector({
   setSelectedCity
 }) {
   const [city, setCity] = useState(selectedCity);
+  const dropdowns = document.querySelectorAll(".city-dropdown");
 
-  const toggleDropdown = () => {
-    document.getElementById('city-dropdown').classList.toggle('active');
-  }
+  const closeAllDropdowns = () => {
+    dropdowns.forEach((item) => {
+      item.classList.remove("active");
+    });
+  };
+
+  const toggleDropdown = (e) => {
+    let arrow = e.target;
+
+    if (arrow.tagName === "svg") {
+      arrow = arrow.parentElement;
+    } else if (arrow.tagName === "path") {
+      arrow = arrow.parentElement.parentElement;
+    }
+
+    if (arrow.nextElementSibling.classList.contains("active")) {
+      arrow.nextElementSibling.classList.remove("active");
+    } else {
+      closeAllDropdowns();
+
+      setTimeout(() => {
+        arrow.nextElementSibling.classList.add("active");
+      }, 400);
+    }
+  };
 
   const selectCity = (city) => {
-    setCity(city)
-    setSelectedCity()
-    toggleDropdown()
-  }
+    setCity(city);
+    setSelectedCity(city);
+    closeAllDropdowns();
+  };
 
   return (
     <MainWrapper>
@@ -50,13 +82,31 @@ export default function CitySelector({
           <City>{city}</City>
         </div>
       </Div>
-      <ArrowIcon onClick={() => toggleDropdown()}>
-        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-down" height="5.9" width="8.9" className="svg-inline--fa fa-chevron-down fa-w-14" role="img" viewBox="0 0 448 512"><path fill="currentColor" d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"/></svg>
+      <ArrowIcon onClick={(e) => toggleDropdown(e)} className="city-arrow-icon">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+          focusable="false"
+          data-prefix="fas"
+          data-icon="chevron-down"
+          height="5.9"
+          width="8.9"
+          className="svg-inline--fa fa-chevron-down fa-w-14"
+          role="img"
+          viewBox="0 0 448 512"
+        >
+          <path
+            fill="currentColor"
+            d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"
+          />
+        </svg>
       </ArrowIcon>
 
-      <DropdownMenu id="city-dropdown">
+      <DropdownMenu className="city-dropdown">
         {cityList.map((item, key) => (
-          <DropdownItem key={key} onClick={() => selectCity(item)}>{item}</DropdownItem>
+          <DropdownItem key={key} onClick={() => selectCity(item)}>
+            {item}
+          </DropdownItem>
         ))}
       </DropdownMenu>
     </MainWrapper>

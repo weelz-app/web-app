@@ -4,19 +4,21 @@ import { Div, StyledTextField } from "./DateTimePickerStyles";
 export default function DateTimePicker({ ts, setTs }) {
   const [timestampUTC, setTimestampUTC] = useState(ts);
   const currentDate = new Date(parseInt(timestampUTC));
+  let currentMonth = currentDate.getMonth().length === 1 ? currentDate.getMonth() : "0" + currentDate.getMonth();
 
   const setTimeStamp = (e) => {
-    setTimestampUTC(new Date(e.target.value).getTime())
-    setTs()
-  }
+    const ts = new Date(e.target.value).getTime();
+    setTimestampUTC(ts);
+    setTs(ts);
+  };
 
   return (
     <Div>
       <StyledTextField
         id="datetime-local"
-        label="Next appointment"
+        label="Departure"
         type="datetime-local"
-        defaultValue={`${currentDate.getFullYear()}-${currentDate.getMonth()}-${currentDate.getDate()}T${currentDate.getHours()}:${currentDate.getMinutes()}`}
+        defaultValue={`${currentDate.getFullYear()}-${currentMonth}-${currentDate.getDate()}T${currentDate.getHours()}:${currentDate.getMinutes()}`}
         InputLabelProps={{
           shrink: true
         }}

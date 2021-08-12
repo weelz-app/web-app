@@ -10,17 +10,21 @@ export default function NumberSelector({ value, max, min, valueUpdated }) {
   const [slecetedValue, setSlecetedValue] = useState(value);
 
   const incrementValue = () => {
-    setSlecetedValue((oldVal) =>
-      oldVal !== parseInt(max) ? parseInt(oldVal) + 1 : oldVal
-    );
-    valueUpdated();
+    const newVal =
+      slecetedValue !== parseInt(max)
+        ? parseInt(slecetedValue) + 1
+        : slecetedValue;
+    setSlecetedValue(newVal);
+    valueUpdated(newVal);
   };
 
   const decrementValue = () => {
-    setSlecetedValue((oldVal) =>
-      oldVal !== parseInt(min) ? parseInt(oldVal) - 1 : oldVal
-    );
-    valueUpdated();
+    const newVal =
+      slecetedValue !== parseInt(min)
+        ? parseInt(slecetedValue) - 1
+        : slecetedValue;
+    setSlecetedValue(newVal);
+    valueUpdated(newVal);
   };
 
   return (

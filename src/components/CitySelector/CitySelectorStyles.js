@@ -5,7 +5,6 @@ export const MainWrapper = styled.div`
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  padding: 15px;
 `;
 
 export const Div = styled.div`
@@ -53,7 +52,7 @@ export const ArrowIcon = styled.div`
 export const DropdownMenu = styled.div`
   position: absolute;
   top: 55px;
-  left: 33px;
+  left: 0;
   width: 300px;
   background-color: #fff;
   box-shadow: 0 2.5px 8px 0 rgb(0 0 0 / 10%);

@@ -8,7 +8,7 @@ let booking = {
   pets: false,
   nonSmoking: true
 };
-let bookingUpdated = () => console.log();
+let bookingUpdated = (val) => console.log(val);
 export default function BookingInfoDialogueDemo() {
   return (
     <div>

@@ -10,10 +10,9 @@ export default function App() {
     <>
       {/* <CarSelectionListDemo /> */}
       {/* <NumberSelectorDemo /> */}
-      <CitySelectorDemo />
       {/* <BookingInfoDialogueDemo /> */}
       {/* <DateTimePickerDemo /> */}
-      {/* <BookingTopMenuDemo /> */}
+      <BookingTopMenuDemo />
     </>
   );
 }
