@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 import { Div, StyledTextField } from "./DateTimePickerStyles";
+import TextField from '@material-ui/core/TextField';
+import AdapterDateFns from '@material-ui/lab/AdapterDateFns';
+import LocalizationProvider from '@material-ui/lab/LocalizationProvider';
+import MobileDateTimePicker from '@material-ui/lab/MobileDateTimePicker';
 
 export default function DateTimePicker({ ts, setTs }) {
   const [timestampUTC, setTimestampUTC] = useState(ts);
@@ -14,16 +18,13 @@ export default function DateTimePicker({ ts, setTs }) {
 
   return (
     <Div>
-      <StyledTextField
-        id="datetime-local"
-        label="Departure"
-        type="datetime-local"
-        defaultValue={`${currentDate.getFullYear()}-${currentMonth}-${currentDate.getDate()}T${currentDate.getHours()}:${currentDate.getMinutes()}`}
-        InputLabelProps={{
-          shrink: true
-        }}
-        onChange={(e) => setTimeStamp(e)}
-      />
+      <LocalizationProvider dateAdapter={AdapterDateFns}>
+        <MobileDateTimePicker
+          value={`${currentDate.getFullYear()}-${currentMonth}-${currentDate.getDate()}T${currentDate.getHours()}:${currentDate.getMinutes()}`}
+          onChange={(e) => setTimeStamp(e)}
+          renderInput={(params) => <TextField {...params} />}
+        />
+      </LocalizationProvider>
     </Div>
   );
 }

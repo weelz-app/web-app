@@ -17,7 +17,7 @@ export default function BookingInfoDialogue({ booking, bookingUpdated, id }) {
 
   useEffect(() => {
     bookingUpdated({ passengers, luggage, pets, nonSmoking });
-  }, [passengers, luggage, pets, nonSmoking, bookingUpdated]);
+  }, [passengers, luggage, pets, nonSmoking]);
 
   return (
     <Div id={id}>
@@ -145,7 +145,7 @@ export default function BookingInfoDialogue({ booking, bookingUpdated, id }) {
           <Title>Brining Pets</Title>
         </ItemDetails>
         <div>
-          <IOSSwitch checked={pets} onChange={() => setPets(!pets)} />
+          <IOSSwitch checked={pets} onClick={() => setPets(!pets)} inputProps={{ 'aria-label': 'Switch Bringin Pets' }} />
         </div>
       </Item>
 
@@ -180,7 +180,8 @@ export default function BookingInfoDialogue({ booking, bookingUpdated, id }) {
         <div>
           <IOSSwitch
             checked={nonSmoking}
-            onChange={() => setNonSmoking(!nonSmoking)}
+            onClick={() => setNonSmoking(!nonSmoking)}
+            inputProps={{ 'aria-label': 'Switch Non-Smooking' }}
           />
         </div>
       </Item>

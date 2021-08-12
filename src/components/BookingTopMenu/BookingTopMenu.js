@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useCallback  } from "react";
 import { Div, Item, Btn, BtnText, BtnIcon, Bar } from "./BookingTopMenuStyles";
 import CitySelector from "../CitySelector/CitySelector";
 import DateTimePicker from "../DateTimePicker/DateTimePicker";
@@ -8,9 +8,9 @@ export default function BookingTopMenu({ b }) {
   const [booking, setBooking] = useState(b);
   let cityList = ["Alex", "Cairo", "Other"];
 
-  const handleBooking = (newVal) => {
+  const handleBooking = useCallback((newVal) => {
     setBooking({ ...booking, ...newVal });
-  };
+  }, [booking])
 
   const toggleBookingInfo = () => {
     document.getElementById("booking-info").classList.toggle("active");
