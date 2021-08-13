@@ -29,6 +29,10 @@ export const StyledTextField = styled(TextField)`
 
   & .MuiInputBase-input {
     cursor: pointer;
+
+    &.Mui-disabled {
+      -webkit-text-fill-color: unset;
+    }
   }
 
   & .MuiOutlinedInput-notchedOutline {

@@ -3,13 +3,17 @@ import { Div, StyledTextField } from "./DateTimePickerStyles";
 import AdapterDateFns from '@material-ui/lab/AdapterDateFns';
 import LocalizationProvider from '@material-ui/lab/LocalizationProvider';
 import DateTimePicker from '@material-ui/lab/DateTimePicker';
-import { createTheme, ThemeProvider, styled } from '@material-ui/core/styles';
+import { StyledEngineProvider, ThemeProvider, createTheme } from '@material-ui/core/styles';
+import "./styles.css";
 
 export default function DateTimePickerCustimzed({ ts, setTs }) {
   const [timestampUTC, setTimestampUTC] = useState(ts);
   const [isOpen, setIsOpen] = useState(false);
   const currentDate = new Date(parseInt(timestampUTC));
-  let currentMonth = currentDate.getMonth().length === 1 ? currentDate.getMonth() : "0" + currentDate.getMonth();
+  let currentMonth = currentDate.getMonth() + 1;
+  currentMonth = currentMonth.toString().length === 2 ? currentMonth : "0" + currentMonth;
+  const currentHours = currentDate.getHours() === 0 ? 12 : currentDate.getHours();
+  const currentMinutes = currentDate.getMinutes().toString().length === 2 ? currentDate.getMinutes() : "0" + currentDate.getMinutes();
 
   const setTimeStamp = (date) => {
     const ts = new Date(date).getTime();
@@ -21,89 +25,58 @@ export default function DateTimePickerCustimzed({ ts, setTs }) {
     <StyledTextField
         {...props}
         label="Departure"
-        readOnly={true}
+        value={`${currentMonth}/${currentDate.getDate()}/${currentDate.getFullYear()} ${currentHours}:${currentMinutes} ${currentDate.getHours() >= 12 ? 'pm' : 'am'}`}
+        onChange={(e) => console.log(e.target)}
     />
   );
 
-  const StyledDateTimePicker = styled(DateTimePicker)(({ theme }) => ({
-    '& .MuiPickersDay-root': {
-        '&.Mui-selected': {
-            backgroundColor: "#333"
-        }
-    },
-  }));
-
   const customTheme = createTheme({
-    overrides: {
-        MuiPickersBasePicker:{
-            pickerView:{
-                backgroundColor:"black"
-            }
-        },
-        MuiPickersDay: {
-            day: {
-                color: "light-gray",
-                fontFamily: "\"Do Hyeon\", sans-serif",
-                backgroundColor: "white",
-                borderRadius:"0px",
-            },
-            container:{
-                backgroundColor:"black"
-            },
-            daySelected: {
-                backgroundColor: "#333",
-                color:"light-gray"
-            },
-            dayDisabled: {
-                color: "black",
-            },
-            current: {
-                color: "#333",
-            },
-        },
-    },
+    palette: {
+        primary: {
+          main: "#05bbd6",
+          contrastText: '#fff',
+        }
+    }
 });
 
   return (
     <Div>
       <LocalizationProvider dateAdapter={AdapterDateFns}>
-        <ThemeProvider theme={customTheme}>
-            <StyledDateTimePicker
-            value={`${currentDate.getFullYear()}-${currentMonth}-${currentDate.getDate()}T${currentDate.getHours()}:${currentDate.getMinutes()}`}
-            onChange={(date) => {
-                setTimeStamp(date)
-                }}
-            renderInput={(params) => renderTextField(params)}
-            OpenPickerButtonProps={{
-                onClick: () => {
-                setIsOpen(!isOpen);
-                }
-            }}
-            PopperProps={{
-                onClose: () => {
-                    setIsOpen(!isOpen);
-                },
-                sx: {
-                    color: "#05bbd6"
-                }
-            }}
-            DialogProps={{
-                onClose: () => {
-                setIsOpen(!isOpen);
-                },
-                sx: {
-                    color: "#05bbd6"
-                }
-            }}
-            InputProps={{
-                onClick: () => {
-                setIsOpen(!isOpen);
-                },
-                disabled: true
-            }}
-            open={isOpen}
-            />
-        </ThemeProvider>
+        <StyledEngineProvider injectFirst>
+            <ThemeProvider theme={customTheme}>
+                <DateTimePicker
+                    value={currentDate}
+                    ampm={true}
+                    onChange={(date) => {
+                        setTimeStamp(date)
+                    }}
+                    renderInput={(params) => renderTextField(params)}
+                    OpenPickerButtonProps={{
+                        onClick: () => {
+                        setIsOpen(!isOpen);
+                        }
+                    }}
+                    PopperProps={{
+                        onClose: () => {
+                            setIsOpen(!isOpen);
+                        },
+                        id: "calander"
+                    }}
+                    DialogProps={{
+                        onClose: () => {
+                            setIsOpen(!isOpen);
+                        }
+                    }}
+                    InputProps={{
+                        onClick: () => {
+                            setIsOpen(!isOpen);
+                        },
+                        disabled: true
+                    }}
+                    open={isOpen}
+                />
+            </ThemeProvider>
+        </StyledEngineProvider>
       </LocalizationProvider>
     </Div>
   );
