@@ -1,7 +1,7 @@
-import React, { useState, useCallback  } from "react";
+import React, { useState, useCallback, useEffect } from "react";
 import { Div, Item, Btn, BtnText, BtnIcon, Bar } from "./BookingTopMenuStyles";
 import CitySelector from "../CitySelector/CitySelector";
-import DateTimePicker from "../DateTimePicker/DateTimePicker";
+import DateTimePickerCustimzed from "../DateTimePicker/DateTimePicker";
 import BookingInfoDialogue from "../BookingInfoDialogue/BookingInfoDialogue";
 
 export default function BookingTopMenu({ b }) {
@@ -9,12 +9,41 @@ export default function BookingTopMenu({ b }) {
   let cityList = ["Alex", "Cairo", "Other"];
 
   const handleBooking = useCallback((newVal) => {
-    setBooking({ ...booking, ...newVal });
-  }, [booking])
+    setBooking(oldB => ({ ...oldB, ...newVal }));
+  }, [])
 
   const toggleBookingInfo = () => {
     document.getElementById("booking-info").classList.toggle("active");
   };
+
+  useEffect(() => {
+    const citySelectors = document.querySelectorAll(".city-selector");
+    const dropdowns = document.querySelectorAll(".city-dropdown");
+
+    const toggleCitySelectorDropdown = (citySelector) => {
+      if (citySelector.nextElementSibling.classList.contains("active")) {
+        citySelector.nextElementSibling.classList.remove("active")
+      } else {
+        dropdowns.forEach((item) => {
+          item.classList.remove("active");
+        });
+  
+        setTimeout(() => {
+          citySelector.nextElementSibling.classList.add("active");
+        }, 400);
+      }
+    }
+
+    citySelectors.forEach((citySelector) => {
+      citySelector.addEventListener("click", () => toggleCitySelectorDropdown(citySelector));
+    });
+
+    return function cleanUp() {
+      citySelectors.forEach((citySelector) => {
+        citySelector.removeEventListener("click", () => toggleCitySelectorDropdown(citySelector));
+      });
+    }
+  }, []);
 
   return (
     <Div>
@@ -37,7 +66,7 @@ export default function BookingTopMenu({ b }) {
       </Item>
       <Bar />
       <Item>
-        <DateTimePicker ts={booking.ts} setTs={(ts) => handleBooking({ ts })} />
+        <DateTimePickerCustimzed ts={booking.ts} setTs={(ts) => handleBooking({ ts })} />
       </Item>
       <Bar />
       <Item>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
   Div,
   Item,
@@ -14,10 +14,6 @@ export default function BookingInfoDialogue({ booking, bookingUpdated, id }) {
   const [luggage, setLuggage] = useState(booking.luggage);
   const [pets, setPets] = useState(booking.pets);
   const [nonSmoking, setNonSmoking] = useState(booking.nonSmoking);
-
-  useEffect(() => {
-    bookingUpdated({ passengers, luggage, pets, nonSmoking });
-  }, [passengers, luggage, pets, nonSmoking]);
 
   return (
     <Div id={id}>
@@ -54,7 +50,10 @@ export default function BookingInfoDialogue({ booking, bookingUpdated, id }) {
             value={passengers}
             min="1"
             max="10"
-            valueUpdated={(val) => setPassengers(val)}
+            valueUpdated={(val) => {
+              setPassengers(val);
+              bookingUpdated({ passengers: val })
+            }}
           />
         </div>
       </Item>
@@ -121,7 +120,10 @@ export default function BookingInfoDialogue({ booking, bookingUpdated, id }) {
             value={luggage}
             min="1"
             max="10"
-            valueUpdated={(val) => setLuggage(val)}
+            valueUpdated={(val) => {
+              setLuggage(val)
+              bookingUpdated({ luggage: val })
+            }}
           />
         </div>
       </Item>
@@ -145,7 +147,12 @@ export default function BookingInfoDialogue({ booking, bookingUpdated, id }) {
           <Title>Brining Pets</Title>
         </ItemDetails>
         <div>
-          <IOSSwitch checked={pets} onClick={() => setPets(!pets)} inputProps={{ 'aria-label': 'Switch Bringin Pets' }} />
+          <IOSSwitch checked={pets} 
+            onClick={() => {
+              setPets(!pets)
+              bookingUpdated({ pets: !pets })
+            }}
+            inputProps={{ 'aria-label': 'Switch Bringin Pets' }} />
         </div>
       </Item>
 
@@ -180,7 +187,10 @@ export default function BookingInfoDialogue({ booking, bookingUpdated, id }) {
         <div>
           <IOSSwitch
             checked={nonSmoking}
-            onClick={() => setNonSmoking(!nonSmoking)}
+            onClick={() => {
+              setNonSmoking(!nonSmoking)
+              bookingUpdated({ nonSmoking: !nonSmoking })
+            }}
             inputProps={{ 'aria-label': 'Switch Non-Smooking' }}
           />
         </div>

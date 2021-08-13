@@ -42,7 +42,7 @@ export const BtnText = styled.span`
   width: 54px;
   margin: 0 16.5px 0 0;
   font-family: Montserrat;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 600;
   line-height: 1.23;
   color: #000;

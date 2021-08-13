@@ -5,6 +5,11 @@ export const MainWrapper = styled.div`
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.7;
+  }
 `;
 
 export const Div = styled.div`
@@ -42,11 +47,6 @@ export const ArrowIcon = styled.div`
   height: 5.9px;
   line-height: 0;
   margin: 5.8px 0 4.8px 66.6px;
-  cursor: pointer;
-
-  &:hover {
-    opacity: 0.7;
-  }
 `;
 
 export const DropdownMenu = styled.div`

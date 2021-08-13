@@ -2,22 +2,19 @@ import styled from "styled-components";
 
 export const Div = styled.div`
   width: 253px;
-  padding: 16px 21.3px 15.5px 21px;
+  padding: 0 21.3px 0 21px;
   border-radius: 5px;
   box-shadow: 0 2.5px 8px 0 rgba(0, 0, 0, 0.05);
   background-color: #fff;
   position: absolute;
   top: 50px;
-  /* max-height: 0;
+  max-height: 0;
   transition: max-height 0.3s ease-out;
-  overflow: hidden; */
-  display: none;
+  overflow: hidden;
 
   &.active {
-    /* max-height: 1000px;
-    padding: 16px 21.3px 15.5px 21px;
-    transition: max-height 0.5s ease-in; */
-    display: block;
+    max-height: 1000px;
+    transition: max-height 0.5s ease-in;
   }
 `;
 
@@ -27,8 +24,11 @@ export const Item = styled.div`
   justify-content: space-between;
   margin-bottom: 10px;
 
+  &:first-of-type {
+    margin-top: 16px;
+  }
   &:last-of-type {
-    margin-bottom: 0;
+    margin-bottom: 16px;
   }
 `;
 
