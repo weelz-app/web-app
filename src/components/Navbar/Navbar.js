@@ -25,22 +25,22 @@ const NavBar = ({ username }) => {
             <Nav className="me-auto">
               <LinkContainer to="/trips">
                 <Nav.Link>
-                  <Icon className="md-hide" src={CalenderIcon} />
-                  {/* <Icon src={BlackCalenderIcon} /> */}
+                  <Icon className="lg-hide" src={CalenderIcon} />
+                  {/* <Icon  className="lg-hide" src={BlackCalenderIcon} /> */}
                   Trips
                 </Nav.Link>
               </LinkContainer>
               <LinkContainer to="/about">
                 <Nav.Link href="/about">
                   <Icon className="md-hide" src={InformationIcon} />
-                  {/* <Icon src={BlackInformationIcon} /> */}
+                  {/* <Icon  className="lg-hide" src={BlackInformationIcon} /> */}
                   About
                 </Nav.Link>
               </LinkContainer>
               <LinkContainer to="/add-trip">
                 <Nav.Link>
                   <Icon className="md-hide" src={AddNewIcon} />
-                  {/* <Icon src={BlackAddNewIcon} /> */}
+                  {/* <Icon  className="lg-hide" src={BlackAddNewIcon} /> */}
                   New Trip
                 </Nav.Link>
               </LinkContainer>
@@ -67,7 +67,7 @@ const NavBar = ({ username }) => {
 
               <Nav.Link eventKey={2} href="#memes">
                 <Icon className="md-hide" src={NotificationIcon} />
-                {/* <Icon src={BlackNotificationIcon} /> */}
+                {/* <Icon className="lg-hide" src={BlackNotificationIcon} /> */}
                 Language
               </Nav.Link>
             </Nav>

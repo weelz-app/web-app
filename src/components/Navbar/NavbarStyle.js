@@ -87,6 +87,12 @@ export const Icon = styled.img`
       display: none;
     }
   }
+
+  @media only screen and (min-width: 992px) {
+    &.lg-hide {
+      display: none;
+    }
+  }
 `;
 
 export const NavbarUser = styled.div`

@@ -1,10 +1,10 @@
 import React from "react";
 import {BtnWrapper} from "./BtnStyles";
 
-const Btn = () => {
+const Btn = ({disabled, variant, onClick, text}) => {
     return (
-        <BtnWrapper>
-            Request Car
+        <BtnWrapper disabled={disabled} onClick={onClick}>
+            {text}
         </BtnWrapper>
     );
 }

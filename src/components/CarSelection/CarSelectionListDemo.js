@@ -39,5 +39,5 @@ export default function CarSelectionItemDemo() {
       img: "https://s3.eu-central-1.amazonaws.com/images.weelz.app/elantra.png"
     }
   ];
-  return <CarSelectionList carOptions={carOptions} />;
+  return <CarSelectionList carOptions={[]} />;
 }

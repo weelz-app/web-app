@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const BtnWrapper = styled.div`
+export const BtnWrapper = styled.button`
     height: 35px;
     padding: 11px 74.5px 10.5px 73.5px;
     border-radius: 4px;
@@ -14,9 +14,15 @@ export const BtnWrapper = styled.div`
     letter-spacing: -0.26px;
     color: #fff;
     text-transform: uppercase;
-    cursor: pointer;
+    border: 0;
+    outline: 0;
 
-    &:hover {
+    &:disabled {
+        background-image: unset;
+        background-color: #bfbfbf;
+    }
+
+    &:not(&:disabled):hover {
         opacity: 0.7;
     }
 

@@ -3,12 +3,17 @@ import {MainWrapper} from "./ToolBarStyles";
 import BackBtn from "../BackBtn/BackBtn"
 import Btn from "../Btn/Btn"
 
-const ToolBar = (showBtn = true, btnVariant, btnOnClock) => {
+const ToolBar = ({showBtn, btnVariant, btnOnClock, btnDisabled, btnText}) => {
     return (
         <MainWrapper>
             <BackBtn />
             {showBtn ? (
-                <Btn onClick={btnOnClock} variant={btnVariant} />
+                <Btn
+                    onClick={btnOnClock}
+                    disabled={btnDisabled}
+                    variant={btnVariant}
+                    text={btnText}
+                />
             ) : null}
         </MainWrapper>
     );
