@@ -1,18 +1,28 @@
 import "./App.css";
-import BookingInfoDialogueDemo from "./components/BookingInfoDialogue/BookingInfoDialogueDemo";
-import BookingTopMenuDemo from "./components/BookingTopMenu/BookingTopMenuDemo";
-import CitySelectorDemo from "./components/CitySelector/CitySelectorDemo";
-import DateTimePickerDemo from "./components/DateTimePicker/DateTimePickerDemo";
-import NumberSelectorDemo from "./components/NumberSelector/NumberSelectorDemo";
-import CarSelectionListDemo from "./components/CarSelection/CarSelectionListDemo";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
+
+import Home from "./pages/Home";
+import CarSelection from "./pages/CarSelection";
+import About from "./pages/About";
+import Navbar from "./components/Navbar/Navbar";
+
 export default function App() {
   return (
     <>
-      {/* <CarSelectionListDemo /> */}
-      {/* <NumberSelectorDemo /> */}
-      {/* <BookingInfoDialogueDemo /> */}
-      {/* <DateTimePickerDemo /> */}
-      <BookingTopMenuDemo />
+      <Router>
+        <Navbar />
+        <div className="content">
+          <Switch>
+            <Route exact path="/" component={CarSelection} />
+            <Route exact path="/about" component={About} />
+            {/* <Route path="/car-selection" component={CarSelection} /> */}
+          </Switch>
+        </div>
+      </Router>
     </>
   );
 }

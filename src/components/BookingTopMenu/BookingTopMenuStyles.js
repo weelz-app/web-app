@@ -1,10 +1,15 @@
 import styled from "styled-components";
 
+export const MainWrapper = styled.div`
+  width: 100%;
+  padding: 12.8px 0;
+  background-color: #fff;
+`;
+
 export const Div = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
-  padding: 12.8px 49.5px;
 `;
 
 export const Item = styled.span`
