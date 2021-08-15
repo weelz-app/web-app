@@ -9,10 +9,25 @@ export const Div = styled.div`
 
 export const Item = styled.span`
   height: auto;
-  display: block;
-  align-items: center;
   width: 200px;
   position: relative;
+`;
+
+export const Hide = styled.div`
+  display: flex;
+  align-items: center;
+
+  @media only screen and (max-width: 760px) {
+    &.item-btn {
+      display: none;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    &.item-calander {
+      display: none;
+    }
+  }
 `;
 
 export const Bar = styled.span`

@@ -47,6 +47,12 @@ export const ArrowIcon = styled.div`
   height: 5.9px;
   line-height: 0;
   margin: 5.8px 0 4.8px 66.6px;
+  
+  @media only screen and (max-width: 425px) {
+    & {
+      margin: 5.8px 0 4.8px 30.6px;
+    }
+  }
 `;
 
 export const DropdownMenu = styled.div`
@@ -64,6 +70,18 @@ export const DropdownMenu = styled.div`
   &.active {
     max-height: 1000px;
     transition: max-height 0.5s ease-in;
+  }
+
+  @media only screen and (max-width: 600px) {
+    & {
+      width: 200px;
+    }
+  }
+
+  @media only screen and (max-width: 450px) {
+    & {
+      width: 120px;
+    }
   }
 `;
 
