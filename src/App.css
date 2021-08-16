@@ -1,4 +1,8 @@
 @font-face {
-    font-family: 'Montserrat';
-    src: local('Montserrat'), url(fonts/Montserrat-SemiBold.ttf) format('truetype');
-  }
+  font-family: 'Montserrat';
+  src: local('Montserrat'), url(fonts/Montserrat-SemiBold.ttf) format('truetype');
+}
+
+#root {
+  background-color: #f6f6f6;
+}

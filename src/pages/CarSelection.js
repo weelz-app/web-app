@@ -1,7 +1,10 @@
-import CarSelectionList from "./CarSelectionList";
+import React from "react";
+import BookingTopMenuDemo from "../components/BookingTopMenu/BookingTopMenuDemo"
+import CarSelectionList from "../components/CarSelection/CarSelectionList"
+import ToolBar from "../components/ToolBar/ToolBar"
+import { Container } from "react-bootstrap";
 
-export default function CarSelectionItemDemo() {
-  let carOptions = [
+let carOptions = [
     {
       id: 1,
       type: "standard",
@@ -38,6 +41,22 @@ export default function CarSelectionItemDemo() {
       originalPrice: "60",
       img: "https://s3.eu-central-1.amazonaws.com/images.weelz.app/elantra.png"
     }
-  ];
-  return <CarSelectionList carOptions={[]} />;
+];
+
+const CarSelection = () => {
+    return (
+        <div>
+            <BookingTopMenuDemo />
+            <Container>
+                <ToolBar
+                    showBtn={true}
+                    btnDisabled={carOptions.length > 0 ? false : true}
+                    btnText="Request Car"
+                />
+                <CarSelectionList carOptions={carOptions} />
+            </Container>
+        </div>
+    );
 }
+
+export default CarSelection;
