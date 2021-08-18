@@ -26,6 +26,11 @@ export const BtnWrapper = styled.button`
         opacity: 0.7;
     }
 
+    &.btn--block {
+        display: block;
+        width: 100%;
+    }
+
     @media only screen and (max-width: 375px) {
         & {
             padding: 11px 50.5px 10.5px 50.5px;

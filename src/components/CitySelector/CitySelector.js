@@ -7,13 +7,17 @@ import {
   City,
   ArrowIcon,
   DropdownMenu,
-  DropdownItem
+  DropdownItem,
+  TextWrapper
 } from "./CitySelectorStyles";
 export default function CitySelector({
   mode,
   cityList,
   selectedCity,
-  setSelectedCity
+  setSelectedCity,
+  className,
+  icon,
+  iconSize
 }) {
   const [city, setCity] = useState(selectedCity);
 
@@ -23,38 +27,52 @@ export default function CitySelector({
     e.target.parentElement.classList.remove("active");
   };
 
+  let iconHeight = iconSize ? iconSize.height : "16.9";
+  let iconWidth = iconSize ? iconSize.width : "11.3";
+  const dropdownClass = className ? className + "__dropdown" : "";
+
   return (
-    <div style={{width: "100%"}}>
-      <MainWrapper className="city-selector">
+    <div style={{width: "100%", position: "relative"}}>
+      <MainWrapper className={`city-selector ${className}`}>
         <Div>
-          <Icon>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              id="Group_12"
-              width="11.3"
-              height="16.9"
-              viewBox="0 0 22.536 33.803"
-            >
-              <path
-                fill="#05bbd6"
-                id="Path_1"
-                d="M539.751 746.333a11.245 11.245 0 0 0-2.161-2.684l-12.7 22.006 5.108 8.847 9.727-16.852.029-.049.023-.041a11.265 11.265 0 0 0-.026-11.227z"
-                className="cls-1"
-                transform="translate(-518.725 -740.699)"
-              />
-              <path
-                fill="#05bbd6"
-                id="Path_3"
-                d="M511.269 731.734a11.268 11.268 0 0 0-9.783 16.861l.023.04.029.049 2.15 3.724 11.525-19.961a11.249 11.249 0 0 0-3.944-.713z"
-                className="cls-1"
-                transform="translate(-500 -731.734)"
-              />
-            </svg>
+          <Icon iconHeight={iconHeight} iconWidth={iconWidth}>
+            {icon === "secondary" ? (
+              <svg xmlns="http://www.w3.org/2000/svg" id="Group_65" width={iconWidth} height={iconHeight} viewBox="0 0 26.488 47.131">
+                <ellipse id="Ellipse_19" cx="7.167" cy="8.063" fill="#e7e7e7" rx="7.167" ry="8.063" transform="translate(6.078 31.005)"/>
+                <g id="Group_64">
+                    <path fill="#c6c6c6" id="Path_1" d="M542.359 746.8a13.229 13.229 0 0 0-2.54-3.155l-14.931 25.866 6 10.4 11.433-19.808c.01-.02.024-.038.035-.058l.027-.048a13.241 13.241 0 0 0-.024-13.197z" class="cls-2" transform="translate(-517.645 -740.182)"/>
+                    <path fill="#c6c6c6" id="Path_3" d="M513.246 731.734a13.244 13.244 0 0 0-11.5 19.818l.027.047c.01.02.024.038.034.058l2.526 4.377 13.546-23.462a13.22 13.22 0 0 0-4.633-.838z" class="cls-2" transform="translate(-500 -731.734)"/>
+                </g>
+              </svg>
+            ) : (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                id="Group_12"
+                width={iconWidth}
+                height={iconHeight}
+                viewBox="0 0 22.536 33.803"
+              >
+                <path
+                  fill="#05bbd6"
+                  id="Path_1"
+                  d="M539.751 746.333a11.245 11.245 0 0 0-2.161-2.684l-12.7 22.006 5.108 8.847 9.727-16.852.029-.049.023-.041a11.265 11.265 0 0 0-.026-11.227z"
+                  className="cls-1"
+                  transform="translate(-518.725 -740.699)"
+                />
+                <path
+                  fill="#05bbd6"
+                  id="Path_3"
+                  d="M511.269 731.734a11.268 11.268 0 0 0-9.783 16.861l.023.04.029.049 2.15 3.724 11.525-19.961a11.249 11.249 0 0 0-3.944-.713z"
+                  className="cls-1"
+                  transform="translate(-500 -731.734)"
+                />
+              </svg>
+            )}
           </Icon>
-          <div>
+          <TextWrapper>
             <Label>{mode}</Label>
             <City>{city}</City>
-          </div>
+          </TextWrapper>
         </Div>
         <ArrowIcon className="city-arrow-icon">
           <svg
@@ -77,7 +95,7 @@ export default function CitySelector({
         </ArrowIcon>
       </MainWrapper>
 
-      <DropdownMenu className="city-dropdown">
+      <DropdownMenu className={`city-dropdown ${dropdownClass}`}>
         {cityList.map((item, key) => (
           <DropdownItem key={key} onClick={(e) => selectCity(e, item)}>
             {item}

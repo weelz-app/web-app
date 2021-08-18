@@ -10,6 +10,13 @@ export const MainWrapper = styled.div`
   &:hover {
     opacity: 0.7;
   }
+
+  // &.sidebar__city-selector {
+  //   border-radius: 5px;
+  //   box-shadow: 0 2.5px 8px 0 rgb(0 0 0 / 5%);
+  //   background-color: #fff;
+  //   padding: 8px 15px 7.5px 14.4px;
+  // }
 `;
 
 export const Div = styled.div`
@@ -18,10 +25,19 @@ export const Div = styled.div`
 `;
 
 export const Icon = styled.div`
-  width: 11.3px;
-  height: 16.9px;
-  margin: 10px 8.2px 0 0;
+  width: ${({iconWidth}) => iconWidth + "px"};
+  height: ${({iconHeight}) => iconHeight + "px"};
+  margin: 0 8.2px 0 0;
   line-height: 0;
+
+  .sidebar__city-selector & {
+    margin: 0 15.9px 0.9px 0;
+  }
+`;
+
+export const TextWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
 `;
 
 export const Label = styled.span`
@@ -34,7 +50,7 @@ export const Label = styled.span`
 
 export const City = styled.span`
   display: block;
-  margin-top: -4px;
+  margin-top: 1px;
   font-family: Montserrat;
   font-size: 11px;
   font-weight: 600;
@@ -57,7 +73,7 @@ export const ArrowIcon = styled.div`
 
 export const DropdownMenu = styled.div`
   position: absolute;
-  top: 55px;
+  top: 40px;
   left: 0;
   width: 300px;
   background-color: #fff;
@@ -66,20 +82,27 @@ export const DropdownMenu = styled.div`
   max-height: 0;
   transition: max-height 0.3s ease-out;
   overflow: hidden;
+  z-index: 3;
 
   &.active {
     max-height: 1000px;
     transition: max-height 0.5s ease-in;
   }
 
+  &.sidebar__city-selector__dropdown {
+    top: 37px;
+    left: 25px;
+    width: calc(100% - 25px);
+  }
+
   @media only screen and (max-width: 600px) {
-    & {
+    &:not(&.sidebar__city-selector__dropdown) {
       width: 200px;
     }
   }
 
   @media only screen and (max-width: 450px) {
-    & {
+    &:not(&.sidebar__city-selector__dropdown) {
       width: 120px;
     }
   }
