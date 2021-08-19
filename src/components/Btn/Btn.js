@@ -1,9 +1,9 @@
 import React from "react";
 import {BtnWrapper} from "./BtnStyles";
 
-const Btn = ({disabled, variant, onClick, text}) => {
+const Btn = ({disabled, variant, onClick, text, className}) => {
     return (
-        <BtnWrapper disabled={disabled} onClick={onClick}>
+        <BtnWrapper className={className} disabled={disabled} onClick={onClick}>
             {text}
         </BtnWrapper>
     );

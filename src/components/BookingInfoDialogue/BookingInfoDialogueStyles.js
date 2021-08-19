@@ -1,18 +1,20 @@
 import styled from "styled-components";
 
 export const Div = styled.div`
-  width: 253px;
-  padding: 0 21.3px 0 21px;
-  border-radius: 5px;
-  box-shadow: 0 2.5px 8px 0 rgba(0, 0, 0, 0.05);
-  background-color: #fff;
-  position: absolute;
-  top: 50px;
-  max-height: 0;
-  transition: max-height 0.3s ease-out;
-  overflow: hidden;
+  &:not(&.sidebar__booking-info) {
+    width: 253px;
+    padding: 0 21.3px 0 21px;
+    border-radius: 5px;
+    box-shadow: 0 2.5px 8px 0 rgba(0, 0, 0, 0.05);
+    background-color: #fff;
+    position: absolute;
+    top: 50px;
+    max-height: 0;
+    transition: max-height 0.3s ease-out;
+    overflow: hidden;
+  }
 
-  &.active {
+  &:not(&.sidebar__booking-info).active {
     max-height: 1000px;
     transition: max-height 0.5s ease-in;
   }

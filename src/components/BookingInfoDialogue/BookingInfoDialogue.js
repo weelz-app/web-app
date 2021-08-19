@@ -9,14 +9,14 @@ import {
 import NumberSelector from "../NumberSelector/NumberSelector";
 import { IOSSwitch } from "./IOSSwitch";
 
-export default function BookingInfoDialogue({ booking, bookingUpdated, id }) {
+export default function BookingInfoDialogue({ booking, bookingUpdated, id, className }) {
   const [passengers, setPassengers] = useState(booking.passengers);
   const [luggage, setLuggage] = useState(booking.luggage);
   const [pets, setPets] = useState(booking.pets);
   const [nonSmoking, setNonSmoking] = useState(booking.nonSmoking);
 
   return (
-    <Div id={id}>
+    <Div id={id} className={className}>
       <Item>
         <ItemDetails>
           <Icon>
