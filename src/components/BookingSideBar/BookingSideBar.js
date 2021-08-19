@@ -1,5 +1,5 @@
 import React, {useCallback, useState, useEffect} from 'react';
-import { MainWrapper, Title, Item, Link, Text } from "./BookingSideBarStyles";
+import { Title, Item, Link, Text } from "./BookingSideBarStyles";
 import CitySelector from "../CitySelector/CitySelector";
 import DateTimePickerCustimzed from "../DateTimePicker/DateTimePicker";
 import BookingInfoDialogue from "../BookingInfoDialogue/BookingInfoDialogue";
@@ -43,7 +43,7 @@ export default function BookingSideBar({b}) {
       }, []);
 
     return (
-        <MainWrapper>
+        <>
             <Title>What's Your Next Destination?</Title>
             <Item>
                 <CitySelector
@@ -80,6 +80,6 @@ export default function BookingSideBar({b}) {
                 <Text>City not listed?</Text>
                 <Link>Let us know</Link>
             </div>
-        </MainWrapper>
+        </>
     )
 }

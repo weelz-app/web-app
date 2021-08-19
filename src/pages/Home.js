@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import BookingSideBar from "../components/BookingSideBar/BookingSideBar"
+import MobileAppAd from "../components/MobileAppAd/MobileAppAd"
 import { Container, Row, Col } from "react-bootstrap";
 
 const booking = {
@@ -26,7 +27,17 @@ const Home = () => {
                         <BookingSideBar b={booking} />
                     </Col>
                     <Col sm={7} md={8} className="d-none d-sm-block">
-                        Page Content Test
+                        <Row>
+                            Test 1
+                        </Row>
+                        <Row>
+                            <Col sm={8}>
+                                Test 2
+                            </Col>
+                            <Col sm={4}>
+                                <MobileAppAd />
+                            </Col>
+                        </Row>
                     </Col>
                 </Row>
             </MainWrapper>

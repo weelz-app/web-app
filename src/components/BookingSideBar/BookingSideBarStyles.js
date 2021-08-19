@@ -1,9 +1,5 @@
 import styled from "styled-components";
 
-export const MainWrapper = styled.div`
-    
-`;
-
 export const Title = styled.h3`
     margin-bottom: 10px;
     font-family: Montserrat;
