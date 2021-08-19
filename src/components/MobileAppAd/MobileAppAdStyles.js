@@ -4,6 +4,7 @@ export const MainWrapper = styled.div`
     width: 100%;
     padding: 23.5px 32.5px 34px 20px;
     position: relative;
+    margin-top: 34px;
 `;
 
 export const Overlay = styled.div`
@@ -46,6 +47,7 @@ export const Icon = styled.img`
     margin-bottom: 4px;
     object-fit: contain;
     cursor: pointer;
+    display: block;
 
     &:last-of-type {
         margin-bottom: 0;

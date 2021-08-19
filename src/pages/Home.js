@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import BookingSideBar from "../components/BookingSideBar/BookingSideBar"
 import MobileAppAd from "../components/MobileAppAd/MobileAppAd"
+import NotificationsList from "../components/Notifications/NotificationsList"
 import { Container, Row, Col } from "react-bootstrap";
 
 const booking = {
@@ -13,6 +14,24 @@ const booking = {
     pets: false,
     nonSmoking: true
 };
+
+const notifications = [
+    {
+        id: 1,
+        title: "We are waiting your feedback!",
+        msg: "Alexandria to Cairo trip, 10 May 2021"
+    },
+    {
+        id: 2,
+        title: "We are waiting your feedback!",
+        msg: "Sahel to Cairo trip, 18 May 2021"
+    },
+    {
+        id: 3,
+        title: "Another Message!",
+        msg: "Another details for this notification"
+    }
+]
 
 const MainWrapper = styled.div`
     margin: 28px 0;
@@ -30,11 +49,11 @@ const Home = () => {
                         <Row>
                             Test 1
                         </Row>
-                        <Row>
-                            <Col sm={8}>
-                                Test 2
+                        <Row style={{marginTop: "15px"}}>
+                            <Col sm={12} md={7}>
+                                <NotificationsList notifications={notifications} />
                             </Col>
-                            <Col sm={4}>
+                            <Col md={5} className="d-none d-md-block">
                                 <MobileAppAd />
                             </Col>
                         </Row>
