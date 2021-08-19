@@ -3,6 +3,8 @@ import styled from "styled-components";
 import BookingSideBar from "../components/BookingSideBar/BookingSideBar"
 import MobileAppAd from "../components/MobileAppAd/MobileAppAd"
 import NotificationsList from "../components/Notifications/NotificationsList"
+// import MyTrips from "../components/MyTrips/MyTrips"
+import Trip from "../components/MyTrips/Trip"
 import { Container, Row, Col } from "react-bootstrap";
 
 const booking = {
@@ -47,7 +49,9 @@ const Home = () => {
                     </Col>
                     <Col sm={7} md={8} className="d-none d-sm-block">
                         <Row>
-                            Test 1
+                            <Col>
+                                <Trip />
+                            </Col>
                         </Row>
                         <Row style={{marginTop: "15px"}}>
                             <Col sm={12} md={7}>
