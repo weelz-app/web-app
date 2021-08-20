@@ -25,7 +25,7 @@ const NavBar = ({ username }) => {
             <Nav className="me-auto">
               <LinkContainer to="/trips">
                 <Nav.Link>
-                  <Icon className="lg-hide" src={CalenderIcon} />
+                  <Icon className="md-hide" src={CalenderIcon} />
                   {/* <Icon  className="lg-hide" src={BlackCalenderIcon} /> */}
                   Trips
                 </Nav.Link>

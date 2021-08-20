@@ -3,8 +3,7 @@ import styled from "styled-components";
 import BookingSideBar from "../components/BookingSideBar/BookingSideBar"
 import MobileAppAd from "../components/MobileAppAd/MobileAppAd"
 import NotificationsList from "../components/Notifications/NotificationsList"
-// import MyTrips from "../components/MyTrips/MyTrips"
-import Trip from "../components/MyTrips/Trip"
+import MyTrips from "../components/MyTrips/MyTrips"
 import { Container, Row, Col } from "react-bootstrap";
 
 const booking = {
@@ -35,6 +34,61 @@ const notifications = [
     }
 ]
 
+const myTrips = [
+    {
+        id: 1,
+        type: "Standard",
+        from: "Alexandria",
+        to: "Cairo",
+        ts: "1629436375456",
+        driver: "Ibrahem Adel",
+        rating: "4.2",
+        car: "Renault Logan 2019",
+        price: "30",
+        currency: "EGP",
+        status: "Confirmed"
+    },
+    {
+        id: 2,
+        type: "Standard",
+        from: "Cairo",
+        to: "Alexandria",
+        ts: "1629436375456",
+        driver: "Ibrahem Adel",
+        rating: "4.2",
+        car: "Renault Logan 2019",
+        price: "50",
+        currency: "EGP",
+        status: "Confirmed"
+    },
+    {
+        id: 3,
+        type: "Vip",
+        from: "Other",
+        to: "Cairo",
+        ts: "1629436375456",
+        driver: "Youssef Adel",
+        rating: "4.7",
+        car: "Renault Logan 2021",
+        price: "90",
+        currency: "EGP",
+        status: "Confirmed"
+    },
+    {
+        id: 4,
+        type: "Standard",
+        from: "Alexandria",
+        to: "Cairo",
+        ts: "1629436375456",
+        driver: "Ibrahem Adel",
+        rating: "4.2",
+        car: "Renault Logan 2019",
+        price: "30",
+        currency: "EGP",
+        status: "Confirmed"
+    }
+]
+
 const MainWrapper = styled.div`
     margin: 28px 0;
 `;
@@ -50,7 +104,7 @@ const Home = () => {
                     <Col sm={7} md={8} className="d-none d-sm-block">
                         <Row>
                             <Col>
-                                <Trip />
+                                <MyTrips trips={myTrips} />
                             </Col>
                         </Row>
                         <Row style={{marginTop: "15px"}}>

@@ -29,6 +29,7 @@ export const BtnWrapper = styled.button`
     &.btn--block {
         display: block;
         width: 100%;
+        padding: 11px 10px;
     }
 
     @media only screen and (max-width: 375px) {

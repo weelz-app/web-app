@@ -51,7 +51,7 @@ export default function Confirmation({ options }) {
                 focusable="false"
                 data-prefix="fas"
                 data-icon="info"
-                class="svg-inline--fa fa-info fa-w-6"
+                className="svg-inline--fa fa-info fa-w-6"
                 role="img"
                 width="48"
                 height="48"
