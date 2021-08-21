@@ -38,3 +38,21 @@ export const BtnWrapper = styled.button`
         }
     }
 `;
+
+export const BtnCancel = styled.button`
+    background-color: transparent;
+    font-family: Montserrat;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -0.26px;
+    text-align: center;
+    color: #f00;
+    text-transform: uppercase;
+    border: 0;
+    outline: 0;
+
+    &:hover {
+        opacity: 0.7;
+    }
+`;

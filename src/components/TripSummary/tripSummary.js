@@ -1,88 +1,78 @@
 import React from "react";
+import {
+    MainWrapper,
+    Header,
+    Body,
+    HeaderContent,
+    Overlay,
+    Title,
+    Items,
+    Item,
+    Label,
+    Text,
+    BodyItem,
+    Icon,
+    BodyText,
+    BodyLabel,
+    Price
+} from './TripSummaryStyle';
+import UserIcon from "../../icons/user@3x.png";
+import PriceIcon from "../../icons/wallet-passes-app.png";
+import BriefcaseIcon from "../../icons/briefcase.svg";
+import PetsIcon from "../../icons/pawprint.svg";
 
-import {SectionTrip, DivTrip, ImgTrip, DTrip, DetaTrip, HTrip, Head} from './tripSummaryStyle';
-
-
-// ----- Images
-import cairo from '../icons/cairo.jpg';
-
-
-const TripSummaryC = () => {
-
+export default function TripSummary({booking}) {
     return (
-        <SectionTrip className="p-5 row mx-0">
-            <DivTrip>
-                <Head className="w-100 head-trip row mx-0  align-content-between">
-                    <ImgTrip src={cairo} />
-                    <HTrip className="col-12 p-3 ">Trip Summary</HTrip>
-                    <DTrip className="row mx-0">
-                        <div className="col-auto px-3 py-3">
-                            <span className="w-100 d-block">
-                                From
-                            </span>
-                            <span className="w-100 d-block">
-                                Alexandria
-                            </span>
-                        </div>
-                        <div className="col-auto px-3 py-3">
-                            <span className="w-100 d-block">
-                                To
-                            </span>
-                            <span className="w-100 d-block">
-                                Cairo
-                            </span>
-                        </div>
-                        <div className="col-auto px-3 py-3">
-                            <span className="w-100 d-block">
-                                Departure
-                            </span>
-                            <span className="w-100 d-block">
-                                10 May, 2021 - 10:15 Pm
-                            </span>
-                        </div>
-                    </DTrip>
-                </Head>
-                <div className="w-100 py-2">
-                    <div className="row mx-0 py-2">
-                        <DetaTrip className="col-5 px-3 ">
-                            Passengers
-                        </DetaTrip>
-                        <div className="col-6 px-3">1</div>
-                    </div>
-
-                    <div className="row mx-0 py-2">
-                        <DetaTrip className="col-5 px-3">
-                            Luggage
-                        </DetaTrip>
-                        <div className="col-6 px-3">2</div>
-                    </div>
-
-                    <div className="row mx-0 py-2">
-                        <DetaTrip className="col-5 px-3">
-                            Brining Pets
-                        </DetaTrip>
-                        <div className="col-6 px-3">No</div>
-                    </div>
-
-                    <div className="row mx-0 py-2">
-                        <DetaTrip className="col-5 px-3">
-                            Non-Smoking
-                        </DetaTrip>
-                        <div className="col-6 px-3">Yes</div>
-                    </div>
-
-                    <div className="row mx-0 py-2">
-                        <DetaTrip className="col-5 px-3">
-                            Price
-                        </DetaTrip>
-                        <div className="col-6 px-3 color-gr">30 EGP</div>
-                    </div>
-                </div>
-            </DivTrip>
-
-        </SectionTrip>
-
+        <MainWrapper>
+            <Header>
+                <Overlay />
+                <HeaderContent>
+                    <Title>Trip Summary</Title>
+                    <Items>
+                        <Item>
+                            <Label>From</Label>
+                            <Text>{booking.from}</Text>
+                        </Item>
+                        <Item>
+                            <Label>To</Label>
+                            <Text>{booking.to}</Text>
+                        </Item>
+                        <Item>
+                            <Label>Departure</Label>
+                            <Text>{`10 May, 2021 - 10:15 PM`}</Text>
+                        </Item>
+                    </Items>
+                </HeaderContent>
+            </Header>
+            <Body>
+                <BodyItem>
+                    <Icon src={UserIcon} />
+                    <BodyLabel>Passengers</BodyLabel>
+                    <BodyText>{booking.passengers}</BodyText>
+                </BodyItem>
+                <BodyItem>
+                    <Icon src={BriefcaseIcon} />
+                    <BodyLabel>Luggage</BodyLabel>
+                    <BodyText>{booking.luggage}</BodyText>
+                </BodyItem>
+                <BodyItem>
+                    <Icon src={PetsIcon} />
+                    <BodyLabel>Brining Pets</BodyLabel>
+                    <BodyText>{booking.pets ? "Yes" : "No"}</BodyText>
+                </BodyItem>
+                <BodyItem>
+                    <Icon src={UserIcon} />
+                    <BodyLabel>Non-Smoking</BodyLabel>
+                    <BodyText>{booking.nonSmoking ? "Yes" : "No"}</BodyText>
+                </BodyItem>
+                <BodyItem>
+                    <Icon src={PriceIcon} />
+                    <BodyLabel>Price</BodyLabel>
+                    <BodyText>
+                        <Price>{`${booking.price} ${booking.currency}`}</Price>
+                    </BodyText>
+                </BodyItem>
+            </Body>
+        </MainWrapper>
     );
 }
-
-export default TripSummaryC;

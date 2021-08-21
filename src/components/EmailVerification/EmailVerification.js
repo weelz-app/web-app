@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useCallback} from 'react';
 import {
     MainWrapper,
     PhoneWrapper,
@@ -22,14 +22,14 @@ export default function EmailVerification() {
     const [code, setCode] = useState("");
     const [isValid, setIsValid] = useState(false);
 
-    const codeValidation = () => {
+    const codeValidation = useCallback(() => {
         let isValid = false;
         if (code !== "" && code.length === 4) {
             isValid = true
         }
 
         setIsValid(isValid)
-    }
+    }, [code])
 
     useEffect(() => {
         codeValidation()
