@@ -20,9 +20,9 @@ import AddNewIcon from "../../icons/AddNew.svg";
 import NotificationIcon from "../../icons/notification.svg";
 
 const NavBar = (props) => {
-  const auth = false;
   const path = props.location.pathname;
   const isSecondary = path === "/sign-in" ? true : path === "/email-verification" ? true : false;
+  const auth = isSecondary ? false : true;
 
   const authLinks = (
     <>

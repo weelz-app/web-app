@@ -4,7 +4,7 @@ import { Navbar } from "react-bootstrap";
 export const NavBarContainer = styled(Navbar)`
   background: linear-gradient(to left, #00c3e1, #584995);
   padding: 20px 0;
-  z-index: 1;
+  z-index: 2;
 
   & .navbar-brand {
     margin-right: 30px;
@@ -28,6 +28,13 @@ export const NavBarContainer = styled(Navbar)`
     background: transparent;
     position: absolute;
     width: 100%;
+  }
+
+  @media only screen and (max-width: 576px) {
+    &.navbar-secondary {
+      background: #fff;
+      position: relative;
+    }
   }
 
   @media only screen and (max-width: 991px) {

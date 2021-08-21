@@ -6,7 +6,8 @@ import MobileImageAd from "../components/MobileImageAd/MobileImageAd";
 
 const MainWrapper = styled.div`
     background-color: #fff;
-    display: flex;
+    position: relative;
+    height: 100vh;
 `;
 
 export default function SignIn() {
