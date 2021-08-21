@@ -7,6 +7,7 @@ import {
 
 import Home from "./pages/Home";
 import SignIn from "./pages/SignIn";
+import EmailVerification from "./pages/EmailVerification";
 import CarSelection from "./pages/CarSelection";
 import About from "./pages/About";
 import Navbar from "./components/Navbar/Navbar";
@@ -20,6 +21,7 @@ export default function App() {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/sign-in" component={SignIn} />
+            <Route path="/email-verification" component={EmailVerification} />
             <Route path="/about" component={About} />
             <Route path="/car-selection" component={CarSelection} />
           </Switch>

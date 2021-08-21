@@ -12,7 +12,7 @@ import Apple from "../../icons/apple.png";
 
 export default function MobileImageAd() {
     return (
-        <MainWrapper>
+        <MainWrapper className="mobile-image-ad">
             <Image src={MobileAd} />
             <Content>
                 <Title>Download Weelz mobile app</Title>
