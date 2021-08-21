@@ -4,6 +4,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import TripBookingMenu from "../components/TripBookingMenu/TripBookingMenu"
 import ToolBar from "../components/ToolBar/ToolBar"
 import TripSummary from "../components/TripSummary/TripSummary"
+import TripDriver from "../components/TripDriver/TripDriver"
 
 const MainWrapper = styled.div`
 
@@ -38,7 +39,7 @@ export default function Trip() {
                         <TripSummary booking={b} />
                     </Col>
                     <Col sm={6} md={4} className="d-none d-sm-block">
-                        Test 2
+                        <TripDriver />
                     </Col>
                     <Col md={2} className="d-none d-md-block">
                         Test 3
