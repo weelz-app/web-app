@@ -4,10 +4,7 @@ import BookingTopMenu from "../components/BookingTopMenu/BookingTopMenu"
 import ToolBar from "../components/ToolBar/ToolBar"
 import TripSummary from "../components/TripSummary/TripSummary"
 import TripDriver from "../components/TripDriver/TripDriver"
-
-// import AvatarIcon from '../icons/avatar.png';
-// import CarImg from '../icons/car.jpg';
-// import CarLogoImg from '../icons/carLogo.png';
+import MobileAppAd from "../components/MobileAppAd/MobileAppAd"
 
 export default function Trip() {
     const [booking, setBooking] = useState({
@@ -41,7 +38,7 @@ export default function Trip() {
         }
     });
     return (
-        <div>
+        <div style={{paddingBottom: "48px"}}>
             <BookingTopMenu b={booking} page="Trips" />
             <Container>
                 <ToolBar
@@ -50,14 +47,14 @@ export default function Trip() {
                     btnText="Cancel Trip"
                 />
                 <Row>
-                    <Col xs={12} sm={6}>
+                    <Col xs={12} sm={6} lg={5}>
                         <TripSummary booking={booking} />
                     </Col>
-                    <Col sm={6} md={4} className="d-none d-sm-block">
+                    <Col sm={6} lg={4} className="d-none d-sm-block">
                         <TripDriver driver={booking.driver} />
                     </Col>
-                    <Col md={2} className="d-none d-md-block">
-                        Test 3
+                    <Col lg={3} className="d-none d-lg-block">
+                        <MobileAppAd look="image" />
                     </Col>
                 </Row>
             </Container>

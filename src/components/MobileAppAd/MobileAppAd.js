@@ -3,10 +3,13 @@ import { MainWrapper, Title, Icon, Text, Overlay, Content } from "./MobileAppAdS
 import Android from "../../icons/android.png";
 import Apple from "../../icons/apple.png";
 
-export default function MobileAppAd() {
+export default function MobileAppAd({look}) {
     return (
-        <MainWrapper>
-            <Overlay />
+        
+        <MainWrapper className={look === "image" ? "mobile-image" : ""}>
+            {look !== "image" ? (
+                <Overlay />
+            ) : null}
             <Content>
                 <Title>Weelz Mobile App</Title>
                 <Text>Follow your trips on Weelz app</Text>

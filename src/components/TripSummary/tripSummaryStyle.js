@@ -1,9 +1,10 @@
 import styled from "styled-components";
-
 import Cairo from "../../icons/cairo.jpg";
 
 export const MainWrapper = styled.div`
-
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 `;
 
 export const Header = styled.div`
@@ -83,6 +84,7 @@ export const Body = styled.div`
   padding: 15px 15px 22.5px 15px;
   box-shadow: 0 2.5px 8px 0 rgba(0, 0, 0, 0.05);
   background-color: #fff;
+  flex: 1;
 `;
 
 export const BodyItem = styled.div`

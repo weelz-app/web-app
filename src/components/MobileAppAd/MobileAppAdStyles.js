@@ -1,10 +1,22 @@
 import styled from "styled-components";
+import MobileImage from "../../icons/avatar-trip.png";
 
 export const MainWrapper = styled.div`
     width: 100%;
     padding: 23.5px 32.5px 34px 20px;
     position: relative;
     margin-top: 34px;
+
+    &.mobile-image {
+        padding: 20px 37.5px 160px 15px;
+        margin-top: 0;
+        height: 100%;
+        background-image: url(${MobileImage});
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 5px;
+    }
 `;
 
 export const Overlay = styled.div`
