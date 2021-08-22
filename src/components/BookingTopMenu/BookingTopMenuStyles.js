@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import ErrorIcon from '@material-ui/icons/Error';
+import CancelIcon from '@material-ui/icons/Cancel';
 
 export const MainWrapper = styled.div`
   width: 100%;
@@ -122,7 +124,7 @@ export const StatusOverlay = styled.div`
     left: 0;
     top: 0;
     border-radius: 2.5px;
-    background-color: #0bb500;
+    background-color: ${({color}) => color};
     opacity: 0.05;
 `;
 
@@ -134,7 +136,7 @@ export const Status = styled.div`
     font-size: 11px;
     font-weight: bold;
     line-height: 1.23;
-    color: #0bb500;
+    color: ${({color}) => color};
     position: relative;
 `;
 
@@ -143,4 +145,22 @@ export const StatusIcon = styled.img`
     height: 11px;
     margin: 0 5px 0 0;
     object-fit: contain;
+`;
+
+export const StyledErrorIcon = styled(ErrorIcon)`
+    margin: 0 5px 0 0;
+
+    &.MuiSvgIcon-root {
+      width: 11px;
+      height: 11px;
+    }
+`;
+
+export const StyledCancelIcon = styled(CancelIcon)`
+    margin: 0 5px 0 0;
+    
+    &.MuiSvgIcon-root {
+      width: 11px;
+      height: 11px;
+    }
 `;

@@ -14,7 +14,9 @@ import {
   Bar,
   RightItems,
   LeftItems,
-  StatusOverlay
+  StatusOverlay,
+  StyledErrorIcon,
+  StyledCancelIcon
 } from "./BookingTopMenuStyles";
 import { Container } from "react-bootstrap";
 import CitySelector from "../CitySelector/CitySelector";
@@ -130,12 +132,12 @@ export default function BookingTopMenu({ b, page }) {
             <RightItems>
               <Type>
                   <Overlay />
-                  {booking.type}
+                  {b.type}
               </Type>
-              <Status>
-                  <StatusOverlay />
-                  <StatusIcon src={CheckMarkIcon} />
-                  {booking.status}
+              <Status color={b.status === "Confirmed" ? "#0bb500" : b.status === "Pending" ? "#ffbb00" : "#ff0000"}>
+                <StatusOverlay color={b.status === "Confirmed" ? "#0bb500" : b.status === "Pending" ? "#ffbb00" : "#ff0000"} />
+                {b.status === "Confirmed" ? <StatusIcon src={CheckMarkIcon} /> : b.status === "Pending" ? <StyledErrorIcon /> : <StyledCancelIcon />}
+                {b.status}
               </Status>
             </RightItems>
           ) : null}

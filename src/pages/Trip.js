@@ -1,51 +1,45 @@
-import React from 'react';
-import styled from "styled-components";
+import React, {useState} from 'react';
 import { Container, Row, Col } from "react-bootstrap";
 import BookingTopMenu from "../components/BookingTopMenu/BookingTopMenu"
 import ToolBar from "../components/ToolBar/ToolBar"
 import TripSummary from "../components/TripSummary/TripSummary"
 import TripDriver from "../components/TripDriver/TripDriver"
 
-const MainWrapper = styled.div`
-
-`;
-
-const b = {
-    from: "Alexandria",
-    to: "Cairo",
-    ts: "1628605559",
-    passengers: 4,
-    luggage: 2,
-    pets: false,
-    nonSmoking: true,
-    type: "Standard",
-    status: "Confirmed",
-    price: "30",
-    currency: "EGP"
-};
-
 export default function Trip() {
+    const [booking, setBooking] = useState({
+        from: "Alexandria",
+        to: "Cairo",
+        ts: "1628605559",
+        passengers: 4,
+        luggage: 2,
+        pets: false,
+        nonSmoking: true,
+        type: "Standard",
+        status: "Canceled",
+        price: "30",
+        currency: "EGP"
+    });
     return (
-        <MainWrapper>
-            <BookingTopMenu b={b} page="Trips" />
+        <div>
+            <BookingTopMenu b={booking} page="Trips" />
             <Container>
                 <ToolBar
-                    showBtn={true}
+                    showBtn={booking.status === "Canceled" ? false : true}
                     btnVariant="cancel-btn"
                     btnText="Cancel Trip"
                 />
                 <Row>
                     <Col xs={12} sm={6}>
-                        <TripSummary booking={b} />
+                        <TripSummary booking={booking} />
                     </Col>
                     <Col sm={6} md={4} className="d-none d-sm-block">
-                        <TripDriver />
+                        <TripDriver booking={booking} />
                     </Col>
                     <Col md={2} className="d-none d-md-block">
                         Test 3
                     </Col>
                 </Row>
             </Container>
-        </MainWrapper>
+        </div>
     )
 }
