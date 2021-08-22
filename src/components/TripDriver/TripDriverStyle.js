@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import StarIcon from '@material-ui/icons/Star';
+import Carousel from "react-multi-carousel";
 
 export const MainWrapper = styled.div`
   padding: 15px 15.5px 21.5px 15px;
@@ -78,10 +79,6 @@ export const RatingText = styled.span`
   color: #000;
 `;
 
-export const CarWraper = styled.div`
-  
-`;
-
 export const CarRow = styled.div`
   display: flex;
   align-items: center;
@@ -96,7 +93,7 @@ export const CarLogo = styled.img`
 `;
 
 export const CarName = styled.p`
-  width: 75px;
+  width: 78px;
   margin: 0;
   font-family: Montserrat;
   font-size: 10px;
@@ -105,19 +102,27 @@ export const CarName = styled.p`
   color: #000;
 `;
 
-export const CarLicense = styled.div`
-  
+export const CarImages = styled.div`
+  margin-top: 10px;
 `;
 
-export const CarImages = styled.div`
-  display: flex;
+export const StyledCarousel = styled(Carousel)`
+  & .trip-slide {
+    width: 90px !important;
+    height: 90px;
+    margin-right: 7.5px;
+  }
+`;
 
+export const CarImageWrapper = styled.div`
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 2.5px;
 `;
 
 export const CarImage = styled.img`
-  width: 90px;
-  height: 76.5px;
-  margin: 0 7.5px 0 0;
-  object-fit: contain;
-  border-radius: 2.5px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 `;

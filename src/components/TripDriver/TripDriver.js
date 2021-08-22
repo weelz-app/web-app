@@ -1,6 +1,5 @@
 import React from "react";
 import LicensePlate from 'react-license-plate-egypt';
-import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import {
   MainWrapper,
@@ -13,12 +12,13 @@ import {
   RatingWrapper,
   RatingIcon,
   RatingText,
-  CarWraper,
   CarRow,
   CarLogo,
   CarName,
   CarImages,
-  CarImage
+  CarImageWrapper,
+  CarImage,
+  StyledCarousel
 } from './TripDriverStyle';
 import AvatarIcon from '../../icons/avatar.png';
 import CarImg from '../../icons/car.jpg';
@@ -26,22 +26,11 @@ import CarLogoImg from '../../icons/carLogo.png';
 
 function TripDriver() {
   const responsive = {
-    superLargeDesktop: {
-      breakpoint: { max: 4000, min: 3000 },
-      items: 5,
-    },
-    desktop: {
-      breakpoint: { max: 3000, min: 1325 },
-      items: 3,
-    },
-    tablet: {
-      breakpoint: { max: 1325, min: 767 },
+    all: {
+      breakpoint: { max: 3000, min: 0 },
       items: 2,
-    },
-    mobile: {
-      breakpoint: { max: 767, min: 0 },
-      items: 1,
-    },
+      partialVisibilityGutter: 30
+    }
   };
 
   return (
@@ -65,24 +54,37 @@ function TripDriver() {
         </div>
       </DriverWraper>
       <SectionTitle>Car Details</SectionTitle>
-      <CarWraper>
+      <div>
         <CarRow>
           <div>
             <CarLogo src={CarLogoImg} />
             <CarName>Renault Logan 2019</CarName>
           </div>
           <div>
-          <LicensePlate number={'سجط ٢٥٩٤'} width='100' />
+            <LicensePlate number={'سجط ٢٥٩٤'} width='90' />
           </div>
         </CarRow>
         <CarImages>
-          <Carousel responsive={responsive}>
-            <CarImage src={CarImg} />
-            <CarImage src={CarImg} />
-            <CarImage src={CarImg} />
-          </Carousel>
+          <StyledCarousel
+            responsive={responsive}
+            centerMode={true}
+            itemClass="trip-slide"
+          >
+            <CarImageWrapper>
+              <CarImage src={CarImg} />
+            </CarImageWrapper>
+            <CarImageWrapper>
+              <CarImage src={CarImg} />
+            </CarImageWrapper>
+            <CarImageWrapper>
+              <CarImage src={CarImg} />
+            </CarImageWrapper>
+            <CarImageWrapper>
+              <CarImage src={CarImg} />
+            </CarImageWrapper>
+          </StyledCarousel>
         </CarImages>
-      </CarWraper>
+      </div>
     </MainWrapper>
   
   );
