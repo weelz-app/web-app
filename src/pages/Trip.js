@@ -5,6 +5,10 @@ import ToolBar from "../components/ToolBar/ToolBar"
 import TripSummary from "../components/TripSummary/TripSummary"
 import TripDriver from "../components/TripDriver/TripDriver"
 
+// import AvatarIcon from '../icons/avatar.png';
+// import CarImg from '../icons/car.jpg';
+// import CarLogoImg from '../icons/carLogo.png';
+
 export default function Trip() {
     const [booking, setBooking] = useState({
         from: "Alexandria",
@@ -17,7 +21,24 @@ export default function Trip() {
         type: "Standard",
         status: "Canceled",
         price: "30",
-        currency: "EGP"
+        currency: "EGP",
+        driver: {
+            name: "Ibrahem Adel",
+            avatar: "/avatar.png",
+            rating: "4.4",
+            number: "+201200000000",
+            car: {
+                logo: "/carLogo.png",
+                name: "Renault Logan 2019",
+                license: "سجط ٢٥٩٤",
+                images: [
+                    "/car.jpg",
+                    "/car.jpg",
+                    "/car.jpg",
+                    "/car.jpg",
+                ],
+            }
+        }
     });
     return (
         <div>
@@ -33,7 +54,7 @@ export default function Trip() {
                         <TripSummary booking={booking} />
                     </Col>
                     <Col sm={6} md={4} className="d-none d-sm-block">
-                        <TripDriver booking={booking} />
+                        <TripDriver driver={booking.driver} />
                     </Col>
                     <Col md={2} className="d-none d-md-block">
                         Test 3

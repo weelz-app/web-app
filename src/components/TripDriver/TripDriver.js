@@ -20,11 +20,8 @@ import {
   CarImage,
   StyledCarousel
 } from './TripDriverStyle';
-import AvatarIcon from '../../icons/avatar.png';
-import CarImg from '../../icons/car.jpg';
-import CarLogoImg from '../../icons/carLogo.png';
 
-function TripDriver() {
+function TripDriver({driver}) {
   const responsive = {
     all: {
       breakpoint: { max: 3000, min: 0 },
@@ -37,31 +34,31 @@ function TripDriver() {
     <MainWrapper>
       <SectionTitle>Driver Details</SectionTitle>
       <DriverWraper>
-        <Avatar src={AvatarIcon} />
+        <Avatar src={driver.avatar} />
         <div style={{
           width: "100%",
           display: "flex",
           flexDirection: "column"
         }}>
           <DriverRow>
-            <DriverName>Ibrahem Adel</DriverName>
+            <DriverName>{driver.name}</DriverName>
             <RatingWrapper>
               <RatingIcon />
-              <RatingText>4.4</RatingText>
+              <RatingText>{driver.rating}</RatingText>
             </RatingWrapper>
           </DriverRow>
-          <DriverNumber>+201200000000</DriverNumber>
+          <DriverNumber>{driver.number}</DriverNumber>
         </div>
       </DriverWraper>
       <SectionTitle>Car Details</SectionTitle>
       <div>
         <CarRow>
           <div>
-            <CarLogo src={CarLogoImg} />
-            <CarName>Renault Logan 2019</CarName>
+            <CarLogo src={driver.car.logo} />
+            <CarName>{driver.car.name}</CarName>
           </div>
           <div>
-            <LicensePlate number={'سجط ٢٥٩٤'} width='90' />
+            <LicensePlate number={driver.car.license} width='90' />
           </div>
         </CarRow>
         <CarImages>
@@ -70,18 +67,11 @@ function TripDriver() {
             centerMode={true}
             itemClass="trip-slide"
           >
-            <CarImageWrapper>
-              <CarImage src={CarImg} />
-            </CarImageWrapper>
-            <CarImageWrapper>
-              <CarImage src={CarImg} />
-            </CarImageWrapper>
-            <CarImageWrapper>
-              <CarImage src={CarImg} />
-            </CarImageWrapper>
-            <CarImageWrapper>
-              <CarImage src={CarImg} />
-            </CarImageWrapper>
+            {driver.car.images.map(carImg => (
+              <CarImageWrapper>
+                <CarImage src={carImg} />
+              </CarImageWrapper>
+            ))}
           </StyledCarousel>
         </CarImages>
       </div>
