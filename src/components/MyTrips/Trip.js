@@ -14,7 +14,7 @@ import {
     StyledStarIcon,
     Price,
     Car,
-    Date,
+    StyledDate,
     Time,
     Status
 } from "./TripStyles";
@@ -24,48 +24,60 @@ import SteeringWheel from "../../icons/steering-wheel.png"
 import Wallet from "../../icons/wallet-passes-app.png"
 import CheckMark from "../../icons/check-mark.png"
 
-export default function Trip() {
+export default function Trip({trip}) {
+    const date = new Date(parseInt(trip.ts));
+    const hours = date.getHours().toString().length === 1 ? "0" + date.getHours() : date.getHours();
+    const minutes = date.getMinutes().toString().length === 1 ? "0" + date.getMinutes() : date.getMinutes();
+    const ampm = date.getHours() >= 12 ? 'PM' : 'AM';
+
+    const getMonthName = num => {
+        const monthNames = ["January", "February", "March", "April", "May", "June",
+            "July", "August", "September", "October", "November", "December"
+        ];
+        return monthNames[num];
+    }
+
     return (
         <MainWrapper>
-            <div>
-                <Type>Standard</Type>
+            <div style={{marginRight: "10px"}}>
+                <Type>{trip.type}</Type>
                 <CityWrapper>
                     <CityLabel>From</CityLabel>
-                    <CityName>Alexandria</CityName>
+                    <CityName>{trip.from}</CityName>
                 </CityWrapper>
                 <CityWrapper>
                     <CityLabel>To</CityLabel>
-                    <CityName>Cairo</CityName>
+                    <CityName>{trip.to}</CityName>
                 </CityWrapper>
             </div>
             <div>
                 <Item>
                     <Icon src={Calendar} />
-                    <Date>
-                        10 May 2021
-                        <Time>10:15 PM</Time>
-                    </Date>
+                    <StyledDate>
+                        {`${date.getDate()} ${getMonthName(date.getMonth())} ${date.getFullYear()}`}
+                        <Time>{`${hours}:${minutes} ${ampm}`}</Time>
+                    </StyledDate>
                 </Item>
                 <Item>
                     <Icon src={SteeringWheel} />
                     <div>
                         <DriversMainRow>
-                            <DriversName>Ibrahem Adel</DriversName>
+                            <DriversName>{trip.driver}</DriversName>
                             <StarsWrapper>
                                 <StyledStarIcon />
-                                <Rating>4.2</Rating>
+                                <Rating>{trip.rating}</Rating>
                             </StarsWrapper>
                         </DriversMainRow>
-                        <Car>Renault Logan 2019</Car>
+                        <Car>{trip.car}</Car>
                     </div>
                 </Item>
                 <Item>
                     <Icon src={Wallet} />
-                    <Price>30 EGP</Price>
+                    <Price>{trip.price + " " + trip.currency}</Price>
                 </Item>
                 <Item>
                     <Icon src={CheckMark} />
-                    <Status>Confirmed</Status>
+                    <Status>{trip.status}</Status>
                 </Item>
             </div>
         </MainWrapper>

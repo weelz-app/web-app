@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import ErrorIcon from '@material-ui/icons/Error';
+import CancelIcon from '@material-ui/icons/Cancel';
 
 export const MainWrapper = styled.div`
   width: 100%;
@@ -7,6 +9,23 @@ export const MainWrapper = styled.div`
 `;
 
 export const Div = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+export const RightItems = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  @media only screen and (max-width: 991px) {
+      display: none;
+  }
+`;
+
+export const LeftItems = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
@@ -72,4 +91,76 @@ export const BtnIcon = styled.div`
   width: 8.9px;
   height: 5.9px;
   line-height: 0;
+`;
+
+export const Type = styled.div`
+    width: 120px;
+    height: 30px;
+    margin: 0 10px 0 0;
+    padding: 8.5px 33.5px 8px;
+    font-family: Montserrat;
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 1.23;
+    color: #00c3e1;
+    position: relative;
+`;
+
+export const Overlay = styled.div`
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0.1;
+    border-radius: 2.5px;
+    background-color: #00c3e1
+`;
+
+export const StatusOverlay = styled.div`
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 2.5px;
+    background-color: ${({color}) => color};
+    opacity: 0.05;
+`;
+
+export const Status = styled.div`
+    width: 131px;
+    height: 30px;
+    padding: 8.5px 26.5px 8px;
+    font-family: Montserrat;
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 1.23;
+    color: ${({color}) => color};
+    position: relative;
+`;
+
+export const StatusIcon = styled.img`
+    width: 11px;
+    height: 11px;
+    margin: 0 5px 0 0;
+    object-fit: contain;
+`;
+
+export const StyledErrorIcon = styled(ErrorIcon)`
+    margin: 0 5px 0 0;
+
+    &.MuiSvgIcon-root {
+      width: 11px;
+      height: 11px;
+    }
+`;
+
+export const StyledCancelIcon = styled(CancelIcon)`
+    margin: 0 5px 0 0;
+    
+    &.MuiSvgIcon-root {
+      width: 11px;
+      height: 11px;
+    }
 `;

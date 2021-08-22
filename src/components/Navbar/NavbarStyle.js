@@ -4,6 +4,7 @@ import { Navbar } from "react-bootstrap";
 export const NavBarContainer = styled(Navbar)`
   background: linear-gradient(to left, #00c3e1, #584995);
   padding: 20px 0;
+  z-index: 2;
 
   & .navbar-brand {
     margin-right: 30px;
@@ -21,6 +22,19 @@ export const NavBarContainer = styled(Navbar)`
 
   & .navbar-nav {
     align-items: center;
+  }
+
+  &.navbar-secondary {
+    background: transparent;
+    position: absolute;
+    width: 100%;
+  }
+
+  @media only screen and (max-width: 576px) {
+    &.navbar-secondary {
+      background: #fff;
+      position: relative;
+    }
   }
 
   @media only screen and (max-width: 991px) {
@@ -112,4 +126,20 @@ export const NavbarUser = styled.div`
 
 export const NavbarLinksDiv = styled.div`
   position: relative;
+`;
+
+export const NavbarLanguage = styled.div`
+  margin-left: 16.8px;
+  border-radius: 5px;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+
+  .navbar-nav & .nav-link {
+    padding: 9px 16px;
+    min-width: unset;
+    margin-right: 0;
+    font-size: 12px;
+    line-height: 1.08;
+    letter-spacing: -0.29px;
+  }
 `;

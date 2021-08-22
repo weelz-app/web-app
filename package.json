@@ -16,7 +16,9 @@
     "react": "^17.0.2",
     "react-bootstrap": "^2.0.0-beta.4",
     "react-code-input": "^3.10.1",
+    "react-countdown": "^2.3.2",
     "react-dom": "^17.0.2",
+    "react-license-plate-egypt": "^0.2.2",
     "react-multi-carousel": "^2.6.3",
     "react-number-format": "^4.5.5",
     "react-router-bootstrap": "^0.25.0",
@@ -25,6 +27,7 @@
     "react-simple-star-rating": "^3.0.0",
     "react-slick": "^0.28.1",
     "react-verification-code-input": "^1.2.9",
+    "react-verification-input": "^2.0.1",
     "slick-carousel": "^1.8.1",
     "styled-components": "^5.3.0",
     "web-vitals": "^1.1.1"

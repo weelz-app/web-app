@@ -1,11 +1,19 @@
 import React from "react";
-import {BtnWrapper} from "./BtnStyles";
+import {BtnWrapper, BtnCancel} from "./BtnStyles";
 
 const Btn = ({disabled, variant, onClick, text, className}) => {
     return (
-        <BtnWrapper className={className} disabled={disabled} onClick={onClick}>
-            {text}
-        </BtnWrapper>
+        <>
+            {variant === "cancel-btn" ? (
+                <BtnCancel className={className} disabled={disabled} onClick={onClick}>
+                    {text}
+                </BtnCancel>
+            ) : (
+                <BtnWrapper className={className} disabled={disabled} onClick={onClick}>
+                    {text}
+                </BtnWrapper>
+            )}
+        </>
     );
 }
 

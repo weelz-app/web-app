@@ -40,8 +40,8 @@ export default function CitySelector({
               <svg xmlns="http://www.w3.org/2000/svg" id="Group_65" width={iconWidth} height={iconHeight} viewBox="0 0 26.488 47.131">
                 <ellipse id="Ellipse_19" cx="7.167" cy="8.063" fill="#e7e7e7" rx="7.167" ry="8.063" transform="translate(6.078 31.005)"/>
                 <g id="Group_64">
-                    <path fill="#c6c6c6" id="Path_1" d="M542.359 746.8a13.229 13.229 0 0 0-2.54-3.155l-14.931 25.866 6 10.4 11.433-19.808c.01-.02.024-.038.035-.058l.027-.048a13.241 13.241 0 0 0-.024-13.197z" class="cls-2" transform="translate(-517.645 -740.182)"/>
-                    <path fill="#c6c6c6" id="Path_3" d="M513.246 731.734a13.244 13.244 0 0 0-11.5 19.818l.027.047c.01.02.024.038.034.058l2.526 4.377 13.546-23.462a13.22 13.22 0 0 0-4.633-.838z" class="cls-2" transform="translate(-500 -731.734)"/>
+                    <path fill="#c6c6c6" id="Path_1" d="M542.359 746.8a13.229 13.229 0 0 0-2.54-3.155l-14.931 25.866 6 10.4 11.433-19.808c.01-.02.024-.038.035-.058l.027-.048a13.241 13.241 0 0 0-.024-13.197z" className="cls-2" transform="translate(-517.645 -740.182)"/>
+                    <path fill="#c6c6c6" id="Path_3" d="M513.246 731.734a13.244 13.244 0 0 0-11.5 19.818l.027.047c.01.02.024.038.034.058l2.526 4.377 13.546-23.462a13.22 13.22 0 0 0-4.633-.838z" className="cls-2" transform="translate(-500 -731.734)"/>
                 </g>
               </svg>
             ) : (

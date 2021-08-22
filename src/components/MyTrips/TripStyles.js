@@ -9,8 +9,11 @@ export const MainWrapper = styled.div`
     display: flex;
     align-items: baseline;
     justify-content: space-between;
-    // I'll Delete This later
-    max-width: 250px;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #e5edef;
+    }
 `;
 
 export const Type = styled.div`
@@ -57,7 +60,7 @@ export const Icon = styled.img`
     object-fit: contain;
 `;
 
-export const Date = styled.h4`
+export const StyledDate = styled.h4`
     font-family: Montserrat;
     font-size: 9px;
     line-height: 1.33;
