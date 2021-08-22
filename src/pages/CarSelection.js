@@ -1,5 +1,5 @@
 import React from "react";
-import BookingTopMenuDemo from "../components/BookingTopMenu/BookingTopMenuDemo"
+import BookingTopMenu from "../components/BookingTopMenu/BookingTopMenu"
 import CarSelectionList from "../components/CarSelection/CarSelectionList"
 import ToolBar from "../components/ToolBar/ToolBar"
 import { Container } from "react-bootstrap";
@@ -43,10 +43,20 @@ let carOptions = [
     }
 ];
 
+const b = {
+  from: "Alexandria",
+  to: "Cairo",
+  ts: "1628605559",
+  passengers: 4,
+  luggage: 2,
+  pets: false,
+  nonSmoking: true
+};
+
 const CarSelection = () => {
     return (
         <div>
-            <BookingTopMenuDemo />
+            <BookingTopMenu page="Car Selection" b={b} />
             <Container>
                 <ToolBar
                     showBtn={true}

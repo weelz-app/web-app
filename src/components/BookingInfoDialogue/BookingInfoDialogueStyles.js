@@ -12,6 +12,7 @@ export const Div = styled.div`
     max-height: 0;
     transition: max-height 0.3s ease-out;
     overflow: hidden;
+    z-index: 1;
   }
 
   &:not(&.sidebar__booking-info).active {

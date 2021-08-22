@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
 import { Container, Row, Col } from "react-bootstrap";
-import TripBookingMenu from "../components/TripBookingMenu/TripBookingMenu"
+import BookingTopMenu from "../components/BookingTopMenu/BookingTopMenu"
 import ToolBar from "../components/ToolBar/ToolBar"
 import TripSummary from "../components/TripSummary/TripSummary"
 import TripDriver from "../components/TripDriver/TripDriver"
@@ -27,7 +27,7 @@ const b = {
 export default function Trip() {
     return (
         <MainWrapper>
-            <TripBookingMenu b={b} />
+            <BookingTopMenu b={b} page="Trips" />
             <Container>
                 <ToolBar
                     showBtn={true}
