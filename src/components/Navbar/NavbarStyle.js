@@ -18,6 +18,16 @@ export const NavBarContainer = styled(Navbar)`
     min-width: 95px;
     text-align: center;
     margin-right: 7px;
+    display: flex;
+    align-items: center;
+  }
+
+  &.navbar-dark .navbar-nav .nav-link {
+    color: rgb(255 255 255);
+
+    &:hover {
+      color: rgb(255 255 255 / 80%);
+    }
   }
 
   & .navbar-nav {
@@ -88,7 +98,7 @@ export const NavBarContainer = styled(Navbar)`
 
 export const Logo = styled.img`
   object-fit: contain;
-  width: 120px;
+  width: 130px;
 `;
 
 export const Icon = styled.img`
