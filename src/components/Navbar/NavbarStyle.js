@@ -4,7 +4,7 @@ import { Navbar } from "react-bootstrap";
 export const NavBarContainer = styled(Navbar)`
   background: linear-gradient(to left, #00c3e1, #584995);
   padding: 20px 0;
-  z-index: 2;
+  z-index: 10000;
 
   & .navbar-brand {
     margin-right: 30px;
@@ -126,6 +126,13 @@ export const NavbarUser = styled.div`
 
 export const NavbarLinksDiv = styled.div`
   position: relative;
+  flex: 1;
+
+  @media only screen and (max-width: 991px) {
+    & {
+      flex: unset;
+    }
+  }
 `;
 
 export const NavbarLanguage = styled.div`
