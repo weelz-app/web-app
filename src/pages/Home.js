@@ -107,7 +107,7 @@ const Home = () => {
                                 <MyTrips trips={myTrips} />
                             </Col>
                         </Row>
-                        <Row style={{marginTop: "15px"}}>
+                        <Row style={{marginTop: "6px"}}>
                             <Col sm={12} md={7}>
                                 <NotificationsList notifications={notifications} />
                             </Col>

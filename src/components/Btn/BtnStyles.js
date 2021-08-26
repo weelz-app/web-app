@@ -8,7 +8,7 @@ export const BtnWrapper = styled.button`
     background-image: linear-gradient(95deg, #00c3e1 12%, #00c0dd 72%);
     text-align: center;
     font-family: Montserrat;
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 600;
     line-height: 1;
     letter-spacing: -0.26px;

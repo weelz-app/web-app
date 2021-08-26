@@ -32,9 +32,9 @@ export const Icon = styled.img`
 `;
 
 export const Title = styled.h4`
-    margin: 0 0 1.5px 0;
+    margin: 0 0 2.5px 0;
     font-family: Montserrat;
-    font-size: 9px;
+    font-size: 11px;
     font-weight: 600;
     line-height: 1.17;
     color: #000;
@@ -43,7 +43,7 @@ export const Title = styled.h4`
 export const Text = styled.p`
     margin: 0;
     font-family: Montserrat;
-    font-size: 7.5px;
+    font-size: 9px;
     line-height: 0.87;
     color: #939393;
 `;

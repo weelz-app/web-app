@@ -24,16 +24,22 @@ export const Item = styled.div`
 export const Text = styled.span`
     margin: 1px 8px 0 0;
     font-family: Montserrat;
-    font-size: 9px;
+    font-size: 10px;
     line-height: 0.89;
     color: #000;
 `;
 
 export const Link = styled.a`
     font-family: Montserrat;
-    font-size: 10px;
+    font-size: 11px;
     font-weight: 600;
     line-height: 0.8;
     color: #2f1b7a;
     cursor: pointer;
+    text-decoration: none;
+    border-bottom: 1px dashed #000;
+
+    &:hover {
+        border-color: #0a58ca;
+    }
 `;

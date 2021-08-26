@@ -7,7 +7,7 @@ export const MainWrapper = styled.div`
     background-color: #eefafc;
     border-radius: 5px;
     display: flex;
-    align-items: baseline;
+    align-items: flex-start;
     justify-content: space-between;
     cursor: pointer;
 
@@ -49,14 +49,14 @@ export const CityName = styled.div`
 
 export const Item = styled.div`
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     margin-bottom: 8px;
 `;
 
 export const Icon = styled.img`
     margin-right: 5.3px;
-    width: 11.2px;
-    height: 11.2px;
+    width: 13.2px;
+    height: 13.2px;
     object-fit: contain;
 `;
 
