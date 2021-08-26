@@ -108,10 +108,10 @@ const Home = () => {
                             </Col>
                         </Row>
                         <Row style={{marginTop: "6px"}}>
-                            <Col sm={12} md={7}>
+                            <Col sm={12} lg={7}>
                                 <NotificationsList notifications={notifications} />
                             </Col>
-                            <Col md={5} className="d-none d-md-block">
+                            <Col lg={5} className="d-none d-lg-block">
                                 <MobileAppAd />
                             </Col>
                         </Row>

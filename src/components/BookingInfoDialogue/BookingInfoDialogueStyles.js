@@ -41,8 +41,8 @@ export const ItemDetails = styled.div`
 `;
 
 export const Icon = styled.div`
-    width: 13.6px;
-    height: 13.6px;
+    width: 15.6px;
+    height: 15.6px;
     line-height: 0;
     margin-right: 4px;
 `;

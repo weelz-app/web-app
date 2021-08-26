@@ -23,8 +23,8 @@ export default function BookingInfoDialogue({ booking, bookingUpdated, id, class
             <svg
               xmlns="http://www.w3.org/2000/svg"
               id="user"
-              width="13.6"
-              height="13.6"
+              width="15.6"
+              height="15.6"
               viewBox="0 0 20.885 27.14"
             >
               <g fill="#00c3e1" id="Group_90" transform="translate(0 16.433)">
@@ -64,8 +64,8 @@ export default function BookingInfoDialogue({ booking, bookingUpdated, id, class
             <svg
               xmlns="http://www.w3.org/2000/svg"
               id="briefcase"
-              width="13.6"
-              height="13.6"
+              width="15.6"
+              height="15.6"
               viewBox="0 0 27.774 27.828"
             >
               <g
@@ -133,8 +133,8 @@ export default function BookingInfoDialogue({ booking, bookingUpdated, id, class
           <Icon>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="13.6"
-              height="13.6"
+              width="15.6"
+              height="15.6"
               viewBox="0 0 27.827 27.851"
             >
               <path
@@ -159,28 +159,15 @@ export default function BookingInfoDialogue({ booking, bookingUpdated, id, class
       <Item>
         <ItemDetails>
           <Icon>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              id="user"
-              width="13.6"
-              height="13.6"
-              viewBox="0 0 20.885 27.14"
-            >
-              <g fill="#00c3e1" id="Group_90" transform="translate(0 16.433)">
-                <path
-                  id="Path_697"
-                  d="M78.825 320.708a1.06 1.06 0 0 1-1.06-1.06 7.536 7.536 0 0 0-7.527-7.527h-1.59a7.536 7.536 0 0 0-7.527 7.527 1.06 1.06 0 1 1-2.12 0A9.658 9.658 0 0 1 68.647 310h1.59a9.658 9.658 0 0 1 9.647 9.647 1.06 1.06 0 0 1-1.059 1.061z"
-                  transform="translate(-59 -310)"
-                />
+            <svg xmlns="http://www.w3.org/2000/svg" width="15.6" height="15.6" viewBox="0 0 30.015 30.015">
+              <g id="Group_519" transform="translate(1.414 1.277)">
+                  <path fill="none" stroke="#00c3e1" stroke-linecap="round" stroke-width="2px" id="Path_762" d="M2472.1-2583.984l27.187 27.187" transform="translate(-2472.102 2584.121)"/>
+                  <path fill="none" stroke="#00c3e1" stroke-linecap="round" stroke-width="2px" stroke-linejoin="round" id="Path_763" d="M2490.933-2359.372h-9.223a2.972 2.972 0 0 0-3.2 3.2 2.992 2.992 0 0 0 3.2 3.2h23.6v-6.4h-8.745" transform="translate(-2478.143 2372.35)"/>
+                  <path fill="none" stroke="#00c3e1" stroke-linecap="round" stroke-width="2px" id="Path_764" d="M2621.708-2305.072v-2.938" transform="translate(-2613.156 2324.454)"/>
+                  <path fill="none" stroke="#00c3e1" stroke-linecap="round" stroke-width="2px" id="Path_765" d="M2705.879-2552.251s-.329 3.39.933 5.064" transform="translate(-2692.48 2554.202)"/>
+                  <path fill="none" stroke="#00c3e1" stroke-linecap="round" stroke-width="2px" stroke-linejoin="round" id="Path_766" d="M2793.664-2584.037s.428 2.32-2.32 2.32-2.32-2.32-2.32-2.32a2.129 2.129 0 0 0-2.347-2.348 2.13 2.13 0 0 0-2.348 2.348s-.21 6.6 7.016 7.02" transform="translate(-2766.477 2586.385)"/>
               </g>
-              <g fill="#00c3e1" id="Group_91" transform="translate(3.18)">
-                <path
-                  id="Path_698"
-                  d="M126.156 14.312a7.156 7.156 0 1 1 7.156-7.156 7.164 7.164 0 0 1-7.156 7.156zm0-12.192a5.036 5.036 0 1 0 5.036 5.036 5.041 5.041 0 0 0-5.036-5.036z"
-                  transform="translate(-119)"
-                />
-              </g>
-            </svg>
+          </svg>
           </Icon>
           <Title>Non-Smoking</Title>
         </ItemDetails>
