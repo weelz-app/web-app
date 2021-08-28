@@ -67,7 +67,6 @@ export const PhoneIcon = styled.img`
 `;
 
 export const Title = styled.h2`
-    width: 120px;
     margin: 0 0 7px 0;
     font-family: Montserrat;
     font-size: 17px;
@@ -136,6 +135,7 @@ export const VerificationInputStyled = styled(VerificationInput)`
         display: flex;
         align-items: center;
         justify-content: center;
+        box-shadow: 0 1.5px 7.5px 0 rgba(0, 195, 225, 0.05);
     }
     
     & .vi__character:first-child {
@@ -185,8 +185,7 @@ export const Resend = styled.a`
 
 export const TimeLeft = styled.span`
     font-family: Montserrat;
-    font-size: 11px;
+    font-size: 13px;
     font-weight: 500;
-    line-height: 1.45;
     color: #000;
 `;

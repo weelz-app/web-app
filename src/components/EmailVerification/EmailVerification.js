@@ -52,7 +52,7 @@ export default function EmailVerification() {
                 <Overlay />
                 <PhoneIcon src={VerificationIcon} />
                 <div>
-                    <Title>Verify Mobile Number</Title>
+                    <Title>Verify Mobile <br /> Number</Title>
                     <Text>a verification code has been sent to <Number>+201xxxxxxxxx</Number></Text>
                 </div>
             </PhoneWrapper>

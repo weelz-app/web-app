@@ -26,7 +26,7 @@ export default function SignIn() {
 
     return (
         <MainWrapper>
-            <Title>Private Car With Your Driver</Title>
+            <Title>Private Car With <br /> Your Driver</Title>
             <Text>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy</Text>
             <div>
                 <Label>Phone Number</Label>
@@ -57,6 +57,12 @@ export default function SignIn() {
             <div style={{marginBottom: "20px"}}>
                 <FormControlLabel
                     label="Remember me"
+                    sx={{
+                        '& .MuiTypography-root': {
+                            fontSize: "13px !important"
+                        },
+                        color: "#00c3e1"
+                    }}
                     control={
                         <Checkbox
                             onChange={() => setChecked(!checked)}
@@ -65,7 +71,7 @@ export default function SignIn() {
                                 color: "#00c3e1",
                                 '&.Mui-checked': {
                                     color: "#00c3e1",
-                                },
+                                }
                             }}
                         />
                     }

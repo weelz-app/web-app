@@ -38,6 +38,20 @@ export const NavBarContainer = styled(Navbar)`
     background: transparent;
     position: absolute;
     width: 100%;
+
+    & .nav-link {
+      justify-content: center;
+      font-size: 13.5px;
+      font-weight: bold;
+    }
+  }
+
+  &.navbar-light .navbar-nav .nav-link {
+    color: #000;
+
+    &:hover {
+      color: rgba(0,0,0,.55);
+    }
   }
 
   @media only screen and (max-width: 576px) {
@@ -136,7 +150,9 @@ export const NavbarUser = styled.div`
 
 export const NavbarLinksDiv = styled.div`
   position: relative;
-  flex: 1;
+  .navbar:not(.navbar-secondary) & {
+    flex: 1;
+  }
 
   @media only screen and (max-width: 991px) {
     & {
