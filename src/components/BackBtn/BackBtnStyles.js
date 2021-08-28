@@ -11,8 +11,8 @@ export const MainWrapper = styled.section`
 `;
 
 export const Icon = styled.div`
-    width: 23.8px;
-    height: 15.1px;
+    width: 27.8px;
+    height: 19.1px;
     margin-right: 9.2px;
     line-height: 0;
 `;
@@ -20,7 +20,7 @@ export const Icon = styled.div`
 export const Text = styled.span`
     margin: 0.5px 0 0.1px 0;
     font-family: Montserrat;
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 500;
     line-height: 1.21;
     color: #808080;

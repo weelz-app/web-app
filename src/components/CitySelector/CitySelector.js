@@ -30,8 +30,8 @@ export default function CitySelector({
     setCityDropdown(false);
   };
 
-  let iconHeight = iconSize ? iconSize.height : "16.9";
-  let iconWidth = iconSize ? iconSize.width : "11.3";
+  let iconHeight = iconSize ? iconSize.height : "18.9";
+  let iconWidth = iconSize ? iconSize.width : "13.3";
   const dropdownClass = className ? className + "__dropdown" : "";
 
   return (

@@ -1,9 +1,22 @@
 import styled from "styled-components";
 
-export const CarSelectionItemWrapper = styled.section`
-  padding: 26.5px 17.5px;
+export const MainWrapper = styled.div`
+  position: relative;
   width: 100%;
   height: 260px;
+`;
+
+export const CarSelectionInput = styled.input`
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+`;
+
+export const CarSelectionItemWrapper = styled.label`
+  padding: 26.5px 17.5px;
+  width: 100%;
+  height: 100%;
   border-radius: 5px;
   background-image: linear-gradient(
     to bottom,
