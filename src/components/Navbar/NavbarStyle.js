@@ -71,6 +71,10 @@ export const NavBarContainer = styled(Navbar)`
     }
   }
 
+  .collapse:not(.show) {
+    display: unset;
+  }
+
   @media only screen and (max-width: 576px) {
     &.navbar-secondary {
       background: #fff;
@@ -82,7 +86,7 @@ export const NavBarContainer = styled(Navbar)`
     & .navbar-collapse {
       position: absolute;
       top: 59px;
-      right: -281px;
+      right: -291px;
       background-color: #00000082;
       z-index: 1;
       padding: 10px 20px;
