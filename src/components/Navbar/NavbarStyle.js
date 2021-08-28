@@ -5,6 +5,8 @@ export const NavBarContainer = styled(Navbar)`
   background: linear-gradient(to left, #00c3e1, #584995);
   padding: 20px 0;
   z-index: 10000;
+  position: fixed;
+  width: 100%;
 
   & .navbar-brand {
     margin-right: 30px;
@@ -34,6 +36,12 @@ export const NavBarContainer = styled(Navbar)`
     align-items: center;
   }
 
+  & .navbar-nav .dropdown-menu {
+    margin-top: 12px;
+    left: -51px;
+    width: 162.89px;
+  }
+
   &.navbar-secondary {
     background: transparent;
     position: absolute;
@@ -54,6 +62,14 @@ export const NavBarContainer = styled(Navbar)`
     }
   }
 
+  &.navbar-dark .navbar-toggler {
+    border: none;
+
+    &:focus {
+      box-shadow: unset;
+    }
+  }
+
   @media only screen and (max-width: 576px) {
     &.navbar-secondary {
       background: #fff;
@@ -64,21 +80,21 @@ export const NavBarContainer = styled(Navbar)`
   @media only screen and (max-width: 991px) {
     & .navbar-collapse {
       position: absolute;
-      top: 50px;
-      right: 0;
-      background-color: #fff;
+      top: 59px;
+      right: -281px;
+      background-color: #00000082;
       z-index: 1;
       padding: 10px 20px;
-      border: 1px solid rgba(0,0,0,.15);
-      border-radius: .25rem;
+      height: 100vh;
+      transition: .3s ease-in-out;
+
+      &.show {
+        right: -67px;
+      }
     }
 
     & .navbar-nav {
       align-items: flex-start;
-    }
-
-    &.navbar-dark .navbar-nav .nav-link {
-      color: #000;
     }
 
     & .nav-link:not(.dropdown-toggle) {
@@ -155,7 +171,7 @@ export const NavbarLinksDiv = styled.div`
   }
 
   @media only screen and (max-width: 991px) {
-    & {
+    .navbar:not(.navbar-secondary) & {
       flex: unset;
     }
   }
@@ -174,5 +190,32 @@ export const NavbarLanguage = styled.div`
     font-size: 12px;
     line-height: 1.08;
     letter-spacing: -0.29px;
+  }
+`;
+
+export const BarsWrapper = styled.div`
+  cursor: pointer;
+  direaction: rtl;
+
+  &:hover .humbergur-bar {
+    opacity: 0.7;
+  }
+`;
+
+export const BarIcon = styled.div`
+  width: 32px;
+  background-color: #fff;
+  height: 4px;
+  display: block;
+  margin-bottom: 6px;
+  border-radius: 4px;
+
+  &:nth-of-type(2) {
+    width: 22px;
+  }
+
+  &:last-of-type {
+    width: 29px;
+    margin-bottom: 0;
   }
 `;

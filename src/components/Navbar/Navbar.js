@@ -8,7 +8,9 @@ import {
   NavBarContainer,
   NavbarUser,
   NavbarLinksDiv,
-  NavbarLanguage
+  NavbarLanguage,
+  BarsWrapper,
+  BarIcon
 } from "./NavbarStyle";
 import { LinkContainer } from 'react-router-bootstrap';
 
@@ -127,7 +129,13 @@ const NavBar = (props) => {
           </NavBarContainer.Brand>
         </LinkContainer>
         <NavbarLinksDiv>
-          <NavBarContainer.Toggle aria-controls="responsive-navbar-nav" />
+          <NavBarContainer.Toggle aria-controls="responsive-navbar-nav">
+            <BarsWrapper>
+              <BarIcon className="humbergur-bar" />
+              <BarIcon className="humbergur-bar" />
+              <BarIcon className="humbergur-bar" />
+            </BarsWrapper>
+          </NavBarContainer.Toggle>
           <NavBarContainer.Collapse id="responsive-navbar-nav">
             {auth ? authLinks : guestLinks}
           </NavBarContainer.Collapse>
