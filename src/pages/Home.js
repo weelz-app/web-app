@@ -95,7 +95,7 @@ const MainWrapper = styled.div`
 
 const Home = () => {
     return (
-        <Container>
+        <Container style={{paddingTop: "82.5px"}}>
             <MainWrapper>
                 <Row>
                     <Col xs={12} sm={5} md={4}>

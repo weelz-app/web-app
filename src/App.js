@@ -18,7 +18,7 @@ export default function App() {
     <>
       <Router>
         <Navbar />
-        <div className="content" style={{paddingTop: "92.5px"}}>
+        <div className="content">
           <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/sign-in" component={SignIn} />

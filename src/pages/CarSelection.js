@@ -55,7 +55,7 @@ const b = {
 
 const CarSelection = () => {
     return (
-        <div>
+        <div style={{paddingTop: "82.5px"}}>
             <BookingTopMenu page="Car Selection" b={b} />
             <Container>
                 <ToolBar

@@ -62,7 +62,8 @@ export const NavBarContainer = styled(Navbar)`
     }
   }
 
-  &.navbar-dark .navbar-toggler {
+  &.navbar-dark .navbar-toggler,
+  &.navbar-light .navbar-toggler {
     border: none;
 
     &:focus {
@@ -86,11 +87,16 @@ export const NavBarContainer = styled(Navbar)`
       z-index: 1;
       padding: 10px 20px;
       height: 100vh;
-      transition: .3s ease-in-out;
+      transition: right .3s ease-in-out;
+      min-width: 225px;
 
       &.show {
         right: -67px;
       }
+    }
+
+    &.navbar-secondary .nav-link {
+      justify-content: flex-start;
     }
 
     & .navbar-nav {
@@ -195,7 +201,7 @@ export const NavbarLanguage = styled.div`
 
 export const BarsWrapper = styled.div`
   cursor: pointer;
-  direaction: rtl;
+  direction: rtl;
 
   &:hover .humbergur-bar {
     opacity: 0.7;
@@ -209,6 +215,10 @@ export const BarIcon = styled.div`
   display: block;
   margin-bottom: 6px;
   border-radius: 4px;
+
+  .navbar-light & {
+    background-color: #000;
+  }
 
   &:nth-of-type(2) {
     width: 22px;

@@ -38,7 +38,7 @@ export default function Trip() {
         }
     });
     return (
-        <div style={{paddingBottom: "48px"}}>
+        <div style={{paddingBottom: "48px", paddingTop: "82.5px"}}>
             <BookingTopMenu b={booking} page="Trips" />
             <Container>
                 <ToolBar
