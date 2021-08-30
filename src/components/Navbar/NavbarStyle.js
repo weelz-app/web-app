@@ -238,7 +238,3 @@ export const BarIcon = styled.div`
     margin-bottom: 0;
   }
 `;
-
-export const Username = styled.span`
-  
-`;

@@ -10,8 +10,7 @@ import {
   NavbarLinksDiv,
   NavbarLanguage,
   BarsWrapper,
-  BarIcon,
-  Username
+  BarIcon
 } from "./NavbarStyle";
 import { LinkContainer } from 'react-router-bootstrap';
 
@@ -52,9 +51,9 @@ const NavBar = (props) => {
       <Nav>
         <NavbarUser>
           <Avatar className="d-xl-flex d-lg-flex" />
-          <Username className="d-lg-none d-flex dropdown-toggle nav-link">
+          <span className="d-lg-none d-flex dropdown-toggle nav-link">
             {props.username ? props.username : "username"}
-          </Username>
+          </span>
 
           <NavDropdown
             className="d-none d-lg-flex"
