@@ -171,6 +171,7 @@ export const NavbarUser = styled.div`
   @media only screen and (max-width: 991px) {
     & {
       margin: 10px 0;
+      background-color: unset;
     }
   }
 `;
