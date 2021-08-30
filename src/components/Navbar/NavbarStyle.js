@@ -84,18 +84,29 @@ export const NavBarContainer = styled(Navbar)`
 
   @media only screen and (max-width: 991px) {
     & .navbar-collapse {
-      position: absolute;
-      top: 59px;
-      right: -291px;
-      background-color: #00000082;
+      position: fixed;
+      top: 83px;
+      right: -230px;
       z-index: 1;
       padding: 10px 20px;
       height: 100vh;
       transition: right .3s ease-in-out;
       min-width: 225px;
+      background: #2195c4;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
 
       &.show {
-        right: -67px;
+        right: 0;
+      }
+
+      & .navbar-nav:first-of-type {
+        order: 2;
+      }
+
+      & .navbar-nav:last-of-type {
+        order: 1;
       }
     }
 
@@ -148,12 +159,6 @@ export const Icon = styled.img`
 
   @media only screen and (max-width: 991px) {
     &.md-hide {
-      display: none;
-    }
-  }
-
-  @media only screen and (min-width: 992px) {
-    &.lg-hide {
       display: none;
     }
   }
@@ -232,4 +237,8 @@ export const BarIcon = styled.div`
     width: 29px;
     margin-bottom: 0;
   }
+`;
+
+export const Username = styled.span`
+  
 `;

@@ -10,7 +10,8 @@ import {
   NavbarLinksDiv,
   NavbarLanguage,
   BarsWrapper,
-  BarIcon
+  BarIcon,
+  Username
 } from "./NavbarStyle";
 import { LinkContainer } from 'react-router-bootstrap';
 
@@ -32,21 +33,18 @@ const NavBar = (props) => {
         <LinkContainer to="/trips">
           <Nav.Link>
             <Icon className="md-hide" src={CalenderIcon} />
-            {/* <Icon  className="lg-hide" src={BlackCalenderIcon} /> */}
             Trips
           </Nav.Link>
         </LinkContainer>
         <LinkContainer to="/about">
           <Nav.Link>
             <Icon className="md-hide" src={InformationIcon} />
-            {/* <Icon  className="lg-hide" src={BlackInformationIcon} /> */}
             About
           </Nav.Link>
         </LinkContainer>
         <LinkContainer to="/add-trip">
           <Nav.Link>
             <Icon className="md-hide" src={AddNewIcon} />
-            {/* <Icon  className="lg-hide" src={BlackAddNewIcon} /> */}
             New Trip
           </Nav.Link>
         </LinkContainer>
@@ -54,8 +52,12 @@ const NavBar = (props) => {
       <Nav>
         <NavbarUser>
           <Avatar className="d-xl-flex d-lg-flex" />
+          <Username className="d-lg-none d-flex dropdown-toggle nav-link">
+            {props.username ? props.username : "username"}
+          </Username>
+
           <NavDropdown
-            className="d-xl-flex d-lg-flex"
+            className="d-none d-lg-flex"
             title={props.username ? props.username : "username"}
             id="collasible-nav-dropdown"
           >
@@ -71,9 +73,20 @@ const NavBar = (props) => {
           </NavDropdown>
         </NavbarUser>
 
+        <div className="d-lg-none d-block">
+          <Nav.Link href="#action/3.1">
+            Action
+          </Nav.Link>
+          <Nav.Link href="#action/3.2">
+            Another Action
+          </Nav.Link>
+          <Nav.Link href="#action/3.3">
+            Something
+          </Nav.Link>
+        </div>
+
         <Nav.Link eventKey={2} href="#memes">
           <Icon className="md-hide" src={NotificationIcon} />
-          {/* <Icon className="lg-hide" src={BlackNotificationIcon} /> */}
           Language
         </Nav.Link>
       </Nav>
