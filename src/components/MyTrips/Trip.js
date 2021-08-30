@@ -18,6 +18,7 @@ import {
     Time,
     Status
 } from "./TripStyles";
+import {getMonthName} from "../../utils/index";
 
 import Calendar from "../../icons/calendar.png"
 import SteeringWheel from "../../icons/steering-wheel.png"
@@ -29,13 +30,6 @@ export default function Trip({trip}) {
     const hours = date.getHours().toString().length === 1 ? "0" + date.getHours() : date.getHours();
     const minutes = date.getMinutes().toString().length === 1 ? "0" + date.getMinutes() : date.getMinutes();
     const ampm = date.getHours() >= 12 ? 'PM' : 'AM';
-
-    const getMonthName = num => {
-        const monthNames = ["January", "February", "March", "April", "May", "June",
-            "July", "August", "September", "October", "November", "December"
-        ];
-        return monthNames[num];
-    }
 
     return (
         <MainWrapper>

@@ -4,6 +4,7 @@ import BookingSideBar from "../components/BookingSideBar/BookingSideBar"
 import MobileAppAd from "../components/MobileAppAd/MobileAppAd"
 import NotificationsList from "../components/Notifications/NotificationsList"
 import MyTrips from "../components/MyTrips/MyTrips"
+import ConfirmTrip from "../components/ConfirmTrip/ConfirmTrip"
 import { Container, Row, Col } from "react-bootstrap";
 
 const booking = {
@@ -13,7 +14,9 @@ const booking = {
     passengers: 4,
     luggage: 2,
     pets: false,
-    nonSmoking: true
+    nonSmoking: true,
+    price: 50,
+    currency: "L.E"
 };
 
 const notifications = [
@@ -95,30 +98,33 @@ const MainWrapper = styled.div`
 
 const Home = () => {
     return (
-        <Container style={{paddingTop: "82.5px"}}>
-            <MainWrapper>
-                <Row>
-                    <Col xs={12} sm={5} md={4}>
-                        <BookingSideBar b={booking} />
-                    </Col>
-                    <Col sm={7} md={8} className="d-none d-sm-block">
-                        <Row>
-                            <Col>
-                                <MyTrips trips={myTrips} />
-                            </Col>
-                        </Row>
-                        <Row style={{marginTop: "6px"}}>
-                            <Col sm={12} lg={7}>
-                                <NotificationsList notifications={notifications} />
-                            </Col>
-                            <Col lg={5} className="d-none d-lg-block">
-                                <MobileAppAd />
-                            </Col>
-                        </Row>
-                    </Col>
-                </Row>
-            </MainWrapper>
-        </Container>
+        <>
+            <ConfirmTrip b={booking} />
+            <Container style={{paddingTop: "82.5px"}}>
+                <MainWrapper>
+                    <Row>
+                        <Col xs={12} sm={5} md={4}>
+                            <BookingSideBar b={booking} />
+                        </Col>
+                        <Col sm={7} md={8} className="d-none d-sm-block">
+                            <Row>
+                                <Col>
+                                    <MyTrips trips={myTrips} />
+                                </Col>
+                            </Row>
+                            <Row style={{marginTop: "6px"}}>
+                                <Col sm={12} lg={7}>
+                                    <NotificationsList notifications={notifications} />
+                                </Col>
+                                <Col lg={5} className="d-none d-lg-block">
+                                    <MobileAppAd />
+                                </Col>
+                            </Row>
+                        </Col>
+                    </Row>
+                </MainWrapper>
+            </Container>
+        </>
     );
 }
 

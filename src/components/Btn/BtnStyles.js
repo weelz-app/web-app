@@ -32,6 +32,13 @@ export const BtnWrapper = styled.button`
         padding: 11px 10px;
     }
 
+    &.btn--confirm {
+        height: 48px;
+        border-radius: 15px;
+        padding: 11px 10px;
+        text-transform: unset;
+    }
+
     @media only screen and (max-width: 375px) {
         & {
             padding: 11px 50.5px 10.5px 50.5px;
