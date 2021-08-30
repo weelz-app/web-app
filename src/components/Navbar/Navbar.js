@@ -51,7 +51,7 @@ const NavBar = (props) => {
       <Nav>
         <NavbarUser>
           <Avatar className="d-xl-flex d-lg-flex" />
-          <span className="d-lg-none d-flex dropdown-toggle nav-link">
+          <span className="d-lg-none d-flex nav-link">
             {props.username ? props.username : "username"}
           </span>
 

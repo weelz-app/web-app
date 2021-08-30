@@ -135,10 +135,6 @@ export const NavBarContainer = styled(Navbar)`
       }
     }
 
-    & .MuiAvatar-root {
-      margin-right: 10px;
-    }
-
     & .navbar-nav .dropdown-menu {
       position: absolute;
       left: -45px;
