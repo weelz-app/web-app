@@ -8,8 +8,8 @@ export const ModalWrapper = styled(Modal)`
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 10040;
-    overflow: scroll;
+    z-index: 10040 !important;
+    overflow-y: scroll;
     padding-top: 80px;
     padding-bottom: 20px;
 
@@ -28,20 +28,26 @@ export const StyledModal = styled.div`
     flex-direction: column;
     align-items: flex-start;
     position: relative;
-    padding: 33px 18px;
+    padding: 25px 18px 33px 18px;
     margin-top: 40px;
+    outline: 0;
 
     @media only screen and (max-width: 575px) {
         width: 100%;
     }
 `;
 
+export const TitleWrapper = styled.div`
+    width: 100%;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgb(124 124 125 / 12%);
+    margin-bottom: 20px;
+`;
+
 export const Title = styled.h3`
     font-size: 22px;
     width: 100%;
-    padding-bottom: 10px;
-    border-bottom: 1px solid rgb(124 124 125 / 12%);
-    margin-bottom: 20px;
+    margin: 0;
 
     @media only screen and (max-width: 575px) {
         width: 200px;
@@ -134,6 +140,7 @@ export const CityName = styled.h5`
 export const DetailsWrapper = styled.div`
     padding: 19px 0;
     width: 100%;
+    border-bottom: 1px solid rgb(124 124 125 / 12%);
 `;
 
 export const DeatilsRow = styled.div`
@@ -179,7 +186,7 @@ export const Price = styled.span`
 `;
 
 export const ChoicesWrapper = styled.div`
-    margin: 30px 0;
+    margin: 25px 0;
     width: 100%;
 `;
 

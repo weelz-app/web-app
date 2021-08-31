@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import {
     ModalWrapper,
     StyledModal,
+    TitleWrapper,
     Title,
     Header,
     HeaderText,
@@ -70,9 +71,11 @@ export default function ConfirmTrip({b}) {
             >
                 <Fade in={isOpen}>
                     <StyledModal>
-                        <Title>
-                            Does everything look right?
-                        </Title>
+                        <TitleWrapper>
+                            <Title>
+                                Does everything look right?
+                            </Title>
+                        </TitleWrapper>
                         <Header>
                             <HeaderText>Trip Summery</HeaderText>
                             <Type>
