@@ -29,9 +29,5 @@ export default function FeedbackItem({title, subtitle, feedback, setFeedback}) {
                 </StarRating>
             </Col>
         </Row>
-        <Row>
-            <Comment onChange={(c) => setFeedback({ ...feedback, comment: c.target.value })}
-                defaultValue={feedback.comment} />
-        </Row>
     </Paper>
 }

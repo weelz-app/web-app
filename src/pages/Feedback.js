@@ -3,6 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import TitleTopBar from "../components/TitleTopBar/TitleTopBar"
 import ToolBar from "../components/ToolBar/ToolBar"
 import TripSummary from "../components/TripSummary/TripSummary"
+import FeedbackCard from "../components/Feedback/FeedbackCard"
 import {getMonthName} from "../utils/index";
 
 export default function Feedback() {
@@ -19,6 +20,20 @@ export default function Feedback() {
         price: "30",
         currency: "EGP"
     });
+    const [feedback, setFeedback] = useState({
+        driver: {
+            name: "Ahmed ElSwa2",
+            rating: 3
+        },
+        car: {
+            name: "Hyundai Elantra",
+            rating: 3
+        },
+        overall: {
+            rating: 3
+        },
+        comment: "Ok"
+    });
     const date = new Date(parseInt(booking.ts));
 
     return (
@@ -31,7 +46,7 @@ export default function Feedback() {
                         <TripSummary booking={booking} />
                     </Col>
                     <Col sm={7} className="d-none d-sm-block">
-                        Test
+                        <FeedbackCard feedback={feedback} setFeedback={(val) => setFeedback(val)} />
                     </Col>
                 </Row>
             </Container>
