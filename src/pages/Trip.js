@@ -59,7 +59,7 @@ export default function Trip() {
                         showBtn={booking.status === "Canceled" ? false : true}
                         btnVariant="cancel-btn"
                         btnText="Cancel Trip"
-                        btnOnClock={() => setIsOpen(val => !val)}
+                        btnOnClick={() => setIsOpen(val => !val)}
                     />
                     <Row>
                         <Col xs={12} sm={6} lg={5}>

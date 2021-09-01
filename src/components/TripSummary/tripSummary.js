@@ -20,8 +20,15 @@ import UserIcon from "../../icons/user@3x.png";
 import PriceIcon from "../../icons/wallet-passes-app.png";
 import BriefcaseIcon from "../../icons/briefcase.svg";
 import PetsIcon from "../../icons/pawprint.svg";
+import {getMonthName} from "../../utils/index";
 
 export default function TripSummary({booking}) {
+    const date = new Date(parseInt(booking.ts));
+    let currentHours = date.getHours() > 12 ? date.getHours() - 12 : date.getHours();
+    currentHours = currentHours.toString().length === 2 ? currentHours : "0" + currentHours;
+    const currentMinutes = date.getMinutes().toString().length === 2 ? date.getMinutes() : "0" + date.getMinutes();
+    const ampm = date.getHours() >= 12 ? 'PM' : 'AM';
+
     return (
         <MainWrapper>
             <Header>
@@ -39,7 +46,7 @@ export default function TripSummary({booking}) {
                         </Item>
                         <Item>
                             <Label>Departure</Label>
-                            <Text>{`10 May, 2021 - 10:15 PM`}</Text>
+                            <Text>{`${date.getDate()} ${getMonthName(date.getMonth())}, ${date.getFullYear()} - ${currentHours}:${currentMinutes} ${ampm}`}</Text>
                         </Item>
                     </Items>
                 </HeaderContent>

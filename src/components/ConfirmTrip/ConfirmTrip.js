@@ -48,7 +48,8 @@ export default function ConfirmTrip({b}) {
     const [booking, setBooking] = useState(b);
     const [isOpen, setIsOpen] = useState(false);
     const date = new Date(parseInt(booking.ts));
-    const currentHours = date.getHours().toString().length === 2 ? date.getHours() : "0" + date.getHours();
+    let currentHours = date.getHours() > 12 ? date.getHours() - 12 : date.getHours();
+    currentHours = currentHours.toString().length === 2 ? currentHours : "0" + currentHours;
     const currentMinutes = date.getMinutes().toString().length === 2 ? date.getMinutes() : "0" + date.getMinutes();
 
     return (

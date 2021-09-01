@@ -27,7 +27,8 @@ import CheckMark from "../../icons/check-mark.png"
 
 export default function Trip({trip}) {
     const date = new Date(parseInt(trip.ts));
-    const hours = date.getHours().toString().length === 1 ? "0" + date.getHours() : date.getHours();
+    let hours = date.getHours() > 12 ? date.getHours() - 12 : date.getHours();
+    hours = hours.toString().length === 2 ? hours : "0" + hours;
     const minutes = date.getMinutes().toString().length === 1 ? "0" + date.getMinutes() : date.getMinutes();
     const ampm = date.getHours() >= 12 ? 'PM' : 'AM';
 
