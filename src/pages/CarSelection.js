@@ -55,7 +55,7 @@ const b = {
 
 const CarSelection = () => {
     return (
-        <div style={{paddingTop: "82.5px"}}>
+        <div className="navbar-padding with-bar">
             <BookingTopMenu page="Car Selection" b={b} />
             <Container>
                 <ToolBar

@@ -9,3 +9,11 @@
   overflow: auto;
   position: relative;
 }
+
+.navbar-padding {
+  padding-top: 82.5px;
+}
+
+.navbar-padding.with-bar {
+  padding-top: 92.5px;
+}

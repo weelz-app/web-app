@@ -100,7 +100,7 @@ const Home = () => {
     return (
         <>
             <ConfirmTrip b={booking} />
-            <Container style={{paddingTop: "82.5px"}}>
+            <Container className="navbar-padding">
                 <MainWrapper>
                     <Row>
                         <Col xs={12} sm={5} md={4}>
