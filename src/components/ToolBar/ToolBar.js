@@ -3,10 +3,10 @@ import {MainWrapper} from "./ToolBarStyles";
 import BackBtn from "../BackBtn/BackBtn"
 import Btn from "../Btn/Btn"
 
-const ToolBar = ({showBtn, btnVariant, btnOnClick, btnDisabled, btnText}) => {
+const ToolBar = ({backLink, showBtn, btnVariant, btnOnClick, btnDisabled, btnText}) => {
     return (
         <MainWrapper>
-            <BackBtn />
+            <BackBtn to={backLink} />
             {showBtn ? (
                 <Btn
                     onClick={btnOnClick}

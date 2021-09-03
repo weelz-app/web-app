@@ -116,7 +116,7 @@ export default function MyTrips() {
         <div className="navbar-padding with-bar" style={{paddingBottom: "48px"}}>
             <TitleTopBar title="My Trips" />
             <Container>
-                <ToolBar showBtn={false} />
+                <ToolBar showBtn={false} backLink="/" />
                 <Row>
                     <Col>
                         <AllMyTrips trips={myTrips} />

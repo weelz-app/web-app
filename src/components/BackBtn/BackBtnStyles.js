@@ -1,11 +1,15 @@
 import styled from "styled-components";
+import {Link} from "react-router-dom";
 
-export const MainWrapper = styled.section`
+export const StyledLink = styled(Link)`
     display: flex;
     align-items: center;
     cursor: pointer;
+    text-decoration: none;
+    color: #000;
 
     &:hover {
+        color: #000;
         opacity: 0.7;
     }
 `;

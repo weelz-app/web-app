@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const MainWrapper = styled.div`
-    margin-bottom: 7px;
-    padding: 5.5px 15px 5.5px 5px;
+    margin-bottom:  ${({variant}) => variant === "notifications-page" ? "10px" : "7px"};
+    padding: ${({variant}) => variant === "notifications-page" ? "6.5px 17px 6.5px 6px" : "5.5px 15px 5.5px 5px"};
     border-radius: 5px;
     background-color: #f7f7f7;
     display: flex;
@@ -17,6 +17,10 @@ export const MainWrapper = styled.div`
     &:hover {
         background-color: #f3f1f1;
     }
+
+    @media only screen and (max-width: 360px) {
+        padding: 6.5px 6px 6.5px 6px;
+    }
 `;
 
 export const ContentWrapper = styled.div`
@@ -25,14 +29,14 @@ export const ContentWrapper = styled.div`
 `;
 
 export const Icon = styled.img`
-    width: 22px;
-    height: 29px;
-    margin-right: 7px;
+    width: ${({variant}) => variant === "notifications-page" ? "26px" : "22px"};
+    height: ${({variant}) => variant === "notifications-page" ? "34px" : "29px"};
+    margin-right: ${({variant}) => variant === "notifications-page" ? "9px" : "7px"};
     object-fit: contain;
 `;
 
 export const Title = styled.h4`
-    margin: 0 0 2.5px 0;
+    margin: 0 0 ${({marginBottom}) => marginBottom} 0;
     font-family: Montserrat;
     font-size: 11px;
     font-weight: 600;

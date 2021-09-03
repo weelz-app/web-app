@@ -22,16 +22,19 @@ const booking = {
 const notifications = [
     {
         id: 1,
+        type: "info",
         title: "We are waiting your feedback!",
         msg: "Alexandria to Cairo trip, 10 May 2021"
     },
     {
         id: 2,
+        type: "info",
         title: "We are waiting your feedback!",
         msg: "Sahel to Cairo trip, 18 May 2021"
     },
     {
         id: 3,
+        type: "info",
         title: "Another Message!",
         msg: "Another details for this notification"
     }
@@ -114,7 +117,7 @@ const Home = () => {
                             </Row>
                             <Row style={{marginTop: "6px"}}>
                                 <Col sm={12} lg={7}>
-                                    <NotificationsList notifications={notifications} />
+                                    <NotificationsList notifications={notifications} showHeader={true} />
                                 </Col>
                                 <Col lg={5} className="d-none d-lg-block">
                                     <MobileAppAd />

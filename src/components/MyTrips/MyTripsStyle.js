@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import ArrowRightAltIcon from "@material-ui/icons/ArrowRightAlt";
+import {Link} from "react-router-dom";
 
 export const Header = styled.div`
     display: flex;
@@ -17,13 +18,17 @@ export const Title = styled.h4`
     margin: 0;
 `;
 
-export const ArrowIcon = styled(ArrowRightAltIcon)`
-    cursor: pointer;
+export const StyledLink = styled(Link)`
+    text-decoration: none;
+    color: #000;
 
     &:hover {
+        color: #000;
         opacity: 0.7;
     }
+`;
 
+export const ArrowIcon = styled(ArrowRightAltIcon)`
     &.MuiSvgIcon-root {
         font-size: 2rem;
     }

@@ -12,6 +12,7 @@ import CarSelection from "./pages/CarSelection";
 import Trip from "./pages/Trip";
 import Feedback from "./pages/Feedback";
 import MyTrips from "./pages/MyTrips";
+import Notifications from "./pages/Notifications";
 import About from "./pages/About";
 import Navbar from "./components/Navbar/Navbar";
 
@@ -28,6 +29,7 @@ export default function App() {
             <Route path="/trip-details" component={Trip} />
             <Route path="/my-trips" component={MyTrips} />
             <Route path="/feedback" component={Feedback} />
+            <Route path="/notifications" component={Notifications} />
             <Route path="/about" component={About} />
             <Route path="/car-selection" component={CarSelection} />
           </Switch>

@@ -6,13 +6,13 @@ import {
   Header,
   Title,
   ArrowIcon,
-  Content
+  Content,
+  StyledLink
 } from "./MyTripsStyle";
 
 const MyTrips = ({trips}) => {
   const responsive = {
     superLargeDesktop: {
-      // the naming can be any, depends on you.
       breakpoint: { max: 4000, min: 3000 },
       items: 5,
     },
@@ -34,7 +34,9 @@ const MyTrips = ({trips}) => {
     <div>
       <Header>
         <Title>My Trips</Title>
-        <ArrowIcon />
+        <StyledLink to="/my-trips">
+          <ArrowIcon />
+        </StyledLink>
       </Header>
       <Content>
         <Carousel responsive={responsive}>
