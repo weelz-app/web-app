@@ -1,43 +1,50 @@
-import { Container } from "react-bootstrap";
 import styled from "styled-components";
+import { Container } from "react-bootstrap";
+import { Rating } from 'react-simple-star-rating';
 
 export const Paper = styled(Container)`
     background-color: #FFFFFF;
+    padding: 0;
+    margin-bottom: 22px;
+
+    &.overall {
+        margin-bottom: 0;
+    }
 `;
 export const Title = styled.h3`
     font-family: Montserrat-SemiBold;
-    font-size: 11px;
+    font-size: 13px;
+    font-weight: 600;
     line-height: 13.5px;
     text-align: left;
     color: #000000;
+    margin: 0;
 `;
 
 export const SubTitle = styled.h4`
     font-family: Montserrat-Medium;
-    font-size: 10px;
+    font-size: 12px;
+    font-weight: 500;
     line-height: 10px;
     text-align: left;
     color: #bfbfbf;
 `;
 
-export const Comment = styled.textarea`
-    background-color: #f6f6f6;
-    border: none;
-    overflow: auto;
-    outline: none;
-
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
-
-    resize: none;
-    font-family: Montserrat-Regular;
-    font-size: 10px;
-    line-height: 10px;
-    text-align: left;
-`;
-
 export const StarRating = styled.div`
     display: flex;
-    align-items: flex-end;
-`
+    align-items: center;
+    justify-content: flex-end;
+`;
+
+export const StyledRating = styled(Rating)`
+    .star {
+        margin-right: 5px;
+    }
+`;
+
+export const FeedbackWrapper = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+`;

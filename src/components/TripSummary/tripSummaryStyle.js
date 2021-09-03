@@ -23,7 +23,7 @@ export const HeaderContent = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  padding: 15px 68.8px 21.5px 15px;
+  padding: 15px 15px 21.5px 15px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
