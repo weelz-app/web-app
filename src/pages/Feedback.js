@@ -44,7 +44,7 @@ export default function Feedback() {
                 toggleModal={() => setIsOpen(val => !val)}
                 isOpen={isOpen}
             />
-            <div className="navbar-padding" style={{paddingBottom: "48px"}}>
+            <div className="navbar-padding with-bar" style={{paddingBottom: "48px"}}>
                 <TitleTopBar title="Feedback" city={`${booking.from} - ${booking.to}, ${date.getDate()} ${getMonthName(date.getMonth())} ${date.getFullYear()}`} />
                 <Container>
                     <ToolBar showBtn={false} />
