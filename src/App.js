@@ -11,6 +11,7 @@ import EmailVerification from "./pages/EmailVerification";
 import CarSelection from "./pages/CarSelection";
 import Trip from "./pages/Trip";
 import Feedback from "./pages/Feedback";
+import MyTrips from "./pages/MyTrips";
 import About from "./pages/About";
 import Navbar from "./components/Navbar/Navbar";
 
@@ -25,6 +26,7 @@ export default function App() {
             <Route path="/sign-in" component={SignIn} />
             <Route path="/email-verification" component={EmailVerification} />
             <Route path="/trip-details" component={Trip} />
+            <Route path="/my-trips" component={MyTrips} />
             <Route path="/feedback" component={Feedback} />
             <Route path="/about" component={About} />
             <Route path="/car-selection" component={CarSelection} />
