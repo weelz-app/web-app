@@ -10,6 +10,7 @@ import {
 } from "./NotificationsListStyles";
 
 const NotificationsList = ({notifications, showHeader, variant}) => {
+    const isNotificationsPage = variant === "notifications-page" ? true : false;
     let notificationsRows = [];
 
     for (let i = 0; i < notifications.length; i++) {
@@ -26,10 +27,12 @@ const NotificationsList = ({notifications, showHeader, variant}) => {
                     </StyledLink>
                 </Header>
             ) : null}
-            <ContentWrapper>
+            <ContentWrapper
+                height={isNotificationsPage ? "100%" : "calc(100% - 39px)"}
+                className={`${isNotificationsPage ? "scrollable" : ""}`}
+            >
                 <Content
-                    height={variant === "notifications-page" ? "100%" : "calc(100% - 39px)"}
-                    className={`${variant === "notifications-page" ? "scrollable" : ""}`}
+                    className={`${isNotificationsPage ? "scrollable" : ""}`}
                 >
                     {notificationsRows}
                 </Content>

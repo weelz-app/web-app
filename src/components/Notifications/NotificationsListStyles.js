@@ -38,11 +38,10 @@ export const Content = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: ${({height}) => height};
+    height: 100%;
 
     &.scrollable {
         overflow-y: scroll;
-        max-height: 312px;
         justify-content: flex-start;
         padding-right: 15px;
 
@@ -66,4 +65,9 @@ export const ContentWrapper = styled.div`
     border-radius: 5px;
     box-shadow: 0 2.5px 8px 0 rgba(0, 0, 0, 0.05);
     background-color: #fff;
+    height: ${({height}) => height};
+
+    &.scrollable {
+        max-height: 312px;
+    }
 `;
