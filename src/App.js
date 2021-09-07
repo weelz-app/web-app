@@ -4,6 +4,7 @@ import {
   Switch,
   Route
 } from "react-router-dom";
+import {useState} from "react";
 
 import Home from "./pages/Home";
 import SignIn from "./pages/SignIn";
@@ -16,10 +17,18 @@ import Notifications from "./pages/Notifications";
 import Navbar from "./components/Navbar/Navbar";
 
 export default function App() {
+  const [lang, setLang] = useState(localStorage.getItem("language"))
+
+  const changeLang = () => {
+    const newLang = lang === "en" ? "ar" : "en";
+    localStorage.setItem("language", newLang);
+    setLang(newLang)
+  }
+
   return (
-    <div className={`App ar`}>
+    <div className={`App ${lang}`}>
       <Router>
-        <Navbar />
+        <Navbar lang={lang} changeLang={() => changeLang()} />
         <div className="content">
           <Switch>
             <Route exact path="/" component={Home} />

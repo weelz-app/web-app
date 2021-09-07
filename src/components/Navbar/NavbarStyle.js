@@ -194,14 +194,14 @@ export const NavbarLanguage = styled.div`
   border-radius: 5px;
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.1);
   background-color: #fff;
+  padding: 9px 16px;
+  font-size: 12px;
+  line-height: 1.08;
+  letter-spacing: -0.29px;
+  cursor: pointer;
 
-  .navbar-nav & .nav-link {
-    padding: 9px 16px;
-    min-width: unset;
-    margin-right: 0;
-    font-size: 12px;
-    line-height: 1.08;
-    letter-spacing: -0.29px;
+  &:hover span {
+    opacity: 0.7;
   }
 `;
 
