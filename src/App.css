@@ -3,7 +3,7 @@
   src: local('Montserrat'), url(fonts/Montserrat-SemiBold.ttf) format('truetype');
 }
 
-#root {
+.App {
   background-color: #f6f6f6;
   height: 100vh;
   overflow: auto;

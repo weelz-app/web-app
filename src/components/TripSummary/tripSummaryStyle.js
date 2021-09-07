@@ -63,7 +63,7 @@ export const Item = styled.div`
 
 export const Label = styled.span`
   font-family: Montserrat;
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 500;
   line-height: 1.22;
   color: #fff;
@@ -73,7 +73,7 @@ export const Label = styled.span`
 export const Text = styled.span`
   margin: 11px 0 0;
   font-family: Montserrat;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 600;
   line-height: 1.23;
   color: #fff;
@@ -98,17 +98,17 @@ export const BodyItem = styled.div`
 `;
 
 export const Icon = styled.img`
-  width: 10.4px;
-  height: 13.6px;
+  width: 13.4px;
+  height: 16.6px;
   margin: 0 10.9px 0 0;
   object-fit: contain;
 `;
 
 export const BodyLabel = styled.span`
-  width: 75px;
+  width: 85px;
   margin: 0 45px 0 0;
   font-family: Montserrat;
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 500;
   line-height: 1;
   color: #474747;
@@ -116,7 +116,7 @@ export const BodyLabel = styled.span`
 
 export const BodyText = styled.span`
   font-family: Montserrat;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 600;
   line-height: 0.91;
   color: #000;

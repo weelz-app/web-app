@@ -4,6 +4,7 @@ import {
     Header,
     Title,
     ArrowIcon,
+    ContentWrapper,
     Content,
     StyledLink
 } from "./NotificationsListStyles";
@@ -25,9 +26,14 @@ const NotificationsList = ({notifications, showHeader, variant}) => {
                     </StyledLink>
                 </Header>
             ) : null}
-            <Content height={variant === "notifications-page" ? "100%" : "calc(100% - 39px)"}>
-                {notificationsRows}
-            </Content>
+            <ContentWrapper>
+                <Content
+                    height={variant === "notifications-page" ? "100%" : "calc(100% - 39px)"}
+                    className={`${variant === "notifications-page" ? "scrollable" : ""}`}
+                >
+                    {notificationsRows}
+                </Content>
+            </ContentWrapper>
         </>
     );
 };

@@ -51,6 +51,10 @@ export const Item = styled.div`
     display: flex;
     align-items: flex-start;
     margin-bottom: 8px;
+
+    &.item-center {
+        align-items: center;
+    }
 `;
 
 export const Icon = styled.img`

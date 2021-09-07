@@ -35,12 +35,35 @@ export const ArrowIcon = styled(ArrowRightAltIcon)`
 `;
 
 export const Content = styled.div`
-    padding: 15px 15px 21.5px;
-    border-radius: 5px;
-    box-shadow: 0 2.5px 8px 0 rgba(0, 0, 0, 0.05);
-    background-color: #fff;
-    height: ${({height}) => height};
     display: flex;
     flex-direction: column;
     justify-content: center;
+    height: ${({height}) => height};
+
+    &.scrollable {
+        overflow-y: scroll;
+        max-height: 312px;
+        justify-content: flex-start;
+        padding-right: 15px;
+
+        &::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: #000;
+            outline: 0;
+        }
+    }
+`;
+
+export const ContentWrapper = styled.div`
+    padding: 15px 10px 21.5px 15px;
+    border-radius: 5px;
+    box-shadow: 0 2.5px 8px 0 rgba(0, 0, 0, 0.05);
+    background-color: #fff;
 `;

@@ -35,6 +35,12 @@ const notifications = [
         type: "info",
         title: "We are waiting your feedback!",
         msg: "Alexandria to Cairo trip, 10 May 2021"
+    },
+    {
+        id: 6,
+        type: "info",
+        title: "We are waiting your feedback!",
+        msg: "Alexandria to Cairo trip, 10 May 2021"
     }
 ]
 

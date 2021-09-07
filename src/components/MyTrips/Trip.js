@@ -70,7 +70,7 @@ export default function Trip({trip}) {
                     <Icon src={Wallet} />
                     <Price>{trip.price + " " + trip.currency}</Price>
                 </Item>
-                <Item>
+                <Item className="item-center">
                     <Icon src={CheckMark} />
                     <Status>{trip.status}</Status>
                 </Item>
