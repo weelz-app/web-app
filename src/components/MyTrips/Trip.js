@@ -16,7 +16,8 @@ import {
     Car,
     StyledDate,
     Time,
-    Status
+    Status,
+    RightWrapper
 } from "./TripStyles";
 import {getMonthName} from "../../utils/index";
 
@@ -34,7 +35,7 @@ export default function Trip({trip}) {
 
     return (
         <MainWrapper>
-            <div style={{marginRight: "10px"}}>
+            <RightWrapper>
                 <Type>{trip.type}</Type>
                 <CityWrapper>
                     <CityLabel>From</CityLabel>
@@ -44,7 +45,7 @@ export default function Trip({trip}) {
                     <CityLabel>To</CityLabel>
                     <CityName>{trip.to}</CityName>
                 </CityWrapper>
-            </div>
+            </RightWrapper>
             <div>
                 <Item>
                     <Icon src={Calendar} />
@@ -66,7 +67,7 @@ export default function Trip({trip}) {
                         <Car>{trip.car}</Car>
                     </div>
                 </Item>
-                <Item>
+                <Item className="item-center">
                     <Icon src={Wallet} />
                     <Price>{trip.price + " " + trip.currency}</Price>
                 </Item>

@@ -45,6 +45,11 @@ export const Icon = styled.div`
     height: 15.6px;
     line-height: 0;
     margin-right: 4px;
+
+    .App.ar & {
+      margin-right: 0;
+      margin-left: 4px;
+    }
 `;
 
 export const Title = styled.h3`
@@ -54,4 +59,8 @@ export const Title = styled.h3`
   font-weight: 500;
   line-height: 1;
   color: #474747;
+
+  .App.ar & {
+    margin: 0.5px 10.9px 1.1px 0;
+  }
 `;

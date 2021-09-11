@@ -32,6 +32,10 @@ export const ArrowIcon = styled(ArrowRightAltIcon)`
     &.MuiSvgIcon-root {
         font-size: 2rem;
     }
+
+    .App.ar &.MuiSvgIcon-root {
+        transform: rotate(180deg);
+    }
 `;
 
 export const Content = styled.div`

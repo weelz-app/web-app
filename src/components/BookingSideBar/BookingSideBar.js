@@ -1,5 +1,5 @@
 import React, {useCallback, useState} from 'react';
-import { Title, Item, Link, Text } from "./BookingSideBarStyles";
+import { Title, Item, Link, Text, LinkWrapper } from "./BookingSideBarStyles";
 import CitySelector from "../CitySelector/CitySelector";
 import DateTimePickerCustimzed from "../DateTimePicker/DateTimePicker";
 import BookingInfoDialogue from "../BookingInfoDialogue/BookingInfoDialogue";
@@ -47,10 +47,10 @@ export default function BookingSideBar({b}) {
                 />
             </Item>
             <Btn text="New Trip!" className="btn--block" />
-            <div style={{marginTop: "10px"}}>
+            <LinkWrapper>
                 <Text>City not listed?</Text>
                 <Link>Let us know</Link>
-            </div>
+            </LinkWrapper>
         </>
     )
 }

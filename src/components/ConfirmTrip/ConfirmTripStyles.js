@@ -35,6 +35,10 @@ export const StyledModal = styled.div`
     @media only screen and (max-width: 575px) {
         width: 100%;
     }
+
+    &.ar {
+        direction: rtl;
+    }
 `;
 
 export const TitleWrapper = styled.div`
@@ -70,6 +74,8 @@ export const HeaderText = styled.h5`
 export const Type = styled.div`
     padding: 11px 36px;
     position: relative;
+    display: flex;
+    align-items: center;
 `;
 
 export const TypeOverlay = styled.div`
@@ -88,6 +94,10 @@ export const TypeIcon = styled.img`
     height: 18.37px;
     margin: 0 5px 0 0;
     object-fit: contain;
+
+    .confirm-trip.ar & {
+        margin: 0 0 0 5px;
+    }
 `;
 
 export const TypeText = styled.span`
@@ -116,6 +126,11 @@ export const CityWrapper = styled.div`
     align-items: center;
     justify-content: space-between;
     padding-right: 22px;
+
+    .confirm-trip.ar & {
+        padding-right: 0;
+        padding-left: 22px;
+    }
 `;
 
 export const Icon = styled.img`
@@ -123,6 +138,11 @@ export const Icon = styled.img`
     width: 24px;
     height: 24px;
     object-fit: contain;
+
+    .confirm-trip.ar & {
+        margin-right: 0;
+        margin-left: 10px;
+    }
 `;
 
 export const CityLabel = styled.label`
@@ -159,11 +179,18 @@ export const DetailsItem = styled.div`
     width: 155px;
     margin-right: 50px;
 
-    &:nth-of-type(2) {
+    .confirm-trip.ar & {
+        margin-right: 0;
+        margin-left: 50px;
+    }
+
+    &:nth-of-type(2),
+    .confirm-trip.ar &:nth-of-type(2) {
         margin: 0;
     }
 
-    &:last-of-type {
+    &:last-of-type,
+    .confirm-trip.ar &:last-of-type {
         margin: 0;
     }
 `;
@@ -209,7 +236,13 @@ export const Tag = styled.div`
     display: flex;
     align-items: center;
 
-    &:last-of-type {
+    .confirm-trip.ar & {
+        margin-right: 0;
+        margin-left: 25px;
+    }
+
+    &:last-of-type,
+    .confirm-trip.ar & {
         margin: 0;
     }
 `;
@@ -230,4 +263,9 @@ export const TagIcon = styled.img`
     width: 20px;
     height: 20px;
     object-fit: contain;
+
+    .confirm-trip.ar & {
+        margin-right: 0;
+        margin-left: 10px;
+    }
 `;

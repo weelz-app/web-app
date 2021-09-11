@@ -31,7 +31,7 @@ export default function App() {
         <Navbar lang={lang} changeLang={() => changeLang()} />
         <div className="content">
           <Switch>
-            <Route exact path="/" component={Home} />
+            <Route exact path="/" component={() => ( <Home lang={lang} /> )} />
             <Route path="/sign-in" component={SignIn} />
             <Route path="/email-verification" component={EmailVerification} />
             <Route path="/trip-details" component={Trip} />

@@ -43,4 +43,25 @@ export const StyledTextField = styled(TextField)`
   & .MuiInput-underline:before {
     display: none;
   }
+
+  .App.ar & .MuiFormLabel-root {
+    left: unset;
+    right: 15px;
+  }
+
+  .App.ar & .MuiInputBase-root {
+    padding-right: 0;
+  }
+
+  .App.ar & .MuiInputBase-input {
+    direction: ltr;
+    text-align: right;
+    padding-right: 14px;
+    padding-left: 0;
+  }
+
+  .App.ar & .MuiInputAdornment-root {
+    margin-left: 0;
+    margin-right: 8px;
+  }
 `;

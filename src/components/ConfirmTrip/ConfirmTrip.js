@@ -44,7 +44,7 @@ import LuggageImg from "../../icons/ic_luggage.png";
 import PetImg from "../../icons/pawprint.svg";
 import SmokingImg from "../../icons/smoking.svg";
 
-export default function ConfirmTrip({b}) {
+export default function ConfirmTrip({b, lang}) {
     const [booking, setBooking] = useState(b);
     const [isOpen, setIsOpen] = useState(false);
     const date = new Date(parseInt(booking.ts));
@@ -71,7 +71,7 @@ export default function ConfirmTrip({b}) {
                 disableEnforceFocus={true}
             >
                 <Fade in={isOpen}>
-                    <StyledModal>
+                    <StyledModal className={`confirm-trip ${lang === "ar" ? "ar" : ""}`}>
                         <TitleWrapper>
                             <Title>
                                 Does everything look right?

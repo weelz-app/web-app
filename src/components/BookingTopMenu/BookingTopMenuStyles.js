@@ -162,4 +162,8 @@ export const StyledCancelIcon = styled(CancelIcon)`
       width: 11px;
       height: 11px;
     }
+
+    .App.ar & {
+      margin: 0 0 0 5px;
+    }
 `;

@@ -19,6 +19,10 @@ export const Title = styled.h3`
     text-align: left;
     color: #000000;
     margin: 0;
+
+    .App.ar & {
+        text-align: right;
+    }
 `;
 
 export const SubTitle = styled.h4`
@@ -28,6 +32,10 @@ export const SubTitle = styled.h4`
     line-height: 10px;
     text-align: left;
     color: #bfbfbf;
+
+    .App.ar & {
+        text-align: right;
+    }
 `;
 
 export const StarRating = styled.div`

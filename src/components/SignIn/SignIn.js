@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import {
     MainWrapper,
@@ -10,7 +9,8 @@ import {
     Input,
     PhoneWrapper,
     PhoneText,
-    PhoneIcon
+    PhoneIcon,
+    StyledFormControlLabel
 } from "./SignInStyles"
 import EgyptIcon from "../../icons/egypt.png";
 import Btn from "../Btn/Btn"
@@ -55,7 +55,7 @@ export default function SignIn() {
                 </FormGroup>
             </div>
             <div style={{marginBottom: "20px"}}>
-                <FormControlLabel
+                <StyledFormControlLabel
                     label="Remember me"
                     sx={{
                         '& .MuiTypography-root': {

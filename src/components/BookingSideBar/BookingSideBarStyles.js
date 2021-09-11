@@ -21,12 +21,26 @@ export const Item = styled.div`
     }
 `;
 
+export const LinkWrapper = styled.div`
+    margin-top: 10px;
+
+    .App.ar & {
+        display: flex;
+        align-items: center;
+        min-height: 24px;
+    }
+`;
+
 export const Text = styled.span`
     margin: 1px 8px 0 0;
     font-family: Montserrat;
     font-size: 10px;
     line-height: 0.89;
     color: #000;
+
+    .App.ar & {
+        margin: 1px 0 0 8px;
+    }
 `;
 
 export const Link = styled.a`

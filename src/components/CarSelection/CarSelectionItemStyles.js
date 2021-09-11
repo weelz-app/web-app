@@ -52,6 +52,10 @@ export const Title = styled.h2`
   font-weight: 600;
   text-transform: uppercase;
   line-height: 0.85;
+
+  .App.ar & {
+    margin: 0 0 3px 33px;
+  }
 `;
 
 export const Description = styled.p`
@@ -71,13 +75,18 @@ export const CarImage = styled.img`
   margin-top: 40px;
 `;
 
-export const PriceWrapper = styled.section`
+export const PriceWrapper = styled.div`
   display: flex;
   align-items: center;
 `;
 
 export const WalletIconWrapper = styled.div`
   margin-right: 5.8px;
+
+  .App.ar & {
+    margin-right: 0;
+    margin-left: 5.8px;
+  }
 `;
 
 export const Price = styled.span`

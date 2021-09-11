@@ -16,6 +16,8 @@ import { LinkContainer } from 'react-router-bootstrap';
 
 import LogoIcon from "../../icons/Weelz-English-White.png";
 import LogoIconSecondary from "../../icons/en-logo-secondary.png";
+import ArLogoIconSecondary from "../../icons/ar_logo_primary.svg";
+import ArLogoIcon from "../../icons/ar_logo_white.svg";
 import CalenderIcon from "../../icons/calender.svg";
 import InformationIcon from "../../icons/information.svg";
 import AddNewIcon from "../../icons/AddNew.svg";
@@ -72,7 +74,7 @@ const NavBar = (props) => {
 
         <Nav.Link onClick={() => props.changeLang()}>
           <Icon className="md-hide" src={NotificationIcon} />
-          Language
+          {props.lang === "en" ? "عربي" : "English"}
         </Nav.Link>
       </Nav>
     </>
@@ -95,7 +97,7 @@ const NavBar = (props) => {
       <Nav>
         <NavbarLanguage onClick={() => props.changeLang()}>
           <span>
-            {props.lang === "en" ? "English" : "عربي"}
+            {props.lang === "en" ? "عربي" : "English"}
           </span>
         </NavbarLanguage>
       </Nav>
@@ -107,10 +109,10 @@ const NavBar = (props) => {
       <Container>
         <LinkContainer to="/">
           <NavBarContainer.Brand>
-            {isSecondary ? (
-              <Logo src={LogoIconSecondary} />
+            {props.lang === "en" ? (
+              <Logo src={isSecondary ? LogoIconSecondary : LogoIcon} />
             ) : (
-              <Logo src={LogoIcon} />
+              <Logo src={isSecondary ? ArLogoIconSecondary : ArLogoIcon} />
             )}
           </NavBarContainer.Brand>
         </LinkContainer>

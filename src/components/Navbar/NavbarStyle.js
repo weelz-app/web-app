@@ -140,12 +140,27 @@ export const NavBarContainer = styled(Navbar)`
       left: -45px;
       margin-top: 12px;
     }
+
+    .App.ar & .navbar-collapse {
+      left: -230px;
+      right: unset;
+      transition: left .3s ease-in-out;
+
+      &.show {
+        right: unset;
+        left: 0;
+      }
+    }
   }
 `;
 
 export const Logo = styled.img`
   object-fit: contain;
   width: 130px;
+
+  .App.ar & {
+    width: 75px;
+  }
 `;
 
 export const Icon = styled.img`
@@ -211,6 +226,10 @@ export const BarsWrapper = styled.div`
 
   &:hover .humbergur-bar {
     opacity: 0.7;
+  }
+
+  .App.ar & {
+    direction: ltr;
   }
 `;
 

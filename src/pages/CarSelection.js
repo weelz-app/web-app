@@ -62,6 +62,7 @@ const CarSelection = () => {
                     showBtn={true}
                     btnDisabled={carOptions.length > 0 ? false : true}
                     btnText="Request Car"
+                    btnOnClick={() => console.log("Request a car")}
                 />
                 <CarSelectionList carOptions={carOptions} />
             </Container>

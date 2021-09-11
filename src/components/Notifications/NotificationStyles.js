@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 
 export const MainWrapper = styled.div`
     margin-bottom:  ${({variant}) => variant === "notifications-page" ? "10px" : "7px"};
@@ -33,6 +34,11 @@ export const Icon = styled.img`
     height: ${({variant}) => variant === "notifications-page" ? "34px" : "29px"};
     margin-right: ${({variant}) => variant === "notifications-page" ? "9px" : "7px"};
     object-fit: contain;
+
+    .App.ar & {
+        margin-left: ${({variant}) => variant === "notifications-page" ? "9px" : "7px"};
+        margin-right: 0;
+    }
 `;
 
 export const Title = styled.h4`
@@ -50,4 +56,10 @@ export const Text = styled.p`
     font-size: 9px;
     line-height: 0.87;
     color: #939393;
+`;
+
+export const StyledArrowForwardIosIcon = styled(ArrowForwardIosIcon)`
+    .App.ar &.MuiSvgIcon-root {
+        transform: rotate(180deg);
+    }
 `;

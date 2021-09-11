@@ -30,6 +30,11 @@ export const Avatar = styled.img`
   object-fit: contain;
   border-radius: 50%;
   margin-right: 10px;
+
+  .App.ar & {
+    margin-left: 10px;
+    margin-right: 0;
+  }
 `;
 
 export const DriverRow = styled.div`
@@ -45,6 +50,10 @@ export const DriverName = styled.span`
   font-weight: 500;
   line-height: 0.82;
   color: #000;
+
+  .App.ar & {
+    margin: 0 0 0 5px;
+  }
 `;
 
 export const DriverNumber = styled.span`

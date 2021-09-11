@@ -59,6 +59,15 @@ export const Item = styled.div`
   &:last-of-type {
     margin-right: 0;
   }
+
+  .App.ar & {
+    margin-right: 0;
+    margin-left: 25px;
+
+    &:last-of-type {
+      margin-left: 0;
+    }
+  }
 `;
 
 export const Label = styled.span`
@@ -102,6 +111,10 @@ export const Icon = styled.img`
   height: 16.6px;
   margin: 0 10.9px 0 0;
   object-fit: contain;
+
+  .App.ar & {
+    margin: 0 0 0 10.9px;
+  }
 `;
 
 export const BodyLabel = styled.span`
@@ -112,6 +125,10 @@ export const BodyLabel = styled.span`
   font-weight: 500;
   line-height: 1;
   color: #474747;
+
+  .App.ar & {
+    margin: 0 0 0 45px;
+  }
 `;
 
 export const BodyText = styled.span`

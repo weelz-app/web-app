@@ -99,10 +99,10 @@ const MainWrapper = styled.div`
     margin: 28px 0;
 `;
 
-const Home = () => {
+const Home = ({lang}) => {
     return (
         <>
-            <ConfirmTrip b={booking} />
+            <ConfirmTrip b={booking} lang={lang} />
             <Container className="navbar-padding">
                 <MainWrapper>
                     <Row>

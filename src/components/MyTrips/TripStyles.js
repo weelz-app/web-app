@@ -16,6 +16,16 @@ export const MainWrapper = styled.div`
     }
 `;
 
+export const RightWrapper = styled.div`
+    margin-right: 10px;
+
+    .App.ar & {
+        margin-right: 0;
+        margin-left: 10px;
+        text-align: right;
+    }
+`;
+
 export const Type = styled.div`
     margin-bottom: 4.1px;
     font-family: Montserrat;
@@ -28,6 +38,11 @@ export const Type = styled.div`
 export const CityWrapper = styled.div`
     margin-bottom: 13.4px;
     margin-left: 7.2px;
+
+    .App.ar & {
+        margin-left: 0;
+        margin-right: 7.2px;
+    }
 `;
 
 export const CityLabel = styled.div`
@@ -55,6 +70,10 @@ export const Item = styled.div`
     &.item-center {
         align-items: center;
     }
+
+    .App.ar & {
+        text-align: right;
+    }
 `;
 
 export const Icon = styled.img`
@@ -62,6 +81,11 @@ export const Icon = styled.img`
     width: 13.2px;
     height: 13.2px;
     object-fit: contain;
+
+    .App.ar & {
+        margin-right: 0;
+        margin-left: 5.3px;
+    }
 `;
 
 export const StyledDate = styled.h4`
@@ -70,6 +94,10 @@ export const StyledDate = styled.h4`
     line-height: 1.33;
     color: #000;
     margin: 0;
+
+    .App.ar & {
+        direction: ltr;
+    }
 `;
 
 export const Time = styled.span`
@@ -90,6 +118,11 @@ export const DriversName = styled.h4`
     color: #000;
     margin: 0;
     margin-right: 10px;
+
+    .App.ar & {
+        margin-right: 0;
+        margin-left: 10px;
+    }
 `;
 
 export const StarsWrapper = styled.div`

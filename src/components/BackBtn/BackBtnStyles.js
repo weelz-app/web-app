@@ -19,6 +19,12 @@ export const Icon = styled.div`
     height: 19.1px;
     margin-right: 9.2px;
     line-height: 0;
+
+    .App.ar & {
+        margin-right: 0;
+        margin-left: 9.2px;
+        transform: rotate(180deg);
+    }
 `;
 
 export const Text = styled.span`

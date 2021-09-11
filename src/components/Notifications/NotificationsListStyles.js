@@ -32,6 +32,10 @@ export const ArrowIcon = styled(ArrowRightAltIcon)`
     &.MuiSvgIcon-root {
         font-size: 2rem;
     }
+
+    .App.ar &.MuiSvgIcon-root {
+        transform: rotate(180deg);
+    }
 `;
 
 export const Content = styled.div`
@@ -57,6 +61,11 @@ export const Content = styled.div`
             background-color: #000;
             outline: 0;
         }
+    }
+
+    .App.ar &.scrollable {
+        padding-right: 0;
+        padding-left: 15px;
     }
 `;
 

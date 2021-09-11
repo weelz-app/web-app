@@ -10,13 +10,6 @@ export const MainWrapper = styled.div`
   &:hover {
     opacity: 0.7;
   }
-
-  // &.sidebar__city-selector {
-  //   border-radius: 5px;
-  //   box-shadow: 0 2.5px 8px 0 rgb(0 0 0 / 5%);
-  //   background-color: #fff;
-  //   padding: 8px 15px 7.5px 14.4px;
-  // }
 `;
 
 export const Div = styled.div`
@@ -32,6 +25,14 @@ export const Icon = styled.div`
 
   .sidebar__city-selector & {
     margin: 0 15.9px 0.9px 0;
+  }
+
+  .App.ar & {
+    margin: 0 0 0 8.2px;
+  }
+
+  .App.ar .sidebar__city-selector & {
+    margin: 0 0 0.9px 15.9px;
   }
 `;
 
@@ -69,6 +70,10 @@ export const ArrowIcon = styled.div`
       margin: 5.8px 0 4.8px 30.6px;
     }
   }
+
+  .App.ar & {
+    margin-left: 0;
+  }
 `;
 
 export const DropdownMenu = styled.div`
@@ -105,6 +110,16 @@ export const DropdownMenu = styled.div`
     &:not(&.sidebar__city-selector__dropdown) {
       width: 120px;
     }
+  }
+
+  .App.ar & {
+    right: 0;
+    left: unset;
+  }
+
+  .App.ar &.sidebar__city-selector__dropdown {
+    right: 25px;
+    left: unset;
   }
 `;
 

@@ -35,6 +35,11 @@ export const City = styled.span`
     color: #bfbfbf;
 
     @media only screen and (max-width: 375px) {
+        margin-right: 0;
         margin-left: 0;
+    }
+
+    .App.ar & {
+      margin: 2.5px 10px 2.5px 0;
     }
 `;

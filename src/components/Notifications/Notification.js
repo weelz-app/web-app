@@ -1,5 +1,4 @@
 import React from 'react';
-import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 import InfoIcon from "../../icons/notification.png";
 import CheckIcon from "../../icons/confirmed.png";
 import PendingIcon from "../../icons/pending.png";
@@ -9,7 +8,8 @@ import {
     ContentWrapper,
     Icon,
     Title,
-    Text
+    Text,
+    StyledArrowForwardIosIcon
 } from "./NotificationStyles";
 
 export default function Notification({title, msg, type, variant, onClick}) {
@@ -30,7 +30,7 @@ export default function Notification({title, msg, type, variant, onClick}) {
                     <Text>{msg}</Text>
                 </div>
             </ContentWrapper>
-            <ArrowForwardIosIcon />
+            <StyledArrowForwardIosIcon />
         </MainWrapper>
     )
 }

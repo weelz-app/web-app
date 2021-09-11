@@ -15,6 +15,11 @@ export const MainWrapper = styled.div`
     @media only screen and (max-width: 576px) {
         width: 100%;
     }
+
+    .App.ar & {
+        left: 0;
+        right: unset;
+    }
 `;
 
 export const Image = styled.img`
@@ -28,8 +33,17 @@ export const Content = styled.div`
     bottom: 80px;
     left: 30px;
 
+    .App.ar & {
+        left: unset;
+        right: 30px;
+    }
+
     @media only screen and (max-width: 640px) {
         left: 14px;
+
+        .App.ar & {
+            right: 14px;
+        }
     }
 
     @media only screen and (max-width: 576px) {
@@ -57,11 +71,17 @@ export const IconBtn = styled.img`
         opacity: 0.8;
     }
 
+    .App.ar & {
+        margin: 0 0 0 7.5px;
+    }
+
     &:last-of-type {
         margin-right: 0;
+        margin-left: 0;
     }
 
     @media only screen and (max-width: 620px) {
+        margin-left: 0;
         margin-right: 0;
         display: inline-block;
 

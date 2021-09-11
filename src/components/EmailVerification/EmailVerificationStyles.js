@@ -7,25 +7,37 @@ export const MainWrapper = styled.div`
     z-index: 1;
     width: 44%;
 
+    .App.ar & {
+        padding-right: 0;
+        padding-left: 50px;
+    }
+
     @media only screen and (max-width: 991px) {
         width: 57%;
     }
 
     @media only screen and (max-width: 767px) {
         padding-right: 15px;
+
+        .App.ar & {
+            padding-left: 15px;
+        }
     }
 
     @media only screen and (max-width: 576px) {
-        position: relative;
-        z-index: 1;
-        background-color: #fff;
-        padding: 40px 32px;
-        top: 80px;
-        border-radius: 13pt;
-        flex-direction: column;
-        display: flex;
-        width: 340px;
-        margin: 0 auto;
+        .App.ar &,
+        & {
+            position: relative;
+            z-index: 1;
+            background-color: #fff;
+            padding: 40px 32px;
+            top: 80px;
+            border-radius: 13pt;
+            flex-direction: column;
+            display: flex;
+            width: 340px;
+            margin: 0 auto;
+        }
     }
 
     @media only screen and (max-width: 365px) {
@@ -63,6 +75,10 @@ export const PhoneIcon = styled.img`
     @media only screen and (max-width: 767px) {
         width: 65.5px;
         height: 65.5px;
+    }
+
+    .App.ar & {
+        margin: 0 0 0 15px;
     }
 `;
 
@@ -137,13 +153,22 @@ export const VerificationInputStyled = styled(VerificationInput)`
         justify-content: center;
         box-shadow: 0 1.5px 7.5px 0 rgba(0, 195, 225, 0.05);
     }
-    
+
     & .vi__character:first-child {
         margin-left: 0;
     }
-
+    
     .character--selected {
         border: 1px solid #00c3e1;
+    }
+
+    .App.ar & .vi__character {
+        margin-left: 0;
+        margin-right: 8px;
+
+        &:first-child {
+            margin-right: 0;
+        }
     }
 
     @media only screen and (max-width: 576px) {
@@ -154,6 +179,10 @@ export const VerificationInputStyled = styled(VerificationInput)`
             border-radius: 5px;
             margin-left: 12px;
             font-size: 18px;
+        }
+
+        .App.ar & .vi__character {
+            margin-right: 12px;
         }
     }
 
@@ -181,6 +210,10 @@ export const Resend = styled.a`
     color: #584995;
     cursor: pointer;
     text-decoration: none;
+
+    .App.ar & {
+        margin: 0 0 0 15px;
+    }
 `;
 
 export const TimeLeft = styled.span`
