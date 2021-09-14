@@ -41,6 +41,7 @@ export const NavBarContainer = styled(Navbar)`
     margin-top: 12px;
     left: -51px;
     width: 162.89px;
+    padding: 0;
   }
 
   &.navbar-secondary {
@@ -77,9 +78,10 @@ export const NavBarContainer = styled(Navbar)`
   }
 
   .dropdown-item:hover,
-  .dropdown-item:active {
-    color: #fff;
-    background-color: #347bb4;
+  .dropdown-item:active,
+  .dropdown-item:focus {
+    color: #347bb4;
+    background-color: transparent;
   }
 
   @media only screen and (max-width: 576px) {
