@@ -62,10 +62,10 @@ export default function Trip() {
                         btnOnClick={() => setIsOpen(val => !val)}
                     />
                     <Row>
-                        <Col xs={12} sm={6} lg={5}>
+                        <Col xs={12} md={6} lg={5}>
                             <TripSummary booking={booking} />
                         </Col>
-                        <Col sm={6} lg={4} className="d-none d-sm-block">
+                        <Col sm={12} md={6} lg={4} className="d-none d-sm-block">
                             <TripDriver driver={booking.driver} />
                         </Col>
                         <Col lg={3} className="d-none d-lg-block">

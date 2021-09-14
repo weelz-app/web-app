@@ -5,8 +5,9 @@ export const NavBarContainer = styled(Navbar)`
   background: linear-gradient(to left, #00c3e1, #584995);
   padding: 20px 0;
   z-index: 10000;
-  position: fixed;
-  width: 100%;
+  position: sticky;
+  top: 0;
+  left: 0;
 
   & .navbar-brand {
     margin-right: 30px;
@@ -75,6 +76,12 @@ export const NavBarContainer = styled(Navbar)`
     display: unset;
   }
 
+  .dropdown-item:hover,
+  .dropdown-item:active {
+    color: #fff;
+    background-color: #347bb4;
+  }
+
   @media only screen and (max-width: 576px) {
     &.navbar-secondary {
       background: #fff;
@@ -125,13 +132,7 @@ export const NavBarContainer = styled(Navbar)`
       padding: .5rem 1rem;
 
       &:hover {
-        color: #1e2125;
-        background-color: #e9ecef;
-      }
-      &.active, &:active {
-        color: #fff;
-        text-decoration: none;
-        background-color: #0d6efd;
+        color: rgb(255 255 255 / 80%);
       }
     }
 
@@ -145,6 +146,7 @@ export const NavBarContainer = styled(Navbar)`
       left: -230px;
       right: unset;
       transition: left .3s ease-in-out;
+      top: 92px;
 
       &.show {
         right: unset;

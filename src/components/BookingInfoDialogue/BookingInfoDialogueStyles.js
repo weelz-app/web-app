@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Div = styled.div`
   &:not(&.sidebar__booking-info) {
-    width: 253px;
+    width: 245px;
     padding: 0 21.3px 0 21px;
     border-radius: 5px;
     box-shadow: 0 2.5px 8px 0 rgba(0, 0, 0, 0.05);

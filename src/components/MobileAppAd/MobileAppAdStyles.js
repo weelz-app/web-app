@@ -11,7 +11,7 @@ export const MainWrapper = styled.div`
     align-items: center;
 
     &.mobile-image {
-        padding: 20px 37.5px 160px 15px;
+        padding: 20px 37.5px 20px 15px;
         margin-top: 0;
         height: 100%;
         background-image: url(${MobileImage});
@@ -19,6 +19,7 @@ export const MainWrapper = styled.div`
         background-repeat: no-repeat;
         background-size: cover;
         border-radius: 5px;
+        align-items: flex-start;
     }
 `;
 
@@ -40,7 +41,7 @@ export const Content = styled.div`
 export const Title = styled.h4`
     margin-bottom: 3px;
     font-family: Montserrat;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
     line-height: 1.33;
     color: #000;
@@ -48,7 +49,7 @@ export const Title = styled.h4`
 
 export const Text = styled.span`
     font-family: Montserrat;
-    font-size: 11px;
+    font-size: 13px;
     font-weight: 500;
     line-height: 1.67;
     color: #797979;
@@ -57,8 +58,7 @@ export const Text = styled.span`
 `;
 
 export const Icon = styled.img`
-    width: 114.5px;
-    height: 33.9px;
+    width: 124.5px;
     margin-bottom: 4px;
     object-fit: contain;
     cursor: pointer;

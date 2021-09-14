@@ -10,19 +10,19 @@
   position: relative;
 }
 
-.navbar-padding {
+/* .navbar-padding {
   padding-top: 82.5px;
 }
 
 .navbar-padding.with-bar {
   padding-top: 92.5px;
-}
-
+} */
+/* 
 @media only screen and (max-width: 991px) {
   .navbar-padding.with-bar {
     padding-top: 82.5px;
   }
-}
+} */
 
 .App.ar {
   direction: rtl;

@@ -4,6 +4,7 @@ export const MainWrapper = styled.div`
   position: relative;
   width: 100%;
   height: 260px;
+  margin-bottom: 10px;
 `;
 
 export const CarSelectionInput = styled.input`
@@ -25,7 +26,6 @@ export const CarSelectionItemWrapper = styled.label`
   );
   overflow: hidden;
   position: relative;
-  margin-bottom: 10px;
   border: solid 2.5px rgba(0, 195, 225, 0.05);
   cursor: pointer;
   display: flex;

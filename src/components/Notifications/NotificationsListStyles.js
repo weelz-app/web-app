@@ -77,6 +77,6 @@ export const ContentWrapper = styled.div`
     height: ${({height}) => height};
 
     &.scrollable {
-        max-height: 312px;
+        max-height: 316px;
     }
 `;
