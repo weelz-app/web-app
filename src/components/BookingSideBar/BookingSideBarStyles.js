@@ -21,19 +21,39 @@ export const Item = styled.div`
     }
 `;
 
+export const LinkWrapper = styled.div`
+    margin-top: 10px;
+
+    .App.ar & {
+        display: flex;
+        align-items: center;
+        min-height: 24px;
+    }
+`;
+
 export const Text = styled.span`
     margin: 1px 8px 0 0;
     font-family: Montserrat;
-    font-size: 9px;
+    font-size: 10px;
     line-height: 0.89;
     color: #000;
+
+    .App.ar & {
+        margin: 1px 0 0 8px;
+    }
 `;
 
 export const Link = styled.a`
     font-family: Montserrat;
-    font-size: 10px;
+    font-size: 11px;
     font-weight: 600;
     line-height: 0.8;
     color: #2f1b7a;
     cursor: pointer;
+    text-decoration: none;
+    border-bottom: 1px dashed #000;
+
+    &:hover {
+        border-color: #0a58ca;
+    }
 `;

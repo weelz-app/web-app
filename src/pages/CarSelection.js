@@ -55,13 +55,14 @@ const b = {
 
 const CarSelection = () => {
     return (
-        <div>
+        <div className="navbar-padding with-bar">
             <BookingTopMenu page="Car Selection" b={b} />
             <Container>
                 <ToolBar
                     showBtn={true}
                     btnDisabled={carOptions.length > 0 ? false : true}
                     btnText="Request Car"
+                    btnOnClick={() => console.log("Request a car")}
                 />
                 <CarSelectionList carOptions={carOptions} />
             </Container>

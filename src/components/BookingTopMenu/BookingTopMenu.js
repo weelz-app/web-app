@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect } from "react";
+import React, { useState, useCallback } from "react";
 import {
   MainWrapper,
   Div,
@@ -35,35 +35,6 @@ export default function BookingTopMenu({ b, page }) {
   const toggleBookingInfo = () => {
     document.getElementById("booking-info").classList.toggle("active");
   };
-
-  useEffect(() => {
-    const citySelectors = document.querySelectorAll(".city-selector");
-    const dropdowns = document.querySelectorAll(".city-dropdown");
-
-    const toggleCitySelectorDropdown = (citySelector) => {
-      if (citySelector.nextElementSibling.classList.contains("active")) {
-        citySelector.nextElementSibling.classList.remove("active")
-      } else {
-        dropdowns.forEach((item) => {
-          item.classList.remove("active");
-        });
-  
-        setTimeout(() => {
-          citySelector.nextElementSibling.classList.add("active");
-        }, 400);
-      }
-    }
-
-    citySelectors.forEach((citySelector) => {
-      citySelector.addEventListener("click", () => toggleCitySelectorDropdown(citySelector));
-    });
-
-    return function cleanUp() {
-      citySelectors.forEach((citySelector) => {
-        citySelector.removeEventListener("click", () => toggleCitySelectorDropdown(citySelector));
-      });
-    }
-  }, []);
 
   return (
     <MainWrapper>
@@ -106,8 +77,8 @@ export default function BookingTopMenu({ b, page }) {
                         focusable="false"
                         data-prefix="fas"
                         data-icon="chevron-down"
-                        height="5.9"
-                        width="8.9"
+                        height="9.9"
+                        width="12.9"
                         className="svg-inline--fa fa-chevron-down fa-w-14"
                         role="img"
                         viewBox="0 0 448 512"

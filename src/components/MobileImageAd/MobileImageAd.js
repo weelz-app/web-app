@@ -15,7 +15,7 @@ export default function MobileImageAd() {
         <MainWrapper className="mobile-image-ad">
             <Image src={MobileAd} />
             <Content>
-                <Title>Download Weelz mobile app</Title>
+                <Title>Download Weelz <br /> mobile app</Title>
                 <div>
                     <IconBtn src={Android} />
                     <IconBtn src={Apple} />

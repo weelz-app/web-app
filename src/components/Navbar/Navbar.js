@@ -8,12 +8,16 @@ import {
   NavBarContainer,
   NavbarUser,
   NavbarLinksDiv,
-  NavbarLanguage
+  NavbarLanguage,
+  BarsWrapper,
+  BarIcon
 } from "./NavbarStyle";
 import { LinkContainer } from 'react-router-bootstrap';
 
 import LogoIcon from "../../icons/Weelz-English-White.png";
 import LogoIconSecondary from "../../icons/en-logo-secondary.png";
+import ArLogoIconSecondary from "../../icons/ar_logo_primary.svg";
+import ArLogoIcon from "../../icons/ar_logo_white.svg";
 import CalenderIcon from "../../icons/calender.svg";
 import InformationIcon from "../../icons/information.svg";
 import AddNewIcon from "../../icons/AddNew.svg";
@@ -30,21 +34,18 @@ const NavBar = (props) => {
         <LinkContainer to="/trips">
           <Nav.Link>
             <Icon className="md-hide" src={CalenderIcon} />
-            {/* <Icon  className="lg-hide" src={BlackCalenderIcon} /> */}
             Trips
           </Nav.Link>
         </LinkContainer>
         <LinkContainer to="/about">
           <Nav.Link>
             <Icon className="md-hide" src={InformationIcon} />
-            {/* <Icon  className="lg-hide" src={BlackInformationIcon} /> */}
             About
           </Nav.Link>
         </LinkContainer>
         <LinkContainer to="/add-trip">
           <Nav.Link>
             <Icon className="md-hide" src={AddNewIcon} />
-            {/* <Icon  className="lg-hide" src={BlackAddNewIcon} /> */}
             New Trip
           </Nav.Link>
         </LinkContainer>
@@ -52,27 +53,28 @@ const NavBar = (props) => {
       <Nav>
         <NavbarUser>
           <Avatar className="d-xl-flex d-lg-flex" />
+          <span className="d-lg-none d-flex nav-link">
+            {props.username ? props.username : "username"}
+          </span>
+
           <NavDropdown
-            className="d-xl-flex d-lg-flex"
+            className="d-none d-lg-flex"
             title={props.username ? props.username : "username"}
             id="collasible-nav-dropdown"
           >
-            <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.2">
-              Another action
-            </NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-            <NavDropdown.Divider />
-            <NavDropdown.Item href="#action/3.4">
-              Separated link
-            </NavDropdown.Item>
+            <NavDropdown.Item href="#action/3.1">Logout</NavDropdown.Item>
           </NavDropdown>
         </NavbarUser>
 
-        <Nav.Link eventKey={2} href="#memes">
+        <div className="d-lg-none d-block">
+          <Nav.Link href="#action/3.1">
+            Logout
+          </Nav.Link>
+        </div>
+
+        <Nav.Link onClick={() => props.changeLang()}>
           <Icon className="md-hide" src={NotificationIcon} />
-          {/* <Icon className="lg-hide" src={BlackNotificationIcon} /> */}
-          Language
+          {props.lang === "en" ? "عربي" : "English"}
         </Nav.Link>
       </Nav>
     </>
@@ -93,22 +95,10 @@ const NavBar = (props) => {
         </LinkContainer>
       </Nav>
       <Nav>
-        <NavbarLanguage>
-          <NavDropdown
-            className="d-xl-flex d-lg-flex"
-            title={props.language ? props.language : "عربي"}
-            id="collasible-nav-dropdown"
-          >
-            <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.2">
-              Another action
-            </NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-            <NavDropdown.Divider />
-            <NavDropdown.Item href="#action/3.4">
-              Separated link
-            </NavDropdown.Item>
-          </NavDropdown>
+        <NavbarLanguage onClick={() => props.changeLang()}>
+          <span>
+            {props.lang === "en" ? "عربي" : "English"}
+          </span>
         </NavbarLanguage>
       </Nav>
     </>
@@ -119,15 +109,21 @@ const NavBar = (props) => {
       <Container>
         <LinkContainer to="/">
           <NavBarContainer.Brand>
-            {isSecondary ? (
-              <Logo src={LogoIconSecondary} />
+            {props.lang === "en" ? (
+              <Logo src={isSecondary ? LogoIconSecondary : LogoIcon} />
             ) : (
-              <Logo src={LogoIcon} />
+              <Logo src={isSecondary ? ArLogoIconSecondary : ArLogoIcon} />
             )}
           </NavBarContainer.Brand>
         </LinkContainer>
         <NavbarLinksDiv>
-          <NavBarContainer.Toggle aria-controls="responsive-navbar-nav" />
+          <NavBarContainer.Toggle aria-controls="responsive-navbar-nav">
+            <BarsWrapper>
+              <BarIcon className="humbergur-bar" />
+              <BarIcon className="humbergur-bar" />
+              <BarIcon className="humbergur-bar" />
+            </BarsWrapper>
+          </NavBarContainer.Toggle>
           <NavBarContainer.Collapse id="responsive-navbar-nav">
             {auth ? authLinks : guestLinks}
           </NavBarContainer.Collapse>

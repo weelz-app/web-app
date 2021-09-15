@@ -14,6 +14,10 @@ export const SelectedNumber = styled.span`
   line-height: 1;
   color: #000;
   width: 10px;
+
+  .App.ar & {
+    margin: 4px 0 4px 9.4px;
+  }
 `;
 
 export const ButtonsWrapper = styled.div`

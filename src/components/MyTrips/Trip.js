@@ -16,8 +16,10 @@ import {
     Car,
     StyledDate,
     Time,
-    Status
+    Status,
+    RightWrapper
 } from "./TripStyles";
+import {getMonthName} from "../../utils/index";
 
 import Calendar from "../../icons/calendar.png"
 import SteeringWheel from "../../icons/steering-wheel.png"
@@ -26,20 +28,14 @@ import CheckMark from "../../icons/check-mark.png"
 
 export default function Trip({trip}) {
     const date = new Date(parseInt(trip.ts));
-    const hours = date.getHours().toString().length === 1 ? "0" + date.getHours() : date.getHours();
+    let hours = date.getHours() > 12 ? date.getHours() - 12 : date.getHours();
+    hours = hours.toString().length === 2 ? hours : "0" + hours;
     const minutes = date.getMinutes().toString().length === 1 ? "0" + date.getMinutes() : date.getMinutes();
     const ampm = date.getHours() >= 12 ? 'PM' : 'AM';
 
-    const getMonthName = num => {
-        const monthNames = ["January", "February", "March", "April", "May", "June",
-            "July", "August", "September", "October", "November", "December"
-        ];
-        return monthNames[num];
-    }
-
     return (
         <MainWrapper>
-            <div style={{marginRight: "10px"}}>
+            <RightWrapper>
                 <Type>{trip.type}</Type>
                 <CityWrapper>
                     <CityLabel>From</CityLabel>
@@ -49,7 +45,7 @@ export default function Trip({trip}) {
                     <CityLabel>To</CityLabel>
                     <CityName>{trip.to}</CityName>
                 </CityWrapper>
-            </div>
+            </RightWrapper>
             <div>
                 <Item>
                     <Icon src={Calendar} />
@@ -71,11 +67,11 @@ export default function Trip({trip}) {
                         <Car>{trip.car}</Car>
                     </div>
                 </Item>
-                <Item>
+                <Item className="item-center">
                     <Icon src={Wallet} />
                     <Price>{trip.price + " " + trip.currency}</Price>
                 </Item>
-                <Item>
+                <Item className="item-center">
                     <Icon src={CheckMark} />
                     <Status>{trip.status}</Status>
                 </Item>

@@ -3,9 +3,66 @@
   src: local('Montserrat'), url(fonts/Montserrat-SemiBold.ttf) format('truetype');
 }
 
-#root {
+.App {
   background-color: #f6f6f6;
   height: 100vh;
   overflow: auto;
   position: relative;
+}
+
+/* .navbar-padding {
+  padding-top: 82.5px;
+}
+
+.navbar-padding.with-bar {
+  padding-top: 92.5px;
+} */
+/* 
+@media only screen and (max-width: 991px) {
+  .navbar-padding.with-bar {
+    padding-top: 82.5px;
+  }
+} */
+
+.App.ar {
+  direction: rtl;
+}
+
+.App.ar .navbar .navbar-brand {
+  margin-right: 0;
+  margin-left: 30px;
+}
+
+.App.ar .navbar .navbar-nav.me-auto {
+  margin-left: auto;
+  margin-right: unset !important;
+}
+
+.App.ar .navbar .nav-link {
+  margin-right: 0;
+  margin-left: 7px;
+}
+
+.App.ar .navbar .nav-link img {
+  margin-right: 0;
+  margin-left: 7px;
+}
+
+.App.ar .navbar .dropdown-toggle::after {
+  margin-left: 0;
+  margin-right: .255em;
+}
+
+.App.ar .navbar .navbar-nav .dropdown-menu {
+  left: 0;
+  right: -51px;
+  text-align: right;
+}
+
+.App.ar .react-multi-carousel-list {
+  direction: ltr;
+}
+
+.App.ar .react-multi-carousel-item {
+  direction: rtl;
 }

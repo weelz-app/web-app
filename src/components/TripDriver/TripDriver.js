@@ -6,66 +6,76 @@ import {
   SectionTitle,
   DriverWraper,
   Avatar,
-  DriverRow,
+  DriverIcons,
+  DriverIcon,
+  StyledWhatsAppIcon,
+  StyledPhoneIcon,
+  DriverText,
   DriverName,
   DriverNumber,
-  RatingWrapper,
-  RatingIcon,
-  RatingText,
+  CarWrapper,
   CarRow,
-  CarLogo,
+  CarLabel,
   CarName,
-  CarImages,
   CarImageWrapper,
   CarImage,
   StyledCarousel
 } from './TripDriverStyle';
 
 function TripDriver({driver}) {
-  const responsive = {
-    all: {
-      breakpoint: { max: 3000, min: 0 },
-      items: 2,
-      partialVisibilityGutter: 30
-    }
-  };
-
   return (
     <MainWrapper>
-      <SectionTitle>Driver Details</SectionTitle>
+      <SectionTitle>Driver Information</SectionTitle>
       <DriverWraper>
         <Avatar src={driver.avatar} />
-        <div style={{
-          width: "100%",
-          display: "flex",
-          flexDirection: "column"
-        }}>
-          <DriverRow>
+          <DriverText>
             <DriverName>{driver.name}</DriverName>
-            <RatingWrapper>
-              <RatingIcon />
-              <RatingText>{driver.rating}</RatingText>
-            </RatingWrapper>
-          </DriverRow>
-          <DriverNumber>{driver.number}</DriverNumber>
-        </div>
+            <DriverNumber>{driver.number}</DriverNumber>
+          </DriverText>
+          <DriverIcons>
+            <DriverIcon>
+              <StyledWhatsAppIcon />
+            </DriverIcon>
+            <DriverIcon>
+              <StyledPhoneIcon />
+            </DriverIcon>
+          </DriverIcons>
       </DriverWraper>
-      <SectionTitle>Car Details</SectionTitle>
-      <div>
-        <CarRow>
-          <div>
-            <CarLogo src={driver.car.logo} />
-            <CarName>{driver.car.name}</CarName>
-          </div>
-          <div>
-            <LicensePlate number={driver.car.license} width='90' />
-          </div>
-        </CarRow>
-        <CarImages>
+      <SectionTitle>Car Information</SectionTitle>
+      <CarWrapper>
+        <div>
           <StyledCarousel
-            responsive={responsive}
-            centerMode={true}
+            responsive={{
+              desktop: {
+                breakpoint: {
+                  max: 3000,
+                  min: 1024
+                },
+                items: 1
+              },
+              mobile: {
+                breakpoint: {
+                  max: 464,
+                  min: 0
+                },
+                items: 1
+              },
+              tablet: {
+                breakpoint: {
+                  max: 1024,
+                  min: 464
+                },
+                items: 1
+              }
+            }}
+            additionalTransfrom={0}
+            centerMode={false}
+            arrows={false}
+            showDots={true}
             itemClass="trip-slide"
+            slidesToSlide={1}
+            swipeable
+            draggable
           >
             {driver.car.images.map(carImg => (
               <CarImageWrapper>
@@ -73,8 +83,17 @@ function TripDriver({driver}) {
               </CarImageWrapper>
             ))}
           </StyledCarousel>
-        </CarImages>
-      </div>
+        </div>
+        <CarRow>
+          <div>
+            <CarLabel>Car</CarLabel>
+            <CarName>{driver.car.name}</CarName>
+          </div>
+          <div>
+            <LicensePlate number={driver.car.license} width='80' />
+          </div>
+        </CarRow>
+      </CarWrapper>
     </MainWrapper>
   
   );

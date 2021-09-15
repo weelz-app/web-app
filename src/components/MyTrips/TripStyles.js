@@ -7,12 +7,22 @@ export const MainWrapper = styled.div`
     background-color: #eefafc;
     border-radius: 5px;
     display: flex;
-    align-items: baseline;
+    align-items: flex-start;
     justify-content: space-between;
     cursor: pointer;
 
     &:hover {
         background-color: #e5edef;
+    }
+`;
+
+export const RightWrapper = styled.div`
+    margin-right: 10px;
+
+    .App.ar & {
+        margin-right: 0;
+        margin-left: 10px;
+        text-align: right;
     }
 `;
 
@@ -28,6 +38,11 @@ export const Type = styled.div`
 export const CityWrapper = styled.div`
     margin-bottom: 13.4px;
     margin-left: 7.2px;
+
+    .App.ar & {
+        margin-left: 0;
+        margin-right: 7.2px;
+    }
 `;
 
 export const CityLabel = styled.div`
@@ -49,15 +64,28 @@ export const CityName = styled.div`
 
 export const Item = styled.div`
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     margin-bottom: 8px;
+
+    &.item-center {
+        align-items: center;
+    }
+
+    .App.ar & {
+        text-align: right;
+    }
 `;
 
 export const Icon = styled.img`
     margin-right: 5.3px;
-    width: 11.2px;
-    height: 11.2px;
+    width: 13.2px;
+    height: 13.2px;
     object-fit: contain;
+
+    .App.ar & {
+        margin-right: 0;
+        margin-left: 5.3px;
+    }
 `;
 
 export const StyledDate = styled.h4`
@@ -66,6 +94,10 @@ export const StyledDate = styled.h4`
     line-height: 1.33;
     color: #000;
     margin: 0;
+
+    .App.ar & {
+        direction: ltr;
+    }
 `;
 
 export const Time = styled.span`
@@ -86,6 +118,11 @@ export const DriversName = styled.h4`
     color: #000;
     margin: 0;
     margin-right: 10px;
+
+    .App.ar & {
+        margin-right: 0;
+        margin-left: 10px;
+    }
 `;
 
 export const StarsWrapper = styled.div`

@@ -1,5 +1,5 @@
-import React, {useCallback, useState, useEffect} from 'react';
-import { Title, Item, Link, Text } from "./BookingSideBarStyles";
+import React, {useCallback, useState} from 'react';
+import { Title, Item, Link, Text, LinkWrapper } from "./BookingSideBarStyles";
 import CitySelector from "../CitySelector/CitySelector";
 import DateTimePickerCustimzed from "../DateTimePicker/DateTimePicker";
 import BookingInfoDialogue from "../BookingInfoDialogue/BookingInfoDialogue";
@@ -12,35 +12,6 @@ export default function BookingSideBar({b}) {
     const handleBooking = useCallback((newVal) => {
         setBooking(oldB => ({ ...oldB, ...newVal }));
     }, [])
-
-    useEffect(() => {
-        const citySelectors = document.querySelectorAll(".city-selector");
-        const dropdowns = document.querySelectorAll(".city-dropdown");
-    
-        const toggleCitySelectorDropdown = (citySelector) => {
-          if (citySelector.nextElementSibling.classList.contains("active")) {
-            citySelector.nextElementSibling.classList.remove("active")
-          } else {
-            dropdowns.forEach((item) => {
-              item.classList.remove("active");
-            });
-      
-            setTimeout(() => {
-              citySelector.nextElementSibling.classList.add("active");
-            }, 400);
-          }
-        }
-    
-        citySelectors.forEach((citySelector) => {
-          citySelector.addEventListener("click", () => toggleCitySelectorDropdown(citySelector));
-        });
-    
-        return function cleanUp() {
-          citySelectors.forEach((citySelector) => {
-            citySelector.removeEventListener("click", () => toggleCitySelectorDropdown(citySelector));
-          });
-        }
-      }, []);
 
     return (
         <>
@@ -76,10 +47,10 @@ export default function BookingSideBar({b}) {
                 />
             </Item>
             <Btn text="New Trip!" className="btn--block" />
-            <div style={{marginTop: "10px"}}>
+            <LinkWrapper>
                 <Text>City not listed?</Text>
                 <Link>Let us know</Link>
-            </div>
+            </LinkWrapper>
         </>
     )
 }

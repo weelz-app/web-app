@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Div = styled.div`
   &:not(&.sidebar__booking-info) {
-    width: 253px;
+    width: 245px;
     padding: 0 21.3px 0 21px;
     border-radius: 5px;
     box-shadow: 0 2.5px 8px 0 rgba(0, 0, 0, 0.05);
@@ -41,17 +41,26 @@ export const ItemDetails = styled.div`
 `;
 
 export const Icon = styled.div`
-    width: 13.6px;
-    height: 13.6px;
+    width: 15.6px;
+    height: 15.6px;
     line-height: 0;
     margin-right: 4px;
+
+    .App.ar & {
+      margin-right: 0;
+      margin-left: 4px;
+    }
 `;
 
 export const Title = styled.h3`
   margin: 0.5px 0 1.1px 10.9px;
   font-family: Montserrat;
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 500;
   line-height: 1;
   color: #474747;
+
+  .App.ar & {
+    margin: 0.5px 10.9px 1.1px 0;
+  }
 `;

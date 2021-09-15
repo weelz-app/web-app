@@ -41,7 +41,7 @@ export const Hide = styled.div`
   display: flex;
   align-items: center;
 
-  @media only screen and (max-width: 760px) {
+  @media only screen and (max-width: 991px) {
     &.item-btn {
       display: none;
     }
@@ -79,7 +79,6 @@ export const Btn = styled.button`
 
 export const BtnText = styled.span`
   width: 54px;
-  margin: 0 16.5px 0 0;
   font-family: Montserrat;
   font-size: 10px;
   font-weight: 600;
@@ -88,8 +87,8 @@ export const BtnText = styled.span`
 `;
 
 export const BtnIcon = styled.div`
-  width: 8.9px;
-  height: 5.9px;
+  width: 12.9px;
+  height: 9.9px;
   line-height: 0;
 `;
 
@@ -162,5 +161,9 @@ export const StyledCancelIcon = styled(CancelIcon)`
     &.MuiSvgIcon-root {
       width: 11px;
       height: 11px;
+    }
+
+    .App.ar & {
+      margin: 0 0 0 5px;
     }
 `;

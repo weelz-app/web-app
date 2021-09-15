@@ -1,9 +1,23 @@
 import styled from "styled-components";
 
-export const CarSelectionItemWrapper = styled.section`
-  padding: 26.5px 17.5px;
+export const MainWrapper = styled.div`
+  position: relative;
   width: 100%;
   height: 260px;
+  margin-bottom: 10px;
+`;
+
+export const CarSelectionInput = styled.input`
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+`;
+
+export const CarSelectionItemWrapper = styled.label`
+  padding: 26.5px 17.5px;
+  width: 100%;
+  height: 100%;
   border-radius: 5px;
   background-image: linear-gradient(
     to bottom,
@@ -12,7 +26,6 @@ export const CarSelectionItemWrapper = styled.section`
   );
   overflow: hidden;
   position: relative;
-  margin-bottom: 10px;
   border: solid 2.5px rgba(0, 195, 225, 0.05);
   cursor: pointer;
   display: flex;
@@ -39,6 +52,10 @@ export const Title = styled.h2`
   font-weight: 600;
   text-transform: uppercase;
   line-height: 0.85;
+
+  .App.ar & {
+    margin: 0 0 3px 33px;
+  }
 `;
 
 export const Description = styled.p`
@@ -58,13 +75,18 @@ export const CarImage = styled.img`
   margin-top: 40px;
 `;
 
-export const PriceWrapper = styled.section`
+export const PriceWrapper = styled.div`
   display: flex;
   align-items: center;
 `;
 
 export const WalletIconWrapper = styled.div`
   margin-right: 5.8px;
+
+  .App.ar & {
+    margin-right: 0;
+    margin-left: 5.8px;
+  }
 `;
 
 export const Price = styled.span`

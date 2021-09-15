@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import FormControlLabel from '@material-ui/core/FormControlLabel';
 
 export const MainWrapper = styled.div`
     padding: 135px 0 50.1px 0;
@@ -24,7 +25,6 @@ export const MainWrapper = styled.div`
 `;
 
 export const Title = styled.h2`
-    width: 169px;
     margin-bottom: 7px;
     font-family: Montserrat;
     font-size: 20px;
@@ -36,10 +36,11 @@ export const Title = styled.h2`
 export const Text = styled.p`
     margin-bottom: 17.6px;
     font-family: Montserrat;
-    font-size: 11px;
+    font-size: 12px;
     line-height: 1.36;
     color: #828282;
-    width: 224.5px;
+    width: 260.5px;
+    display: inline-block;
 `;
 
 export const FormGroup = styled.div`
@@ -64,7 +65,7 @@ export const Label = styled.label`
 `;
 
 export const Input = styled.input`
-    height: 30px;
+    height: 40px;
     width: 100%;
     padding: 10px 8px;
     border-radius: 2.5px;
@@ -75,12 +76,17 @@ export const Input = styled.input`
 
 export const PhoneWrapper = styled.div`
     margin-right: 7.5px;
-    height: 30px;
+    height: 40px;
     padding: 2px 12px;
     border-radius: 2.5px;
     background-color: #f1f1f1;
     display: flex;
     align-items: center;
+
+    .App.ar & {
+        margin-right: 0;
+        margin-left: 7.5px;
+    }
 `;
 
 export const PhoneIcon = styled.img`
@@ -97,4 +103,10 @@ export const PhoneText = styled.span`
     line-height: 1.18;
     letter-spacing: -0.26px;
     color: #bfbfbf;
+`;
+
+export const StyledFormControlLabel = styled(FormControlLabel)`
+    .App.ar &.MuiFormControlLabel-root {
+        margin-right: 0;
+    }
 `;

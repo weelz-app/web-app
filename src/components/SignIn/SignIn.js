@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import {
     MainWrapper,
@@ -10,7 +9,8 @@ import {
     Input,
     PhoneWrapper,
     PhoneText,
-    PhoneIcon
+    PhoneIcon,
+    StyledFormControlLabel
 } from "./SignInStyles"
 import EgyptIcon from "../../icons/egypt.png";
 import Btn from "../Btn/Btn"
@@ -26,7 +26,7 @@ export default function SignIn() {
 
     return (
         <MainWrapper>
-            <Title>Private Car With Your Driver</Title>
+            <Title>Private Car With <br /> Your Driver</Title>
             <Text>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy</Text>
             <div>
                 <Label>Phone Number</Label>
@@ -55,8 +55,14 @@ export default function SignIn() {
                 </FormGroup>
             </div>
             <div style={{marginBottom: "20px"}}>
-                <FormControlLabel
+                <StyledFormControlLabel
                     label="Remember me"
+                    sx={{
+                        '& .MuiTypography-root': {
+                            fontSize: "13px !important"
+                        },
+                        color: "#00c3e1"
+                    }}
                     control={
                         <Checkbox
                             onChange={() => setChecked(!checked)}
@@ -65,7 +71,7 @@ export default function SignIn() {
                                 color: "#00c3e1",
                                 '&.Mui-checked': {
                                     color: "#00c3e1",
-                                },
+                                }
                             }}
                         />
                     }
