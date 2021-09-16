@@ -6,7 +6,7 @@ import {
     IconBtn,
     Title
 } from "./MobileImageAdStyles"
-import MobileAd from "../../icons/mobile-ad.png";
+import MobileAd from "../../icons/mobileAd.png";
 import Android from "../../icons/android.png";
 import Apple from "../../icons/apple.png";
 

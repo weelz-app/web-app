@@ -81,27 +81,23 @@ const NavBar = (props) => {
   );
 
   const guestLinks = (
-    <>
-      <Nav className="me-auto">
-        <LinkContainer to="/about">
-          <Nav.Link>
-            About
-          </Nav.Link>
-        </LinkContainer>
-        <LinkContainer to="/privacy-policy">
-          <Nav.Link>
-            Privacy Policy
-          </Nav.Link>
-        </LinkContainer>
-      </Nav>
-      <Nav>
-        <NavbarLanguage onClick={() => props.changeLang()}>
-          <span>
-            {props.lang === "en" ? "عربي" : "English"}
-          </span>
-        </NavbarLanguage>
-      </Nav>
-    </>
+    <nav className="ml-auto d-flex navbar-nav guest-link">
+      <LinkContainer className="d-none d-sm-block w-auto" to="/about">
+        <Nav.Link>
+          About
+        </Nav.Link>
+      </LinkContainer>
+      <LinkContainer className="d-none d-sm-block w-auto" to="/privacy-policy">
+        <Nav.Link>
+          Privacy Policy
+        </Nav.Link>
+      </LinkContainer>
+      <NavbarLanguage onClick={() => props.changeLang()}>
+        <span>
+          {props.lang === "en" ? "عربي" : "English"}
+        </span>
+      </NavbarLanguage>
+    </nav>
   );
 
   return (
@@ -116,6 +112,7 @@ const NavBar = (props) => {
             )}
           </NavBarContainer.Brand>
         </LinkContainer>
+        {auth ?
         <NavbarLinksDiv>
           <NavBarContainer.Toggle aria-controls="responsive-navbar-nav">
             <BarsWrapper>
@@ -124,10 +121,9 @@ const NavBar = (props) => {
               <BarIcon className="humbergur-bar" />
             </BarsWrapper>
           </NavBarContainer.Toggle>
-          <NavBarContainer.Collapse id="responsive-navbar-nav">
-            {auth ? authLinks : guestLinks}
-          </NavBarContainer.Collapse>
+           <NavBarContainer.Collapse id="responsive-navbar-nav">{authLinks}</NavBarContainer.Collapse>
         </NavbarLinksDiv>
+         : guestLinks }
       </Container>
     </NavBarContainer>
   );

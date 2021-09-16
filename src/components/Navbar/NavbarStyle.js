@@ -35,6 +35,9 @@ export const NavBarContainer = styled(Navbar)`
 
   & .navbar-nav {
     align-items: center;
+    &.guest-link{
+      flex-direction: row !important;
+    }
   }
 
   & .navbar-nav .dropdown-menu {
