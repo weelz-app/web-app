@@ -48,9 +48,40 @@ export const FormGroup = styled.div`
     align-items: center;
     margin-bottom: 20px;
     width: 260px;
-
+    direction: ltr !important;
     @media only screen and (max-width: 576px) {
         width: 100%;
+    }
+    .react-tel-input{
+        position: relative  !important;
+        width: 100%  !important;
+        display: flex  !important;
+        flex-direction: row-reverse !important;
+        justify-content: space-between  !important;
+        direction: ltr !important;
+        .flag-dropdown {
+            position: static;
+            width: 40px;
+            height: 40px;
+            margin: 0 !important;
+            background: #f1f1f1 !important;
+            border: none !important;
+            border-radius: 2.5px !important;
+            .selected-flag{
+                background: #f1f1f1 !important;
+            }
+        }
+        .form-control{
+            height: 40px;
+            width: calc(100% - 50px);
+            outline: none;
+            margin: 0 !important;
+            padding: 9px !important;
+            background: #f1f1f1 !important;
+            border: none !important;
+            border-radius: 2.5px !important;
+            box-shadow: none !important;
+        }
     }
 `;
 
@@ -84,8 +115,8 @@ export const PhoneWrapper = styled.div`
     align-items: center;
 
     .App.ar & {
-        margin-right: 0;
-        margin-left: 7.5px;
+        // margin-right: 0;
+        // margin-left: 7.5px;
     }
 `;
 

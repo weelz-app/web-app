@@ -1,5 +1,7 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import Checkbox from '@material-ui/core/Checkbox';
+import PhoneInput from 'react-phone-input-2';
+import 'react-phone-input-2/lib/style.css';
 import {
     MainWrapper,
     Title,
@@ -31,16 +33,8 @@ export default function SignIn() {
             <div>
                 <Label>Phone Number</Label>
                 <FormGroup>
-                    <PhoneWrapper>
-                        <PhoneIcon src={EgyptIcon} />
-                        <PhoneText>+20</PhoneText>
-                    </PhoneWrapper>
-                    <Input
-                        placeholder="123456789"
-                        value={phone}
-                        type="text"
-                        onChange={(e) => setPhone(e.target.value)}
-                    />
+                    <PhoneInput
+                        country={'eg'} />
                 </FormGroup>
             </div>
             <div>
@@ -54,9 +48,9 @@ export default function SignIn() {
                     />
                 </FormGroup>
             </div>
-            <div style={{marginBottom: "20px"}}>
+            <div style={{ marginBottom: "20px" }}>
                 <StyledFormControlLabel
-                    label="Remember me"
+                    label="I agree to the terms and conditions"
                     sx={{
                         '& .MuiTypography-root': {
                             fontSize: "13px !important"
