@@ -3,16 +3,18 @@ import Modal from '@material-ui/core/Modal';
 
 export const ModalWrapper = styled(Modal)`
     width: 100%;
-    height: 100vh;
+    height: 100% !important;
     background-color: #0006;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 10040 !important;
-    overflow-y: scroll;
-    padding-top: 80px;
-    padding-bottom: 20px;
-
+    overflow-y: auto;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    .MuiBackdrop-root{
+        display: none !important;
+    }
     @media only screen and (max-width: 575px) {
         & .MuiBackdrop-root {
             background-color: #fff;
@@ -23,38 +25,45 @@ export const ModalWrapper = styled(Modal)`
 export const StyledModal = styled.div`
     width: 375px;
     border-radius: 5px;
-    background-color: #fff;
+    background-color: #00C3E1;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     position: relative;
-    padding: 25px 18px 33px 18px;
-    margin-top: 40px;
-    outline: 0;
-
+    top: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    outline: 0 !important;
     @media only screen and (max-width: 575px) {
         width: 100%;
     }
-
     &.ar {
         direction: rtl;
+    }
+    .content-dt{
+        width: 100%;
+        background: #fff;
+        border-radius: 25px 25px 0 0;
+        padding: 15px !important;
     }
 `;
 
 export const TitleWrapper = styled.div`
     width: 100%;
-    padding-bottom: 20px;
+    padding: 0 !important;
     border-bottom: 1px solid rgb(124 124 125 / 12%);
-    margin-bottom: 20px;
+    margin: 0 !important;
 `;
 
 export const Title = styled.h3`
     font-size: 22px;
     width: 100%;
-    margin: 0;
-
+    margin: 0 ;
+    padding: 20px 15px !important;
+    color: #fff !important;
     @media only screen and (max-width: 575px) {
-        width: 200px;
         font-size: 25px;
     }
 `;

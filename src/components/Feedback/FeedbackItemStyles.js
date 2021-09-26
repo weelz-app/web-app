@@ -12,7 +12,7 @@ export const Paper = styled(Container)`
     }
 `;
 export const Title = styled.h3`
-    font-family: Montserrat-SemiBold;
+    font-family: Montserrat;
     font-size: 13px;
     font-weight: 600;
     line-height: 13.5px;
@@ -26,7 +26,7 @@ export const Title = styled.h3`
 `;
 
 export const SubTitle = styled.h4`
-    font-family: Montserrat-Medium;
+    font-family: Montserrat;
     font-size: 12px;
     font-weight: 500;
     line-height: 10px;

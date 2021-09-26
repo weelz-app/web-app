@@ -4,6 +4,7 @@ import CitySelector from "../CitySelector/CitySelector";
 import DateTimePickerCustimzed from "../DateTimePicker/DateTimePicker";
 import BookingInfoDialogue from "../BookingInfoDialogue/BookingInfoDialogue";
 import Btn from "../Btn/Btn";
+import ConfirmTrip from "../ConfirmTrip/ConfirmTrip";
 
 export default function BookingSideBar({b}) {
     const [booking, setBooking] = useState(b);
@@ -27,7 +28,7 @@ export default function BookingSideBar({b}) {
                     iconSize={{width: "13.2", height: "23.6"}}
                 />
             </Item>
-            <Item>
+            <Item >
                 <CitySelector
                     mode="to"
                     selectedCity={booking.to}
@@ -46,7 +47,7 @@ export default function BookingSideBar({b}) {
                     className="sidebar__booking-info"
                 />
             </Item>
-            <Btn text="New Trip!" className="btn--block" />
+            <Btn  text="New Trip!" className="btn--block" />
             <LinkWrapper>
                 <Text>City not listed?</Text>
                 <Link>Let us know</Link>

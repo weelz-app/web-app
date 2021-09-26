@@ -55,13 +55,8 @@ export default function ConfirmTrip({b, lang}) {
     return (
         <>
             <div
-                onClick={() => setIsOpen(val => !val)}
-                style={{
-                    marginLeft: "30px",
-                    marginTop: "200px",
-                    cursor: "pointer"
-                }}
-            >
+                onClick={() => setIsOpen(val => !val)}>
+
                 Try Confirm Trip
             </div>
             <ModalWrapper
@@ -73,90 +68,92 @@ export default function ConfirmTrip({b, lang}) {
                 <Fade in={isOpen}>
                     <StyledModal className={`confirm-trip ${lang === "ar" ? "ar" : ""}`}>
                         <TitleWrapper>
-                            <Title>
+                            <Title className="">
                                 Does everything look right?
                             </Title>
                         </TitleWrapper>
-                        <Header>
-                            <HeaderText>Trip Summery</HeaderText>
-                            <Type>
-                                <TypeOverlay />
-                                <TypeIcon src={CarIcon} />
-                                <TypeText>Standard</TypeText>
-                            </Type>
-                        </Header>
-                        <CitiesWrapper>
-                            <CityWrapper>
-                                <Icon src={LocationImg} />
-                                <div>
-                                    <CityLabel>From</CityLabel>
-                                    <CityName>{booking.from}</CityName>
-                                </div>
-                            </CityWrapper>
-                            <LineIcon src={LineImg} />
-                            <CityWrapper>
-                                <Icon src={ToImg} />
-                                <div>
-                                    <CityLabel>To</CityLabel>
-                                    <CityName>{booking.to}</CityName>
-                                </div>
-                            </CityWrapper>
-                        </CitiesWrapper>
-                        <DetailsWrapper>
-                            <DeatilsRow>
-                                <DetailsItem>
-                                    <Icon src={DateImg} />
+                        <div className="content-dt">
+                            <Header>
+                                <HeaderText>Trip Summery</HeaderText>
+                                <Type>
+                                    <TypeOverlay />
+                                    <TypeIcon src={CarIcon} />
+                                    <TypeText>Standard</TypeText>
+                                </Type>
+                            </Header>
+                            <CitiesWrapper>
+                                <CityWrapper>
+                                    <Icon src={LocationImg} />
                                     <div>
-                                        <DetailsLabel>Departure</DetailsLabel>
-                                        <DetailsText>{`${date.getDate()} ${getMonthName(date.getMonth())} At ${currentHours}:${currentMinutes}`}</DetailsText>
+                                        <CityLabel>From</CityLabel>
+                                        <CityName>{booking.from}</CityName>
                                     </div>
-                                </DetailsItem>
-                                <DetailsItem>
-                                    <Icon src={LuggageImg} />
+                                </CityWrapper>
+                                <LineIcon src={LineImg} />
+                                <CityWrapper>
+                                    <Icon src={ToImg} />
                                     <div>
-                                        <DetailsLabel>Luggage</DetailsLabel>
-                                        <DetailsText>{booking.luggage}</DetailsText>
+                                        <CityLabel>To</CityLabel>
+                                        <CityName>{booking.to}</CityName>
                                     </div>
-                                </DetailsItem>
-                            </DeatilsRow>
-                            <DeatilsRow>
-                                <DetailsItem>
-                                    <Icon src={PriceImg} />
-                                    <div>
-                                        <DetailsLabel>Price</DetailsLabel>
-                                        <DetailsText>
-                                            <Price>{`${booking.price} ${booking.currency}`}</Price>
-                                        </DetailsText>
-                                    </div>
-                                </DetailsItem>
-                                <DetailsItem>
-                                    <Icon src={PassengerImg} />
-                                    <div>
-                                        <DetailsLabel>Passengers</DetailsLabel>
-                                        <DetailsText>{booking.passengers}</DetailsText>
-                                    </div>
-                                </DetailsItem>
-                            </DeatilsRow>
-                        </DetailsWrapper>
-                        <ChoicesWrapper>
-                            <ChoicesTitle>Extra Choices</ChoicesTitle>
-                            <Tags>
-                                <Tag>
-                                    <TagOverlay />
-                                    <TagIcon src={SmokingImg} />
-                                    <TypeText>Smoking</TypeText>
-                                </Tag>
-                                <Tag>
-                                    <TagOverlay />
-                                    <TagIcon src={PetImg} />
-                                    <TypeText>Pets</TypeText>
-                                </Tag>
-                            </Tags>
-                        </ChoicesWrapper>
-                        <Btn
-                            text="Confirm Request"
-                            className="btn--block btn--confirm"
-                        />
+                                </CityWrapper>
+                            </CitiesWrapper>
+                            <DetailsWrapper>
+                                <DeatilsRow>
+                                    <DetailsItem>
+                                        <Icon src={DateImg} />
+                                        <div>
+                                            <DetailsLabel>Departure</DetailsLabel>
+                                            <DetailsText>{`${date.getDate()} ${getMonthName(date.getMonth())} At ${currentHours}:${currentMinutes}`}</DetailsText>
+                                        </div>
+                                    </DetailsItem>
+                                    <DetailsItem>
+                                        <Icon src={LuggageImg} />
+                                        <div>
+                                            <DetailsLabel>Luggage</DetailsLabel>
+                                            <DetailsText>{booking.luggage}</DetailsText>
+                                        </div>
+                                    </DetailsItem>
+                                </DeatilsRow>
+                                <DeatilsRow>
+                                    <DetailsItem>
+                                        <Icon src={PriceImg} />
+                                        <div>
+                                            <DetailsLabel>Price</DetailsLabel>
+                                            <DetailsText>
+                                                <Price>{`${booking.price} ${booking.currency}`}</Price>
+                                            </DetailsText>
+                                        </div>
+                                    </DetailsItem>
+                                    <DetailsItem>
+                                        <Icon src={PassengerImg} />
+                                        <div>
+                                            <DetailsLabel>Passengers</DetailsLabel>
+                                            <DetailsText>{booking.passengers}</DetailsText>
+                                        </div>
+                                    </DetailsItem>
+                                </DeatilsRow>
+                            </DetailsWrapper>
+                            <ChoicesWrapper>
+                                <ChoicesTitle>Extra Choices</ChoicesTitle>
+                                <Tags>
+                                    <Tag>
+                                        <TagOverlay />
+                                        <TagIcon src={SmokingImg} />
+                                        <TypeText>Smoking</TypeText>
+                                    </Tag>
+                                    <Tag>
+                                        <TagOverlay />
+                                        <TagIcon src={PetImg} />
+                                        <TypeText>Pets</TypeText>
+                                    </Tag>
+                                </Tags>
+                            </ChoicesWrapper>
+                            <Btn
+                                text="Confirm Request"
+                                className="btn--block btn--confirm"
+                            />
+                        </div>
                     </StyledModal>
                 </Fade>
             </ModalWrapper>

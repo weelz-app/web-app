@@ -1,100 +1,76 @@
 import React from "react";
+import Slider from "react-slick";
 import LicensePlate from 'react-license-plate-egypt';
 import "react-multi-carousel/lib/styles.css";
-import {
-  MainWrapper,
-  SectionTitle,
-  DriverWraper,
-  Avatar,
-  DriverIcons,
-  DriverIcon,
-  StyledWhatsAppIcon,
-  StyledPhoneIcon,
-  DriverText,
-  DriverName,
-  DriverNumber,
-  CarWrapper,
-  CarRow,
-  CarLabel,
-  CarName,
-  CarImageWrapper,
-  CarImage,
-  StyledCarousel
-} from './TripDriverStyle';
+import { DriverDivi } from './TripDriverStyle';
+import iconCar from '../../icons/ic_car.svg';
+import phoneOne from '../../icons/ic_phone.png';
+import phoneTwo from '../../icons/ic_whatsapp.png';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
+let settings = {
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1
+};
 
 function TripDriver({driver}) {
   return (
-    <MainWrapper>
-      <SectionTitle>Driver Information</SectionTitle>
-      <DriverWraper>
-        <Avatar src={driver.avatar} />
-          <DriverText>
-            <DriverName>{driver.name}</DriverName>
-            <DriverNumber>{driver.number}</DriverNumber>
-          </DriverText>
-          <DriverIcons>
-            <DriverIcon>
-              <StyledWhatsAppIcon />
-            </DriverIcon>
-            <DriverIcon>
-              <StyledPhoneIcon />
-            </DriverIcon>
-          </DriverIcons>
-      </DriverWraper>
-      <SectionTitle>Car Information</SectionTitle>
-      <CarWrapper>
-        <div>
-          <StyledCarousel
-            responsive={{
-              desktop: {
-                breakpoint: {
-                  max: 3000,
-                  min: 1024
-                },
-                items: 1
-              },
-              mobile: {
-                breakpoint: {
-                  max: 464,
-                  min: 0
-                },
-                items: 1
-              },
-              tablet: {
-                breakpoint: {
-                  max: 1024,
-                  min: 464
-                },
-                items: 1
-              }
-            }}
-            additionalTransfrom={0}
-            centerMode={false}
-            arrows={false}
-            showDots={true}
-            itemClass="trip-slide"
-            slidesToSlide={1}
-            swipeable
-            draggable
-          >
-            {driver.car.images.map(carImg => (
-              <CarImageWrapper>
-                <CarImage src={carImg} />
-              </CarImageWrapper>
-            ))}
-          </StyledCarousel>
+    <DriverDivi>
+      <h5 className="title-driver">Driver Information</h5>
+      <div className="driver-data">
+        <div className="driver-photo">
+          <img src={driver.avatar} />
         </div>
-        <CarRow>
-          <div>
-            <CarLabel>Car</CarLabel>
-            <CarName>{driver.car.name}</CarName>
+
+        <div className="driver-text">
+          <h6 className="driver-name">{driver.name}</h6>
+          <h6 className="driver-phone">{driver.number}</h6>
+        </div>
+
+        <div className="data-contact">
+          <button className="btn-control">
+            <img src={phoneTwo} />
+          </button>
+
+          <button className="btn-control">
+            <img src={phoneOne} />
+          </button>
+        </div>
+      </div>
+      <h5 className="title-driver">Driver Information</h5>
+      <div className="car-data">
+
+        <div className="slider-cars">
+          <Slider {...settings}>
+            {driver.car.images.map(carImg => (
+                <div>
+                  <img src={carImg} />
+                </div>
+              ))}
+          </Slider>
+        </div>
+
+        <div className="car-nm">
+
+          <div className="car-text d-flex align-items-center">
+            <img src={iconCar} className="mr-3" />
+            <div className="car-data-text">
+              <h6 className="car-name">Car</h6>
+              <h6 className="car-model">{driver.car.name}</h6>
+            </div>
+
           </div>
-          <div>
-            <LicensePlate number={driver.car.license} width='80' />
+
+          <div className="car-number">
+            <LicensePlate number={driver.car.license} className="carnum" width='100' />
           </div>
-        </CarRow>
-      </CarWrapper>
-    </MainWrapper>
+        </div>
+      </div>
+    </DriverDivi>
   
   );
 }

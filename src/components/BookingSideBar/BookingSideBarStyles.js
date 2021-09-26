@@ -15,6 +15,11 @@ export const Item = styled.div`
     background-color: #fff;
     padding: 8px 15px 7.5px 14.4px;
     border-radius: 5px;
+    &.date-picker{
+        background-color: transparent !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+    }
 `;
 
 export const LinkWrapper = styled.div`

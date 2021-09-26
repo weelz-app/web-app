@@ -12,7 +12,7 @@ export default function FeedbackItem({title, subtitle, feedback, setFeedback, cl
     return <Paper className={className}>
         <FeedbackWrapper>
             <div>
-                <Title>
+                <Title className="mb-2">
                     {title}
                 </Title>
                 {subtitle ? (

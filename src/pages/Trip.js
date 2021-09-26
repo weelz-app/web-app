@@ -53,7 +53,6 @@ export default function Trip() {
                 isOpen={isOpen}
             />
             <div className="navbar-padding with-bar" style={{paddingBottom: "48px"}}>
-                <BookingTopMenu b={booking} page="Trips" />
                 <Container>
                     <ToolBar
                         showBtn={booking.status === "Canceled" ? false : true}
@@ -65,7 +64,7 @@ export default function Trip() {
                         <Col xs={12} md={6} lg={5}>
                             <TripSummary booking={booking} />
                         </Col>
-                        <Col sm={12} md={6} lg={4} className="d-none d-sm-block">
+                        <Col sm={12} md={6} lg={4}>
                             <TripDriver driver={booking.driver} />
                         </Col>
                         <Col lg={3} className="d-none d-lg-block">

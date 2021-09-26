@@ -67,3 +67,8 @@
 .App.ar .react-multi-carousel-item {
   direction: rtl;
 }
+
+.App.ar .driver-data .data-contact{
+  left: 15px !important;
+  right: auto;
+}

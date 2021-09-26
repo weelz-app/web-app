@@ -26,17 +26,20 @@ export const ButtonsWrapper = styled.div`
   align-items: center;
   width: 57.3px;
   height: 20px;
-  padding: 5px 9.8px 4.5px 8.3px;
+  padding: 0 !important;
   border-radius: 4px;
   background-color: #dfdfdf;
+  direction: ltr !important;
 `;
 
 export const Btn = styled.span`
-  height: 10px;
-  width: 10px;
-  line-height: 0;
-  cursor: pointer;
-
+    height: 19px;
+    width: 18px;
+    line-height: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   &:hover {
     opacity: 0.7;
   }

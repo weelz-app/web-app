@@ -7,6 +7,11 @@ export const Div = styled.div`
   flex-wrap: wrap;
   padding-left: 58px;
   position: relative;
+  margin-bottom: 13.5px;
+  box-shadow: 0 2.5px 8px 0 rgb(0 0 0 / 5%);
+  background-color: #fff;
+  padding: 6px 45px;
+  border-radius: 5px;
     .format-label-tr{
       font-family: Montserrat;
       font-size: 9px;
@@ -40,8 +45,8 @@ export const Div = styled.div`
         color: #00c3e1 !important;
         margin: 0 !important;
         border: none !important;
-        left: 0;
-        top: 5px;
+        left: 11px;
+        top: 9px;
         font-size: 20px;
         display: block;
       }
@@ -52,12 +57,24 @@ export const Div = styled.div`
         color: #00c3e1 !important;
         margin: 0 !important;
         border: none !important;
-        left: 26px;
-        top: 5px;
-        font-size: 19px;
+        left: 13px;
+        top: 11px;
+        font-size: 19px !important;
         display: block;
         min-width: auto !important;
         min-height: auto !IMPORTANT;
+      }
+      .e-datepicker, .e-timepicker{
+        height: 18px !important;
+        min-height: auto !important;
+        padding: 0 !important;
+        display: block;
+        margin-top: 1px;
+        font-family: Montserrat;
+        font-size: 11px;
+        font-weight: 600;
+        line-height: 1.23;
+        color: #000;
       }
     }
 `;

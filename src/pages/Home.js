@@ -102,7 +102,7 @@ const MainWrapper = styled.div`
 const Home = ({lang}) => {
     return (
         <>
-            <ConfirmTrip b={booking} lang={lang} />
+            <ConfirmTrip b={booking} />
             <Container className="navbar-padding">
                 <MainWrapper>
                     <Row>
