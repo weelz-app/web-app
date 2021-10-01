@@ -49,10 +49,10 @@ export default function Feedback() {
                 <Container>
                     <ToolBar showBtn={false} />
                     <Row>
-                        <Col md={5} className="d-none d-md-block">
+                        <Col lg={6} className="mb-3 mb-lg-0">
                             <TripSummary booking={booking} />
                         </Col>
-                        <Col xs={12} md={7}>
+                        <Col lg={6}>
                             <FeedbackCard feedback={feedback} toggleFeedbackThanks={() => setIsOpen(val => !val)} setFeedback={(val) => setFeedback(val)} />
                         </Col>
                     </Row>

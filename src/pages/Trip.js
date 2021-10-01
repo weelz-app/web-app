@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col} from "react-bootstrap";
 import BookingTopMenu from "../components/BookingTopMenu/BookingTopMenu"
 import ToolBar from "../components/ToolBar/ToolBar"
 import TripSummary from "../components/TripSummary/TripSummary"
@@ -61,10 +61,10 @@ export default function Trip() {
                         btnOnClick={() => setIsOpen(val => !val)}
                     />
                     <Row>
-                        <Col xs={12} md={6} lg={5}>
-                            <TripSummary booking={booking} />
+                        <Col className="pb-3 pb-lg-0" xs={12} md={12} lg={5}>
+                            <TripSummary booking={booking} expandBehavior={"expanded"} />
                         </Col>
-                        <Col sm={12} md={6} lg={4}>
+                        <Col sm={12} md={12} lg={4}>
                             <TripDriver driver={booking.driver} />
                         </Col>
                         <Col lg={3} className="d-none d-lg-block">

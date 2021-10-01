@@ -35,6 +35,13 @@ export const Item = styled.span`
   height: auto;
   width: 200px;
   position: relative;
+  &.time-items{
+    width: 500px;
+    div{
+      margin:0 !Important;
+      box-shadow: none !important;
+    }
+  }
 `;
 
 export const Hide = styled.div`
@@ -47,7 +54,7 @@ export const Hide = styled.div`
     }
   }
 
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 900px) {
     &.item-calander {
       display: none;
     }

@@ -18,6 +18,7 @@ import Btn from "../Btn/Btn"
 import VerificationIcon from "../../icons/verification.png";
 import Countdown, { zeroPad } from 'react-countdown';
 
+
 export default function EmailVerification() {
     const [code, setCode] = useState("");
     const [isValid, setIsValid] = useState(false);
@@ -46,6 +47,11 @@ export default function EmailVerification() {
         </TimeLeft>
     );
 
+    const getVal= (e)=>{
+        console.log(VerificationInputStyled);
+        
+    }
+
     return (
         <MainWrapper>
             <PhoneWrapper>
@@ -60,19 +66,22 @@ export default function EmailVerification() {
                 <Label>Enter the Verification Code</Label>
                 <FormGroup>
                     <VerificationInputStyled
-                        value={code}
+                        // value={code}
                         length={4}
                         validChars="0-9"
                         autoFocus={true}
-                        onChange={(val) => setCode(val)}
+                        onChange={getVal}
                         placeholder=""
                         removeDefaultStyles
                         classNames={{
+                            container: "container",
+                            character: "character",
                             characterInactive: "character--inactive",
                             characterSelected: "character--selected",
                         }}
                     />
                 </FormGroup>
+
             </div>
             <Btn
                 onClick={(e) => submit(e)}

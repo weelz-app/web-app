@@ -60,8 +60,8 @@ export default function BookingTopMenu({ b, page }) {
             </Item>
             <Hide className="item-calander">
               <Bar />
-              <Item>
-                <DateTimePickerCustimzed ts={booking.ts} setTs={(ts) => handleBooking({ ts })} />
+              <Item className="time-items">
+                <DateTimePickerCustimzed col={6} ts={booking.ts} setTs={(ts) => handleBooking({ ts })} />
               </Item>
             </Hide>
             {page === "Car Selection" ? (
