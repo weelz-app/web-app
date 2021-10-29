@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import CarSelectionItem from "./CarSelectionItem";
 import {
   CarSelectionListWrapper,
@@ -10,19 +10,18 @@ import {
 import { Row, Col } from "react-bootstrap";
 import NoCarsImage from "../../icons/no-cars.png"
 
-export default function CarSelectionList({ carOptions }) {
-  const [selectedCar, setSelectedCar] = useState({ type: "" });
+export default function CarSelectionList({ carOptions, selectedCar, setSelectedCar }) {
 
   return (
     <CarSelectionListWrapper>
       {carOptions.length > 0 ? (
         <Row>
           {carOptions.map((car) => (
-            <Col xs={12} sm={6} lg={3} key={car.id}>
+            < Col xs={12} sm={6} lg={3} key={car.type} >
               <CarSelectionItem
-                key={car.id}
+                key={car.type}
                 carOption={car}
-                active={car.id === selectedCar.id ? true : false}
+                active={car && selectedCar && car.type === selectedCar.type ? true : false}
                 selectCar={() => setSelectedCar(car)}
               />
             </Col>
@@ -35,7 +34,8 @@ export default function CarSelectionList({ carOptions }) {
             Seems like there are <NoCarsHighlight>no cars available</NoCarsHighlight> for this trip, check again soon.
           </NoCarsText>
         </NoCarsWrapper>
-      )}
-    </CarSelectionListWrapper>
+      )
+      }
+    </CarSelectionListWrapper >
   );
 }

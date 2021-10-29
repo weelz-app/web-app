@@ -8,15 +8,14 @@ import {
     Content,
     StyledLink
 } from "./NotificationsListStyles";
+import { MY_NOTIFICATIONS } from "../../graphql/queries";
+import { useMutation, useQuery } from "@apollo/client";
 
-const NotificationsList = ({notifications, showHeader, variant}) => {
+
+const NotificationsList = ({ notifications, showHeader, variant }) => {
     const isNotificationsPage = variant === "notifications-page" ? true : false;
-    let notificationsRows = [];
-
-    for (let i = 0; i < notifications.length; i++) {
-        notificationsRows.push(<Notification key={notifications[i].id} title={notifications[i].title} msg={notifications[i].msg} type={notifications[i].type} variant={variant} />);
-    }
-
+    
+    const { loading, data } = useQuery(MY_NOTIFICATIONS);
     return (
         <>
             {showHeader ? (
@@ -34,7 +33,8 @@ const NotificationsList = ({notifications, showHeader, variant}) => {
                 <Content
                     className={`${isNotificationsPage ? "scrollable" : ""}`}
                 >
-                    {notificationsRows}
+                    {data && data.myNotifications.map(n => 
+                        <Notification key={n.id} title={n.title.en} msg={n.description.en} type={n.type} variant />)}
                 </Content>
             </ContentWrapper>
         </>

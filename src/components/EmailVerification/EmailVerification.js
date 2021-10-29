@@ -1,4 +1,9 @@
-import React, {useState, useEffect, useCallback} from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
+import { useHistory, useLocation } from 'react-router-dom'
+import config from '../../config.json'
+import LinearProgress from '@material-ui/core/LinearProgress';
+import Alert from '@material-ui/lab/Alert';
+
 import {
     MainWrapper,
     PhoneWrapper,
@@ -17,29 +22,62 @@ import {
 import Btn from "../Btn/Btn"
 import VerificationIcon from "../../icons/verification.png";
 import Countdown, { zeroPad } from 'react-countdown';
+import { setUserAuthToken } from '../../utils';
 
+const results = {
+    VALID: 'valid',
+    INVALID: 'invalid',
+    EXPIRED: 'expired',
+    UNKNOWN: 'unknown',
+    TOOMANY: 'too many attempts'
+}
 
 export default function EmailVerification() {
-    const [code, setCode] = useState("");
-    const [isValid, setIsValid] = useState(false);
+    let VERIFY_API = `${config.API_BASE_URL}/verify`
+    const history = useHistory()
+    let location = useLocation()
+    const [loading, setLoading] = useState(false)
+    const [error, setError] = useState('')
+    const [code, setCode] = useState('')
 
-    const codeValidation = useCallback(() => {
-        let isValid = false;
-        if (code !== "" && code.length === 4) {
-            isValid = true
-        }
+    if (!location.state || !location.state[0] || !location.state[0].uid) {
+        history.push('/')
+    }
 
-        setIsValid(isValid)
-    }, [code])
+    const submit = useCallback(() => {
+        setError('')
+        let uid = location.state[0].uid
+        let name = location.state[0].name
+        setLoading(true)
+        fetch(VERIFY_API + `?uid=${uid}&code=${code}`)
+            .then(response => response.json())
+            .then(r => {
+                console.log(r)
+                if (!r.error && r.codeValidation === results.VALID) {
+                    setUserAuthToken(r.token)
+                    window.sessionStorage.setItem('uid', uid)
+                    window.sessionStorage.setItem('user-name', name)
+                    history.push('/')
+                } else {
+                    setLoading(false)
+                    setError(
+                        r.error
+                            ? r.message
+                            : r.codeValidation +
+                            ', ' +
+                            r.remainingAttempts +
+                            ' attempts remaining'
+                    )
+                }
+            })
+    }, [code, history, location.state])
 
     useEffect(() => {
-        codeValidation()
-    }, [code, codeValidation]);
+        if (code && code.length === 4 && !error) submit()
+        if (!location || !location.state) history.push('/signIn')
+    }, [error, code, submit])
 
-    const submit = (e) => {
-        codeValidation()
-        console.log("Verified")
-    }
+
 
     const renderer = ({ minutes, seconds }) => (
         <TimeLeft>
@@ -47,9 +85,9 @@ export default function EmailVerification() {
         </TimeLeft>
     );
 
-    const getVal= (e)=>{
-        console.log(VerificationInputStyled);
-        
+    const getVal = (e) => {
+        setError('')
+        setCode(e ? e : code)
     }
 
     return (
@@ -58,8 +96,8 @@ export default function EmailVerification() {
                 <Overlay />
                 <PhoneIcon src={VerificationIcon} />
                 <div>
-                    <Title>Verify Mobile <br /> Number</Title>
-                    <Text>a verification code has been sent to <Number>+201xxxxxxxxx</Number></Text>
+                    <Title>Verify Your Mobile Number</Title>
+                    <Text>A verification code has been sent to <Number>{location?.state ? location?.state[0]?.phone : ''}</Number></Text>
                 </div>
             </PhoneWrapper>
             <div>
@@ -83,9 +121,13 @@ export default function EmailVerification() {
                 </FormGroup>
 
             </div>
+            <div style={{ marginBottom: "20px" }}>
+                {error && <Alert severity="error">{error}</Alert>}
+                {loading && <LinearProgress />}
+            </div>
             <Btn
                 onClick={(e) => submit(e)}
-                disabled={!isValid ? true : false}
+                disabled={error}
                 text="Verify"
             />
             <ResendWrapper>

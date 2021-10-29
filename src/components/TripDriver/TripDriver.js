@@ -23,7 +23,7 @@ function TripDriver({driver}) {
       <h5 className="title-driver">Driver Information</h5>
       <div className="driver-data">
         <div className="driver-photo">
-          <img src={driver.avatar} />
+          <img  />
         </div>
 
         <div className="driver-text">

@@ -14,20 +14,21 @@ import {
 } from "./CarSelectionItemStyles";
 
 export default function CarSelectionItem({ carOption, active, selectCar }) {
+  let currency = "EGP"
   return (
-    <MainWrapper key={carOption.id}>
+    <MainWrapper key={carOption.type}>
       <CarSelectionInput
         type="radio"
         name="car"
-        id={carOption.id}
+        id={carOption.type}
         checked={active}
         onChange={() => selectCar()}
       />
-      <CarSelectionItemWrapper htmlFor={carOption.id} className={`car-item ${active ? "active" : ""}`}>
+      <CarSelectionItemWrapper htmlFor={carOption.type} className={`car-item ${active ? "active" : ""}`}>
         <DetailsWrapper>
           <div>
             <Title>{carOption.type}</Title>
-            <Description>{carOption.description}</Description>
+            <Description>{carOption.description.en}</Description>
           </div>
           <PriceWrapper>
             <WalletIconWrapper>
@@ -45,17 +46,17 @@ export default function CarSelectionItem({ carOption, active, selectCar }) {
               </svg>
             </WalletIconWrapper>
             <div>
-              <Price>{carOption.price + " " + carOption.currency}</Price>
+              <Price>{carOption.price + " " + currency}</Price>
               {carOption.originalPrice &&
               carOption.price !== carOption.originalPrice ? (
                 <OriginalPrice>
-                  {carOption.originalPrice + " " + carOption.currency}
+                  {carOption.originalPrice + " " + currency}
                 </OriginalPrice>
               ) : null}
             </div>
           </PriceWrapper>
         </DetailsWrapper>
-        <CarImage src={carOption.img} />
+        <CarImage src={carOption.imgURL} />
       </CarSelectionItemWrapper>
     </MainWrapper>
   );

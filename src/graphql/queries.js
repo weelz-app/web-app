@@ -1,24 +1,36 @@
 import { gql } from '@apollo/client'
 
-
-export const TRIP = gql`
-    query trip($id: String){
-        trip(id: $id) {
+export const BOOKING = gql`
+    query Booking($id: String){
+        booking(id:$id) {
             id
-            from
-            to
+            ts
+            from {en, ar}
+            to {en, ar}
             at
             on
-            price
-            car {
-                plate
-                make
-                year
-                photoURLs
+            status{
+                type
+                title{en, ar}
             }
+            passengers
+            luggage
+            pets
+            nonSmoking
+            carOption {type, title {en, ar}, description{en, ar}}
+            price
+            pickup { address }
+            dropOff { address }
             driver {
                 name
                 phone
+            }
+            car {
+                type
+                make
+                year
+                plate
+                photoURLs
             }
         }
     }
@@ -28,11 +40,28 @@ export const MY_BOOKINGS = gql`
     query MyBookings{
         myBookings {
             id
-            from
-            to
+            from {en, ar}
+            to {en, ar}
             at
             on
+            status{
+                type
+                title{en, ar}
+            }
+        }
+    }
+`
+
+export const MY_NOTIFICATIONS = gql`
+    query MyNotifications{
+        myNotifications {
+            id
+            type 
+            bookingId
+            ts
             status
+            title{en, ar}
+            description{en, ar}
         }
     }
 `
@@ -55,9 +84,6 @@ export const CAR_OPTIONS = gql`
 
 export const CITIES = gql`
     query GetCities {
-        cities {
-            id,
-            en
-        }
+        cities {id, ar, en}
     }
 `

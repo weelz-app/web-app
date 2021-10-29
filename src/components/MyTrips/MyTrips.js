@@ -9,8 +9,10 @@ import {
   Content,
   StyledLink
 } from "./MyTripsStyle";
+import { MY_BOOKINGS } from "../../graphql/queries";
+import { useMutation, useQuery } from "@apollo/client";
 
-const MyTrips = ({trips}) => {
+const MyTrips = ({ trips }) => {
   const responsive = {
     superLargeDesktop: {
       breakpoint: { max: 4000, min: 3000 },
@@ -30,6 +32,8 @@ const MyTrips = ({trips}) => {
     },
   };
 
+
+  const { loading, data } = useQuery(MY_BOOKINGS);
   return (
     <div>
       <Header>
@@ -39,11 +43,14 @@ const MyTrips = ({trips}) => {
         </StyledLink>
       </Header>
       <Content>
-        <Carousel responsive={responsive}>
-          {trips.map(trip => (
-            <Trip key={trip.id} trip={trip} />
-          ))}
-        </Carousel>
+        {
+          data &&
+          <Carousel responsive={responsive}>
+            {data.myBookings.map(trip => (
+              <Trip key={trip.id} trip={trip} />
+            ))}
+          </Carousel>
+        }
       </Content>
     </div>
   );

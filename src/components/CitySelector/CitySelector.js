@@ -75,7 +75,7 @@ export default function CitySelector({
             </Icon>
             <TextWrapper>
               <Label>{mode}</Label>
-              <City>{city}</City>
+              <City>{city?.en}</City>
             </TextWrapper>
           </Div>
           <ArrowIcon className="city-arrow-icon">
@@ -102,7 +102,7 @@ export default function CitySelector({
         <DropdownMenu className={`city-dropdown ${dropdownClass} ${cityDropdown ? "active" : ""}`}>
           {cityList.map((item, key) => (
             <DropdownItem key={key} onClick={(e) => selectCity(e, item)}>
-              {item}
+              {item.en}
             </DropdownItem>
           ))}
         </DropdownMenu>

@@ -47,11 +47,11 @@ export default function TripSummary({ booking, expandBehavior }) {
                             <Items>
                                 <Item>
                                     <Label>From</Label>
-                                    <Text>{booking.from}</Text>
+                                    <Text>{booking.from.en}</Text>
                                 </Item>
                                 <Item>
                                     <Label>To</Label>
-                                    <Text>{booking.to}</Text>
+                                    <Text>{booking.to.en}</Text>
                                 </Item>
                                 <Item>
                                     <Label>Departure</Label>
@@ -86,7 +86,7 @@ export default function TripSummary({ booking, expandBehavior }) {
                             <Icon src={PriceIcon} />
                             <BodyLabel>Price</BodyLabel>
                             <BodyText>
-                                <Price>{`${booking.price} ${booking.currency}`}</Price>
+                                <Price>{`${booking.price}`}</Price>
                             </BodyText>
                         </BodyItem>
                     </Body>

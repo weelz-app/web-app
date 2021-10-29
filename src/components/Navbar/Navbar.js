@@ -22,6 +22,7 @@ import CalenderIcon from "../../icons/calender.svg";
 import InformationIcon from "../../icons/information.svg";
 import AddNewIcon from "../../icons/AddNew.svg";
 import NotificationIcon from "../../icons/notification.svg";
+import { setUserAuthToken } from "../../utils";
 
 const NavBar = (props) => {
   const path = props.location.pathname;
@@ -67,7 +68,7 @@ const NavBar = (props) => {
         </NavbarUser>
 
         <div className="d-lg-none d-block">
-          <Nav.Link href="#action/3.1">
+          <Nav.Link onClick={() => setUserAuthToken('') } href="/">
             Logout
           </Nav.Link>
         </div>
